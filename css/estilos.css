@@ -1,0 +1,62 @@
+
+* { box-sizing: border-box }
+
+body, html {
+    margin: 0;
+    padding: 0; 
+}
+
+
+#home .intro {
+    margin: 10em;
+    text-align: center;}
+
+#btn1 {
+    text-align: center;
+    color: aliceblue;
+    background-color: blue;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+}
+
+#home #amarillo {
+    background-color: #E9D89B;
+    padding-top: 3em;
+}
+
+#home .datos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9em;
+    background-image: url(../img/banner_la_boca.jpg);
+}
+
+#home .datos div {
+    text-align: center;
+    background-color: rgba(176, 145, 89, 0.839);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 4em;
+    padding: 2em;
+}
+
+
+#home .diversidad {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .diversidad img {
+    border-radius: 5px;
+    height: 15em;
+    width: 10em;
+    margin: 2em;
+ } #home .diversidad img:hover { opacity: 70%;}
+    #home .diversidad .img-txt:hover { opacity: 70%;}
+
