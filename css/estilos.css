@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 * { box-sizing: border-box }
 
-body, html {
+
+
+
+body {
     margin: 0;
     padding: 0; 
+    font-family: "Roboto", serif;
+}
+
+h2 {
+    font-family: "Playwrite IT Moderna", serif;
 }
 
 
@@ -59,4 +69,8 @@ body, html {
     margin: 2em;
  } #home .diversidad img:hover { opacity: 70%;}
     #home .diversidad .img-txt:hover { opacity: 70%;}
-
+    
+/* 
+margin, padding, color, align hacerlo con tailwind en hrml
+dejar hoja css para estructuración - flexbox 
+*/
