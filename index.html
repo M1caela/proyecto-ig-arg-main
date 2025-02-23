@@ -9,146 +9,151 @@
 </head>
 
 <body>
-    <header>
-        <nav class="border-gray-200 mb-10">
-            <div class="w-full mx-auto">
-                <div class="mx-2 flex flex-wrap items-center justify-between">
-                    <a href="index.html" class="flex">
-                    <img src="img/escarapela.webp" width="100" height="auto"  > </img>
-                        <span class="self-center text-lg font-semibold whitespace-nowrap">Argentina</span>
-                    </a>
-                    <div class="flex md:hidden md:order-2">
-                        <button data-collapse-toggle="mobile-menu-3" type="button"
-                            class="md:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
-                            aria-controls="mobile-menu-3" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                    clip-rule="evenodd"></path>
+
+        <!-- barra de navegacion - CORREGIR -->
+        <!-- transparencia + hay un error porque al hacer click en turismo/cultura para abrir el menu ya te lleva a esa pag -->
+        <header> 
+            <nav class="border-gray-200 mb-10">
+                <div class="w-full mx-auto">
+                    <div class="mx-2 flex flex-wrap items-center justify-between">
+                        <a href="#" class="flex">
+                            <svg class="h-10 mr-3" width="51" height="70" viewBox="0 0 51 70" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path d="M1 53H27.9022C40.6587 53 51 42.7025 51 30H24.0978C11.3412 30 1 40.2975 1 53Z"
+                                        fill="#76A9FA"></path>
+                                    <path
+                                        d="M-0.876544 32.1644L-0.876544 66.411C11.9849 66.411 22.4111 55.9847 22.4111 43.1233L22.4111 8.87674C10.1196 8.98051 0.518714 19.5571 -0.876544 32.1644Z"
+                                        fill="#A4CAFE"></path>
+                                    <path d="M50 5H23.0978C10.3413 5 0 15.2975 0 28H26.9022C39.6588 28 50 17.7025 50 5Z"
+                                        fill="#1C64F2"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect width="51" height="70" fill="white"></rect>
+                                    </clipPath>
+                                </defs>
                             </svg>
-                        </button>
-                    </div>
-                    <div class="hidden md:flex justify-between items-end w-full md:w-auto md:order-1" id="mobile-menu-3">
-                        <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-                            <li><a href="historia.html" class="text-gray-700 hover:text-blue-700 block">HISTORIA</a></li>
-                            
-                            <li class="relative">
-                                <button id="culturaBtn" class="text-gray-700 hover:text-blue-700 block w-full text-left">
-                                    <a href="cultura/index.html" >CULTURA</a>
-                                </button>
-                                <ul id="culturaSubmenu" class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-lg hidden">
-                                    <li><a href="cultura/festividades.html" class="block px-4 py-2 hover:bg-gray-200">Festividades</a></li>
-                                    <li><a href="cultura/gastronomia.html" class="block px-4 py-2 hover:bg-gray-200">Gastronomía</a></li>
-                                </ul>
-                            </li>
-    
-                            <li class="relative">
-                                <button id="turismoBtn" class="text-gray-700 hover:text-blue-700 block w-full text-left">
-                                    <a href="turismo/index.html">TURISMO</a>
-                                </button>
-                                <ul id="turismoSubmenu" class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-lg hidden">
-                                    <li><a href="turismo/verano.html" class="block px-4 py-2 hover:bg-gray-200">Verano</a></li>
-                                    <li><a href="turismo/invierno.html" class="block px-4 py-2 hover:bg-gray-200">Invierno</a></li>
-                                    <li><a href="turismo/todoelaño.html" class="block px-4 py-2 hover:bg-gray-200">Todo el año</a></li>
-                                    <li><a href="turismo/guia.html" class="block px-4 py-2 hover:bg-gray-200">Guía de turismo</a></li>
-                                </ul>
-                            </li>
-                            
-                            <li><a href="noticias.html" class="text-gray-700 hover:text-blue-700 block">NOTICIAS</a></li>
-                            <li><a href="sustentabilidad.html" class="text-gray-700 hover:text-blue-700 block">AMBIENTE</a></li>
-                            <li><a href="truco/index.html" class="text-gray-700 hover:text-blue-700 block">JUGÁ AL TRUCO</a></li>
-                        </ul>
+                            <span class="self-center text-lg font-semibold whitespace-nowrap">FlowBite</span>
+                        </a>
+                        <div class="hidden md:flex justify-between items-end w-full md:w-auto md:order-1" id="mobile-menu-3">
+                            <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">HISTORIA</a></li>
+        
+                                <li class="relative group">
+                                    <div class="cursor-pointer">
+                                        <a href="cultura.html" class="text-gray-700 hover:text-blue-700 block">CULTURA</a>
+                                    </div>
+                                    <ul class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-lg hidden group-hover:block">
+                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Festividades</a></li>
+                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Gastronomía</a></li>
+                                    </ul>
+                                </li>
+        
+                                <li class="relative group">
+                                    <div class="cursor-pointer">
+                                        <a href="turismo.html" class="text-gray-700 hover:text-blue-700 block">TURISMO</a>
+                                    </div>
+                                    <ul class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-lg hidden group-hover:block">
+                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Verano</a></li>
+                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Invierno</a></li>
+                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Todo el año</a></li>
+                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Guía de turismo</a></li>
+                                    </ul>
+                                </li>
+        
+                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">NOTICIAS</a></li>
+                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">AMBIENTE</a></li>
+                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">JUGÁ AL TRUCO</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-
-        <!-- hay un error porque al hacer click en turismo/cultura para abrir el menu ya te lleva a esa pag -->
-         
+            </nav>
+        </header>
+        
+        
     
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                var culturaBtn = document.getElementById("culturaBtn");
-                var culturaSubmenu = document.getElementById("culturaSubmenu");
-    
-                var turismoBtn = document.getElementById("turismoBtn");
-                var turismoSubmenu = document.getElementById("turismoSubmenu");
-    
-                function toggleMenu(btn, menu) {
-                    menu.classList.toggle("hidden");
-                }
-    
-                culturaBtn.addEventListener("click", function (event) {
-                    event.stopPropagation(); // Evita que el clic se propague al document
-                    toggleMenu(culturaBtn, culturaSubmenu);
-                    turismoSubmenu.classList.add("hidden"); // Cierra el otro menú
-                });
-    
-                turismoBtn.addEventListener("click", function (event) {
-                    event.stopPropagation();
-                    toggleMenu(turismoBtn, turismoSubmenu);
-                    culturaSubmenu.classList.add("hidden"); // Cierra el otro menú
-                });
-    
-                document.addEventListener("click", function (event) {
-                    if (!culturaBtn.contains(event.target) && !culturaSubmenu.contains(event.target)) {
-                        culturaSubmenu.classList.add("hidden");
-                    }
-                    if (!turismoBtn.contains(event.target) && !turismoSubmenu.contains(event.target)) {
-                        turismoSubmenu.classList.add("hidden");
-                    }
-                });
-            });
-        </script>
-    </header>
-    
-    
-
 
     <main id="home">
+        <div class="vid-banner">                
+            <video autoplay muted loop class="background-video">
+                <source src="vid/tango_bailarines.mp4" type="video/mp4">
+            </video>
+        </div>
 
-        <section class="intro">
+        <section class="text-center p-8 m-8">
             <p>
-                <br>Argentina</br> es un país ubicado en el extremo sur de América del Sur. Con una superficie de aproximadamente 2.78 millones de kilómetros cuadrados, es el octavo país más grande del mundo y el segundo más grande de América Latina, después de Brasil. Su territorio abarca una amplia variedad de paisajes, desde las vastas pampas hasta las imponentes montañas de los Andes, y desde los bosques subtropicales del norte hasta los glaciares y fiordos de la Patagonia.
+                <strong>Argentina</strong> es un país ubicado en el extremo sur de América del Sur. Con una superficie de aproximadamente 2.78 millones de kilómetros cuadrados, es el octavo país más grande del mundo y el segundo más grande de América Latina, después de Brasil. Su territorio abarca una amplia variedad de paisajes, desde las vastas pampas hasta las imponentes montañas de los Andes, y desde los bosques subtropicales del norte hasta los glaciares y fiordos de la Patagonia.
                 La capital y ciudad más poblada es Buenos Aires, una metrópolis vibrante y cosmopolita conocida por su arquitectura europea, su rica vida cultural y su renombrada escena gastronómica. Argentina es famosa por su pasión por el fútbol, su música de tango y su legado literario, con figuras destacadas como Jorge Luis Borges y Julio Cortázar.
-                El país tiene una <br>población diversa y multicultural</br>, resultado de oleadas de inmigración europeas en los siglos XIX y XX, que se sumaron a la mezcla original de pueblos indígenas y descendientes de africanos. Esta rica diversidad cultural se refleja en las tradiciones, festividades y costumbres argentinas.
-                Es un país de contrastes y riquezas, que ofrece una combinación única de <br>historia, cultura y belleza</br> natural que atrae a visitantes de todo el mundo.
+                El país tiene una <strong>población diversa y multicultural</strong>, resultado de oleadas de inmigración europeas en los siglos XIX y XX, que se sumaron a la mezcla original de pueblos indígenas y descendientes de africanos. Esta rica diversidad cultural se refleja en las tradiciones, festividades y costumbres argentinas.
+                Es un país de contrastes y riquezas, que ofrece una combinación única de <strong>historia, cultura y belleza</strong> natural que atrae a visitantes de todo el mundo.
             </p>
-            <button id="btn1">Conocer más sobre la historia de Argentina</button>
+            <a href="historia.html"><button id="btn">Conocer más sobre la historia de Argentina</button></a>
         </section>
         
 
         <div id="amarillo"> 
             <section class="datos">
-                <div> <p>Superficie total</p><p>2 780 400 km12</p> </div>
-                <div> <p>Población total</p> <p>46 044 703 hab</p> <p>*Según Censo 2022</p> </div>
-                <div> <p>24<br>Juridicciones</p> <p>(un distrito federal y 23 provincias)</p> </div>
+                <div class="card-container text-[1.50em]">
+                    <div class="card"> <p>Superficie total</p><p>2 780 400 km12</p> </div>
+                    <div class="card"> <p>Población total</p> <p>46 044 703 hab</p> <p class="text-[0.60em] p-2">*Según Censo 2022</p> </div>
+                    <div class="card"> <p>24<br>Juridicciones</p> <p>(un distrito federal y 23 provincias)</p> </div>
+                </div>
             </section>
 
-            <section class="diversidad">
-                <h2>Explorá la diversidad de Argentina</h2>
-                <div class="nieve"> <img src="img/nieve_ushuaia.jpg" alt="Paisaje de nieve"> <p class="img-txt"></p> </div>
-                <div class="montañas"> <img src="img/montañas_mdz.jpg" alt="Paisaje de montañas"><p class="img-txt"></p></div>
-                <div class="lagos"> <img src="img/lagos_arg.jpg" alt="Paisaje de lago"> </div>
-                <div class="playas"> <img src="img/playas_arg.jpg" alt="Paisaje de playa"> </div>
+            <section>
+                <h2 class="text-white">Explorá la diversidad de Argentina</h2>
+                <div class="diversidad">
+                    <div>
+                        <a href="turismo/invierno.html"> 
+                            <img src="img/nieve.png" alt="Paisaje de nieve"> 
+                            <p id="txtNieve">Nieve</p> 
+                        </a> 
+                    </div>
+
+                    <div>
+                        <a href="turismo/todoelaño.html"> 
+                            <img src="img/montañas.png" alt="Paisaje de montañas">
+                            <p id="txtMonta">Montaña</p>
+                        </a> 
+                    </div>
+              
+                    <div> 
+                        <a href="turismo/index.html">
+                        <img src="img/lagos.png" alt="Paisaje de lago">
+                        <p id="txtLagos">Lagos</p> 
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="turismo/verano.html">
+                        <img src="img/playa.png" alt="Paisaje de playa">
+                        <p id="txtPlaya">Playas</p> 
+                        </a>
+                    </div>
+                </div>
             </section> 
         </div>
         
         <section class="truco">
-            <img src="" alt="Cartas">
-            <h3>¡Quiero retruco</h3>
-            <p>¿Sabías que el truco es uno de los juegos de cartas más famosos en Argentina? Ahora podés disfrutar de este clásico, conocido por su combinación de estrategia, astucia y suerte, en su versión virtual, enfrentándote a amigos o a la inteligencia artificial en partidas dinámicas y desafiantes.<br>
-                Repartí, cantá "¡Truco!" y demostrá quién es el mejor en la mesa.
-            </p>
+            <div id="img-truco"> 
+                <img src="img/cartas-truco.png" alt="Cartas de truco">
+            </div>
 
-            <button>JUGAR</button>
-  
+            <div id="txt-truco">
+                <h3>¡Quiero retruco</h3>
+                <p>¿Sabías que el truco es uno de los juegos de cartas más famosos en Argentina? Ahora podés disfrutar de este clásico, conocido por su combinación de estrategia, astucia y suerte, en su versión virtual, enfrentándote a amigos o a la inteligencia artificial en partidas dinámicas y desafiantes.<br>
+                    Repartí, cantá "¡Truco!" y demostrá quién es el mejor en la mesa.
+                </p>
+
+                <a href="truco/index.html"><button id="btn">JUGAR</button></a>
+            </div>
         </section>
 
     
       
 
-
+<script src="js/main.js"></script>
 </body>
 </html>

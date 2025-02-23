@@ -4,73 +4,120 @@
 * { box-sizing: border-box }
 
 
-
-
 body {
     margin: 0;
-    padding: 0; 
     font-family: "Roboto", serif;
 }
 
 h2 {
-    font-family: "Playwrite IT Moderna", serif;
+    font-weight: 600;
+    font-size: 2em;
+    padding: 1em;
 }
 
-
-#home .intro {
-    margin: 10em;
-    text-align: center;}
-
-#btn1 {
-    text-align: center;
-    color: aliceblue;
-    background-color: blue;
-    width: auto;
-    height: auto;
-    border-radius: 5px;
+h3 {
+    font-weight: 600;
+    font-size: 1em;
 }
 
+#btn { 
+    padding: 0.40em;
+    margin-top: 1em;
+    border-radius: 11px;
+    font-weight: 600;
+    color: white;
+    background-color: #304283;
+}   #btn:hover {background-color: #1e2b57;}
+    #btn:active {background-color: #242f55;}
+
+
+
+/* HOME */
 #home #amarillo {
     background-color: #E9D89B;
     padding-top: 3em;
 }
 
+/* seccion de datos con fondo de la boca */
 #home .datos {
+    background-image: url('../img/banner_la_boca.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* efecto parallax Scroll */
+    height: 100vh; 
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    padding: 9em;
-    background-image: url(../img/banner_la_boca.jpg);
+    justify-content: center;
 }
 
-#home .datos div {
+#home .card {
     text-align: center;
-    background-color: rgba(176, 145, 89, 0.839);
+    background-color: #b8a974f3;
     color: white;
     font-weight: 600;
     border-radius: 10px;
-    margin: 4em;
-    padding: 2em;
+    margin: 2em;
+    padding: 1.50em;
+} #home .card:hover {background-color: #978b5df3;}
+
+
+/* seccion de 'descubri diversidad arg' */
+#home .diversidad {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
+.diversidad div {
+    position: relative;
+    text-align: center;
+}
 
-#home .diversidad {
+.diversidad img {
+    border-radius: 15px;
+    height: auto;
+    max-width: 20em;
+    margin: 2em;
+    margin-top: 2em;
+    margin-bottom: 7em;
+ }  #home .diversidad img:hover {opacity: 80%;}
+    
+ .diversidad p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Roboto";
+    font-weight: 800;
+    font-size: 2em;
+    opacity: 0;
+} .diversidad div:hover p { opacity: 1;}
+
+/* seccion de truco */
+
+#home .truco {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 4em;
 }
 
-#home .diversidad img {
-    border-radius: 5px;
-    height: 15em;
-    width: 10em;
-    margin: 2em;
- } #home .diversidad img:hover { opacity: 70%;}
-    #home .diversidad .img-txt:hover { opacity: 70%;}
+#img-truco {
+    max-width: 20em;
+   margin-right: 4em;
+}
+
+#txt-truco {
+    width: 40em;
+}
+
+
+
+
+
     
-/* 
-margin, padding, color, align hacerlo con tailwind en hrml
-dejar hoja css para estructuración - flexbox 
-*/
+
+
+
