@@ -30,13 +30,40 @@ h3 {
 }   #btn:hover {background-color: #1e2b57;}
     #btn:active {background-color: #242f55;}
 
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* asegura que el nav esté sobre el video */
+}
 
 
-/* HOME */
+/** HOME **/
 #home #amarillo {
     background-color: #E9D89B;
     padding-top: 3em;
 }
+
+#home .vid-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+#home .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video sin deformarlo */
+}
+
+
+section {
+    padding-top: 50px; /* Ajusta este valor si el contenido queda muy encima */
+}
+
+
 
 /* seccion de datos con fondo de la boca */
 #home .datos {

@@ -1,79 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Argentina</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-
-        <!-- barra de navegacion - CORREGIR -->
-        <!-- transparencia + hay un error porque al hacer click en turismo/cultura para abrir el menu ya te lleva a esa pag -->
-        <header> 
-            <nav class="border-gray-200 mb-10">
-                <div class="w-full mx-auto">
-                    <div class="mx-2 flex flex-wrap items-center justify-between">
-                        <a href="#" class="flex">
-                            <svg class="h-10 mr-3" width="51" height="70" viewBox="0 0 51 70" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0)">
-                                    <path d="M1 53H27.9022C40.6587 53 51 42.7025 51 30H24.0978C11.3412 30 1 40.2975 1 53Z"
-                                        fill="#76A9FA"></path>
-                                    <path
-                                        d="M-0.876544 32.1644L-0.876544 66.411C11.9849 66.411 22.4111 55.9847 22.4111 43.1233L22.4111 8.87674C10.1196 8.98051 0.518714 19.5571 -0.876544 32.1644Z"
-                                        fill="#A4CAFE"></path>
-                                    <path d="M50 5H23.0978C10.3413 5 0 15.2975 0 28H26.9022C39.6588 28 50 17.7025 50 5Z"
-                                        fill="#1C64F2"></path>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0">
-                                        <rect width="51" height="70" fill="white"></rect>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <span class="self-center text-lg font-semibold whitespace-nowrap">FlowBite</span>
-                        </a>
-                        <div class="hidden md:flex justify-between items-end w-full md:w-auto md:order-1" id="mobile-menu-3">
-                            <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">HISTORIA</a></li>
-        
-                                <li class="relative group">
-                                    <div class="cursor-pointer">
-                                        <a href="cultura.html" class="text-gray-700 hover:text-blue-700 block">CULTURA</a>
-                                    </div>
-                                    <ul class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-lg hidden group-hover:block">
-                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Festividades</a></li>
-                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Gastronomía</a></li>
-                                    </ul>
-                                </li>
-        
-                                <li class="relative group">
-                                    <div class="cursor-pointer">
-                                        <a href="turismo.html" class="text-gray-700 hover:text-blue-700 block">TURISMO</a>
-                                    </div>
-                                    <ul class="absolute left-0 mt-1 w-40 bg-white shadow-lg rounded-lg hidden group-hover:block">
-                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Verano</a></li>
-                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Invierno</a></li>
-                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Todo el año</a></li>
-                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-200">Guía de turismo</a></li>
-                                    </ul>
-                                </li>
-        
-                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">NOTICIAS</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">AMBIENTE</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-blue-700 block">JUGÁ AL TRUCO</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        
-        
+    <header>
+        <nav class="bg-transparent text-white p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-xl font-bold">Mi Sitio</div>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-300">Historia</a></li>
+                    
+                    <li class="relative group">
+                        <a href="#" class="hover:text-gray-300">Cultura</a>
+                        <ul class="absolute left-0 hidden group-hover:block bg-gray-800 text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Arte</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Tradiciones</a></li>
+                        </ul>
+                    </li>
     
+                    <li><a href="#" class="hover:text-gray-300">Noticias</a></li>
+    
+                    <li class="relative group">
+                        <a href="#" class="hover:text-gray-300">Turismo</a>
+                        <ul class="absolute left-0 hidden group-hover:block bg-gray-800 text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Playas</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-700">Montañas</a></li>
+                        </ul>
+                    </li>
+    
+                    <li><a href="#" class="hover:text-gray-300">Ambiente</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Jugá al Truco</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
 
     <main id="home">
         <div class="vid-banner">                
@@ -150,8 +119,7 @@
                 <a href="truco/index.html"><button id="btn">JUGAR</button></a>
             </div>
         </section>
-
-    
+    </main>
       
 
 <script src="js/main.js"></script>
