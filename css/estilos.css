@@ -10,12 +10,14 @@ body {
 }
 
 h2 {
+    font-family: "Roboto", serif;
     font-weight: 600;
-    font-size: 2em;
-    padding: 1em;
+    font-size: 1.50em;
+    padding: 0.50em;
 }
 
 h3 {
+    font-family: "Roboto", serif;
     font-weight: 600;
     font-size: 1em;
 }
@@ -92,37 +94,71 @@ section {
 #home .diversidad {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden si no caben */
     padding: 20px;
 }
 
 .diversidad div {
     position: relative;
     text-align: center;
-}
-
-.diversidad img {
-    border-radius: 15px;
-    height: auto;
-    max-width: 20em;
     margin: 2em;
     margin-top: 2em;
     margin-bottom: 7em;
+}
+
+.diversidad img {
+    height: auto;
+    max-width: 20em;    
+    display: block;
+    border-radius: 15px;
  }  #home .diversidad img:hover {opacity: 80%;}
     
  .diversidad p {
     position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
     font-family: "Roboto";
     font-weight: 800;
     font-size: 2em;
-    opacity: 0;
+    text-align: center;
 } .diversidad div:hover p { opacity: 1;}
 
-/* seccion de truco */
 
+/** HISTORIA **/
+    #historia .contenido p, .contenido h3 {
+        font-size: 1.20em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    .poblamiento {
+        height: 450px;
+        width: 100%;
+        background-image: url(../img/historia-pueblos-originarios.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+
+    .independencia {
+        height: 450px;
+        width: 100%;
+        background-image: url(../img/historia-primera-junta.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+
+
+
+
+
+
+
+/* seccion de truco */
 #home .truco {
     display: flex;
     flex-direction: row;
@@ -137,14 +173,42 @@ section {
 }
 
 #txt-truco {
-    width: 40em;
+    max-width: 40em;
 }
 
 
 
+    
+
+/*///////////  RESPONSIVE MOBILE  ////////////*/
+
+@media (max-width: 960px) {
+    #home .diversidad {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .diversidad img {
+        max-width: 80%; /* Reducir el tamaño en pantallas pequeñas */
+    }
+
+    .diversidad p {
+        font-size: 1.2rem; /* Reducir el tamaño del texto */
+        padding: 3px 7px;
+    }
+}
 
 
     
 
 
 
+
+/* 
+Notas: 
+    * centrar texto de las cards en diversidad/home
+    * corregir menu del nav + responsive!
+
+
+*/
