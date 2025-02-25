@@ -1,25 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Days+One&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 * { box-sizing: border-box }
-
 
 body {
     margin: 0;
     font-family: "Roboto", serif;
 }
 
+h1 {
+    font-weight: 800;
+    font-size: 2em;
+    padding: 0.50em;
+}
+
 h2 {
-    font-family: "Roboto", serif;
     font-weight: 600;
     font-size: 1.50em;
     padding: 0.50em;
 }
 
 h3 {
-    font-family: "Roboto", serif;
-    font-weight: 600;
     font-size: 1em;
+    font-weight: 600;
+}
+
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* asegura que el nav esté sobre el video */
 }
 
 #btn { 
@@ -32,21 +43,7 @@ h3 {
 }   #btn:hover {background-color: #1e2b57;}
     #btn:active {background-color: #242f55;}
 
-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* asegura que el nav esté sobre el video */
-}
-
-
 /** HOME **/
-#home #amarillo {
-    background-color: #E9D89B;
-    padding-top: 3em;
-}
-
 #home .vid-banner {
     position: relative;
     width: 100%;
@@ -57,22 +54,16 @@ nav {
 #home .background-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta el video sin deformarlo */
+    object-fit: cover; 
 }
 
 
-section {
-    padding-top: 50px; /* Ajusta este valor si el contenido queda muy encima */
-}
-
-
-
-/* seccion de datos con fondo de la boca */
+/* seccion de datos con img de fondo */
 #home .datos {
     background-image: url('../img/banner_la_boca.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* efecto parallax Scroll */
+    background-attachment: fixed; /* efecto parallax scroll */
     height: 100vh; 
     display: flex;
     align-items: center;
@@ -94,7 +85,7 @@ section {
 #home .diversidad {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que las imágenes se acomoden si no caben */
+    flex-wrap: wrap; 
     padding: 20px;
 }
 
@@ -126,38 +117,6 @@ section {
     text-align: center;
 } .diversidad div:hover p { opacity: 1;}
 
-
-/** HISTORIA **/
-    #historia .contenido p, .contenido h3 {
-        font-size: 1.20em;
-        margin-left: 2em;
-        margin-right: 2em;
-    }
-
-    .poblamiento {
-        height: 450px;
-        width: 100%;
-        background-image: url(../img/historia-pueblos-originarios.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-    }
-
-    .independencia {
-        height: 450px;
-        width: 100%;
-        background-image: url(../img/historia-primera-junta.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-    }
-
-
-
-
-
-
-
 /* seccion de truco */
 #home .truco {
     display: flex;
@@ -176,13 +135,42 @@ section {
     max-width: 40em;
 }
 
+/** HISTORIA **/
+    #historia .contenido p, .contenido h3 {
+        font-size: 1.20em;
+        padding: 1.20em;
+    }
+
+    .poblamiento { background-image: url(../img/historia-pueblos-originarios.png); }
+    .poblamiento:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);}
+    .independencia { background-image: url(../img/historia-primera-junta.png); }
+    .independencia:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-primera-junta.png);}
+    .independencia, .poblamiento {
+        min-height: 450px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+
+    #historia .banner {
+        width: 100%;
+        min-height: 500px;
+        background-color: #1e2b57;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 
 
-    
 
 /*///////////  RESPONSIVE MOBILE  ////////////*/
 
 @media (max-width: 960px) {
+
+    /*  HOME */
     #home .diversidad {
         flex-direction: column;
         align-items: center;
@@ -190,18 +178,21 @@ section {
     }
 
     .diversidad img {
-        max-width: 80%; /* Reducir el tamaño en pantallas pequeñas */
+        max-width: 80%; 
     }
 
     .diversidad p {
-        font-size: 1.2rem; /* Reducir el tamaño del texto */
+        font-size: 1.2rem;
         padding: 3px 7px;
     }
-}
 
+    /* HISTORIA */
+        /* en el desktop esto sucede al hacer hover pero en mobile se ve mas oscuro por default */
+    .poblamiento { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);}
+    .independencia { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-primera-junta.png);}
 
     
-
+}
 
 
 
