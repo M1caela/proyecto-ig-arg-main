@@ -283,6 +283,7 @@ nav {
         background-image: url('../cultura/img/gastronomia-banner.png');
     }
 
+    /* seccion comidas tradicionales */
     .comidas-tradi div {
         width: 100%;
         display: flex;
@@ -301,6 +302,26 @@ nav {
         font-weight: 500;
     }
 
+    /* seccion de paseos gastronomicos */
+        .paseos {
+            display: flex;
+            justify-content: center; 
+        } 
+  
+        .paseos img  {
+            max-width: 280px;
+        }
+
+    .paseos .izquierda div, .paseos .derecha div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 0.90em;
+        padding-bottom: 3em;
+    }   .costumbres .derecha img { order: 2 }
+        .costumbres .derecha p { order: 1; }
+        
+        
 
 
 /*///////////  RESPONSIVE MOBILE  ////////////*/
