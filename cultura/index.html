@@ -5,227 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cultura | Argentina</title>
     <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="node_modules/flyonui/dist/css/flyonui.min.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 
 <body>
-    <header> 
-    </header>
+  <header>
+    <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-xl font-bold"><img id="escarapela" src="../img/escarapela.webp" alt="Escarapela" title="Inicio"></div>
 
-    <main id="cultura">
-        <div>
-            <h1>CONOCÉ TODO SOBRE LA <br>CULTURA ARGENTINA</h1>
+            <!-- Botón hamburguesa (Mobile) -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menú -->
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="historia.html" class="font-semibold hover:text-[#111E4A]">Historia</a></li>
+
+                <!-- CULTURA -->
+                <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
+                    <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                        Cultura
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-cultura" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                        <li><a href="cultura/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
+                        <li><a href="cultura/gastronomia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
+                        <li><a href="cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="noticias.html" class="font-semibold hover:text-[#111E4A]">Noticias</a></li>
+
+                <!-- TURISMO -->
+                <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
+                    <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                        Turismo
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                        <li><a href="turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Turismo</a></li>
+                        <li><a href="turismo/guia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Guía de turismo</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a></li>
+                <li><a href="truco/index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a></li>
+            </ul>
+
+            <!-- Menú Mobile -->
+            <div id="mobile-menu"
+                class="hidden fixed top-0 right-0 w-64 h-full bg-[#233679] shadow-lg flex flex-col p-6 md:hidden">
+                <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
+                <ul class="mt-6 space-y-4">
+                    <li><a href="historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
+
+                    <!-- CULTURA MOBILE -->
+                    <li>
+                        <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                            onclick="toggleDropdown('mobile-cultura')">
+                            Cultura
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="mobile-cultura" class="hidden ml-4">
+                            <li><a href="cultura/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Cultura</a></li>
+                            <li><a href="cultura/gastronomia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Gastronomía</a></li>
+                            <li><a href="cultura/festividades.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Festividades</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="noticias.html" class="font-semibold hover:text-[#8492C7]">Noticias</a></li>
+
+                    <!-- TURISMO MOBILE -->
+                    <li>
+                        <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                            onclick="toggleDropdown('mobile-turismo')">
+                            Turismo
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="mobile-turismo" class="hidden ml-4">
+                            <li><a href="turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Turismo</a></li>
+                            <li><a href="turismo/guia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Guía de turismo</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="sustentabilidad.html" class="font-semibold hover:text-[#8492C7]">Ambiente</a></li>
+                    <li><a href="truco/index.html" class="font-semibold hover:text-[#8492C7]">Jugá al Truco</a></li>
+                </ul>
+            </div>
         </div>
-
-        <p class="p-[2em] text-center">
-            Argentina es un país único que ofrece TODO en términos de cultura, gastronomía, arte y paisajes.
-            La cultura de Argentina está marcada por el carácter multiétnico y multicultural de su población, el fuerte sincretismo de sus formas de expresión y una positiva valoración del progreso y la modernidad, en la que se conjugan, no sin conflictos, muchas identidades étnicas y un sentido de pertenencia a las culturas europeas y latinoamericanas, con algunos aportes asiáticos y africanos.
-           La cultura argentina tiene como origen la mezcla de otras que se encontraron durante los años de las inmigraciones. En cuanto a sus ideologías se destacan sus pensamientos y lenguajes liberales o socialdemócratas, mucho valor a la libertad, también la democracia y el respeto a los derechos humanos.
-        </p>
-
-        <article class="visuales">
-            <div class="p-[3em]">
-                <h2>Sobre las Artes visuales y plásticas</h2>
-                <p>
-                    Los movimientos artísticos en Argentina estuvieron influenciados por el arte europeo. Sin embargo, en la historia de la pintura nacional siempre estuvo presente el interés por alcanzar un carácter y sello propio. Esa búsqueda pasó de asumir las tendencias europeas y argentinizarlas a reelaborar las propias formas. Así se crearon estilos que luego fueron exportados al mundo. Las obras de los pintores argentinos dejaron su huella en la historia del arte y siguen sorprendiendo y conmoviendo al público.
-                </p>
-
-                <p>
-                    <strong>Los renovadores de los años 40</strong><br>
-                    Argentina vivió un momento de profundas transformaciones de las estructuras sociales. Fue un período de crecimiento para las pequeñas y medianas industrias. Por otro lado, la clase intelectual se posicionó y asumió un carácter más crítico. Desde lo estético, <strong>se abrió paso al arte concreto</strong>.
-                    Entre las preocupaciones de los artistas estaba la misión social del arte. Así como la receptividad del público y las exigencias de una nueva sociedad tecnológica. Para fundamentar sus obras unieron el empleo de nuevos materiales a conceptos matemáticos, y priorizaron el carácter racional y concreto. La idea era “no copiar, no reproducir, inventar”, por eso fueron llamados <strong>renovadores.</strong>
-                </p>
-
-                <p>
-                    <strong>Los años 50</strong><br>
-                    En esta década confluyeron diversos movimientos artísticos a la vez. Fue el inicio de un <strong>período de experimentación</strong> y búsqueda de nuevos planteos. Se organizaron asociaciones para generar formas originales vinculadas a la abstracción lírica y surrealista, el informalismo y la nueva figuración. En 1956 se creó la <strong>Asociación Amigos del Museo Nacional de Bellas Artes y el Museo de Arte Moderno.</strong>
-                    En 1958, el Fondo Nacional de las Artes y el Instituto Di Tella. A fines de los 50 nació el Grupo Espartaco, autor de obras que propugnaban un <strong>arte re­volucionario latinoamerica­no.</strong> Dieron vida a imágenes monu­mentales, escultóricas, con temáticas referidas a los campesinos y trabajadores.
-                </p>
-
-                <p>
-                    <strong>Los experimentales años 60</strong><br>
-                    Estos años estuvieron marcados por una multiplicidad de tendencias artísticas y una <strong>apertura internacional.</strong> Los artistas locales participaron en las Bienales de San Pablo, Venecia y Cracovia.
-                    Frente al informalismo se fue imponiendo el <strong>arte pop.</strong> También surgieron con fuerza las tendencias visuales puras que desarrollaron la nueva figuración, el constructivismo y el concretismo. En este último movimiento encontramos a Luis Felipe Noé como su máximo exponente.
-                </p>
-
-                <p>
-                    <strong>Los 70, 80 y 90</strong><br>
-                    En 1966 el artista argentino Julio Le Parc obtuvo el primer premio en la Bie­nal de Venecia. Así se difundió a nivel ma­sivo uno de los movimientos artísticos más novedosos: <strong>el arte cinético y arte óptico</strong>. Estas obras tienen como núcleo investigacio­nes visuales sobre el movi­miento y la luz, tanto en su ca­rácter real como virtual. Duran­te este tiempo el pú­blico de Buenos Aires pudo ver y participar en diversas experiencias artís­ticas. Se podía disfrutar desde algo más bien lúdico hasta obras de fuerte contenido político. 
-                    El golpe cívico militar de 1976 provocó un efecto negativo sobre el desarrollo de las artes ya que gran parte de éste no podía manifestarse. La falta de libertad y la persecución motivó el exilio de muchos artistas. Más adelante, se inició un proceso de recuperación de nuestra memoria, mitos y cultura. 
-                </p>
-            </div>
-
-            <section class="destacadas"> 
-                <h3>Personalidades destacadas</h3>
-                  
-
-                <div
-                id="multi-slide"
-                data-carousel='{ "loadingClasses": "opacity-0", "slidesQty": { "xs": 1, "lg": 3 } }'
-                class="relative w-full"
-              >
-                <div class="carousel h-80">
-                  <div class="carousel-body  h-full opacity-0">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide">
-                      <div class="bg-base-200/50 flex h-full justify-center p-6">
-                        <span class="self-center text-lg">First slide</span>
-                      </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide">
-                      <div class="bg-base-200 flex h-full justify-center p-6">
-                        <span class="self-center text-lg">Second slide</span>
-                      </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-slide">
-                      <div class="bg-base-300 flex h-full justify-center p-6">
-                        <span class="self-center text-lg">Third slide</span>
-                      </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-slide">
-                      <div class="bg-base-200/50 flex h-full justify-center p-6">
-                        <span class="self-center text-lg">Fourth slide</span>
-                      </div>
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="carousel-slide">
-                      <div class="bg-base-200 flex h-full justify-center p-6">
-                        <span class="self-center text-lg">Fifth slide</span>
-                      </div>
-                    </div>
-                    <!-- Slide 6 -->
-                    <div class="carousel-slide">
-                      <div class="bg-base-300 flex h-full justify-center p-6">
-                        <span class="self-center text-lg">Sixth slide</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <!-- Previous Slide -->
-                <button type="button" class="carousel-prev">
-                  <span class="size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow">
-                    <span class="icon-[tabler--chevron-left] size-5 cursor-pointer rtl:rotate-180"></span>
-                  </span>
-                  <span class="sr-only">Previous</span>
-                </button>
-                <!-- Next Slide -->
-                <button type="button" class="carousel-next">
-                  <span class="sr-only">Next</span>
-                  <span class="size-9.5 bg-base-100 flex items-center justify-center rounded-full shadow">
-                    <span class="icon-[tabler--chevron-right] size-5 cursor-pointer rtl:rotate-180"></span>
-                  </span>
-                </button>
-              </div>
+    </nav>
+  </header>
 
 
-                <!-- <div>
-                    <img src="" alt="">
-                    <p class="nombre"></p>
-                    <p></p>
-                </div> -->
+  <main id="cultura">
+  <div class="vid-banner">                
+      <video autoplay muted loop class="background-video">
+        <source src="../vid/tango_bailarines.mp4" type="video/mp4">
+      </video>
+      <h1 class="text-center">CONOCÉ TODO SOBRE LA <br>CULTURA ARGENTINA</h1>
+  </div> 
+  
+  
+  <p class="p-[3em] text-center">
+    <strong>Argentina es un país único que ofrece TODO en términos de cultura, gastronomía, arte y paisajes.</strong><br>
+    La cultura de Argentina está marcada por el carácter multiétnico y multicultural de su población, el fuerte sincretismo de sus formas de expresión y una positiva valoración del progreso y la modernidad, en la que se conjugan, no sin conflictos, muchas identidades étnicas y un sentido de pertenencia a las culturas europeas y latinoamericanas, con algunos aportes asiáticos y africanos.
+    La cultura argentina tiene como origen la mezcla de otras que se encontraron durante los años de las inmigraciones. En cuanto a sus ideologías se destacan sus pensamientos y lenguajes liberales o socialdemócratas, mucho valor a la libertad, también la democracia y el respeto a los derechos humanos.
+  </p>
 
-            </section>
-        </article>
+  <article class="visuales">
+    <div class="p-[3em]">
+      <h2>Sobre las Artes visuales y plásticas</h2>
+      <p>
+        Los movimientos artísticos en Argentina estuvieron influenciados por el arte europeo. Sin embargo, en la historia de la pintura nacional siempre estuvo presente el interés por alcanzar un carácter y sello propio. Esa búsqueda pasó de asumir las tendencias europeas y argentinizarlas a reelaborar las propias formas. Así se crearon estilos que luego fueron exportados al mundo. Las obras de los pintores argentinos dejaron su huella en la historia del arte y siguen sorprendiendo y conmoviendo al público.
+      </p>
 
-        <article class="musicales">
-            <div class="p-[3em]">
-                <h2>Sobre las Artes musicales</h2>
-                <p>
-                    La historia de nuestra música se remonta a las tribus aborígenes autóctonas de nuestro territorio. Éstos la utilizaban como un vehículo de expresión de sus sentimientos y su instinto. Sin embargo, con la llegada de Colón a nuestras tierras, la música fue cambiando y adaptándose a la influencia española. Es así, que comenzó a mezclarse o a utilizarse para celebraciones religiosas. Los jesuitas, en ésa época, crearon escuelas para la formación de músicos en dicha materia. 
-                    Gracias a la influencia mencionada, y a la llegada de esclavos africanos para trabajar en nuestras tierras, fue que se creó la música folklórica. Por lo tanto, ésta es resultado de un proceso de mestizaje entre 3 culturas: europea, originaria y africana.          
-                    El <strong>folklore</strong> representaba lo que el pueblo sabía y quería decir. Para lograrlo, tenía que rebelarse. Este significado deviene de la etimología de su palabra: folk (pueblo) y lore (saber).
-                </p>
+      <p>
+        <strong>Los renovadores de los años 40</strong><br>
+        Argentina vivió un momento de profundas transformaciones de las estructuras sociales. Fue un período de crecimiento para las pequeñas y medianas industrias. Por otro lado, la clase intelectual se posicionó y asumió un carácter más crítico. Desde lo estético, <strong>se abrió paso al arte concreto</strong>.
+        Entre las preocupaciones de los artistas estaba la misión social del arte. Así como la receptividad del público y las exigencias de una nueva sociedad tecnológica. Para fundamentar sus obras unieron el empleo de nuevos materiales a conceptos matemáticos, y priorizaron el carácter racional y concreto. La idea era “no copiar, no reproducir, inventar”, por eso fueron llamados <strong>renovadores.</strong>
+      </p>
 
-                <p>
-                    A partir de 1852 hasta 1910, la música argentina (ya fuera de la esfera de influencia española colonizadora) busca insertarse en los grandes centros europeos. Es así que se desarrolla enormemente la <strong>ópera</strong> en nuestro país. En 1857 se construye el Teatro Colón como centro de cultura musical. Incluso, adquiere relevancia mundial y participan de sus muestras artistas de todo el mundo. 
-                </p>
+      <p>
+        <strong>Los años 50</strong><br>
+        En esta década confluyeron diversos movimientos artísticos a la vez. Fue el inicio de un <strong>período de experimentación</strong> y búsqueda de nuevos planteos. Se organizaron asociaciones para generar formas originales vinculadas a la abstracción lírica y surrealista, el informalismo y la nueva figuración. En 1956 se creó la <strong>Asociación Amigos del Museo Nacional de Bellas Artes y el Museo de Arte Moderno.</strong>
+        En 1958, el Fondo Nacional de las Artes y el Instituto Di Tella. A fines de los 50 nació el Grupo Espartaco, autor de obras que propugnaban un <strong>arte re­volucionario latinoamerica­no.</strong> Dieron vida a imágenes monu­mentales, escultóricas, con temáticas referidas a los campesinos y trabajadores.
+      </p>
 
-                <p>
-                    Arribando en un nuevo siglo, el XIX, se origina el <strong>tango</strong>, otro género característico de nuestro país, declarado <strong>Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO</strong>. Éste surgió como la fusión entre el candombe (propio de la cultura esclava africana de la época) y la milonga, para dar lugar al tango y a sus instrumentos básicos: el piano, violín y bandoneón que reemplazaban a los tambores, flautas y guitarras de los ritmos anteriores. 
-                    En primer lugar, el tango venía a representar al sector más pobre de la sociedad y a narrar sus aventuras amorosas e infidelidades. Recién adquirió protagonismo entre la clase social alta en el siglo XX, gracias a su fama mundial y el gusto de las burguesías europeas por ésta música. 
-                </p>
+      <p>
+        <strong>Los experimentales años 60</strong><br>
+        Estos años estuvieron marcados por una multiplicidad de tendencias artísticas y una <strong>apertura internacional.</strong> Los artistas locales participaron en las Bienales de San Pablo, Venecia y Cracovia.
+        Frente al informalismo se fue imponiendo el <strong>arte pop.</strong> También surgieron con fuerza las tendencias visuales puras que desarrollaron la nueva figuración, el constructivismo y el concretismo. En este último movimiento encontramos a Luis Felipe Noé como su máximo exponente.
+      </p>
 
-                <p>
-                    A principios de 1960 surge el <strong>rock nacional</strong> como la «movida» creada por la  generación más joven para reclamar y hacer escuchar sus voces sobre temas de preocupación social. Sin embargo, el auge de éste finaliza en los inicios de la dictadura militar, en dónde más de 100 artistas locales fueron censurados por elaborar «material sublevador». Aunque luego con la culminación de la dictadura militar argentina, el rock volvió a ocupar el primer lugar en las listas y fueron apareciendo nuevos artistas.
-                </p>
+      <p>
+        <strong>Los 70, 80 y 90</strong><br>
+        En 1966 el artista argentino Julio Le Parc obtuvo el primer premio en la Bie­nal de Venecia. Así se difundió a nivel ma­sivo uno de los movimientos artísticos más novedosos: <strong>el arte cinético y arte óptico</strong>. Estas obras tienen como núcleo investigacio­nes visuales sobre el movi­miento y la luz, tanto en su ca­rácter real como virtual. Duran­te este tiempo el pú­blico de Buenos Aires pudo ver y participar en diversas experiencias artís­ticas. Se podía disfrutar desde algo más bien lúdico hasta obras de fuerte contenido político. 
+        El golpe cívico militar de 1976 provocó un efecto negativo sobre el desarrollo de las artes ya que gran parte de éste no podía manifestarse. La falta de libertad y la persecución motivó el exilio de muchos artistas. Más adelante, se inició un proceso de recuperación de nuestra memoria, mitos y cultura. 
+      </p>
+    </div>
 
-            </div>
+    <section class="destacadas"> 
+      <h3>Personalidades destacadas</h3>
+    </section>
+  </article>
 
-            <section class="destacadas"> 
-                <h3>Personalidades destacadas</h3>
-            </section>
-        </article>
+  <article class="musicales">
+    <div class="p-[3em]">
+      <h2>Sobre las Artes musicales</h2>
+      <p>
+          La historia de nuestra música se remonta a las tribus aborígenes autóctonas de nuestro territorio. Éstos la utilizaban como un vehículo de expresión de sus sentimientos y su instinto. Sin embargo, con la llegada de Colón a nuestras tierras, la música fue cambiando y adaptándose a la influencia española. Es así, que comenzó a mezclarse o a utilizarse para celebraciones religiosas. Los jesuitas, en ésa época, crearon escuelas para la formación de músicos en dicha materia. 
+          Gracias a la influencia mencionada, y a la llegada de esclavos africanos para trabajar en nuestras tierras, fue que se creó la música folklórica. Por lo tanto, ésta es resultado de un proceso de mestizaje entre 3 culturas: europea, originaria y africana.          
+          El <strong>folklore</strong> representaba lo que el pueblo sabía y quería decir. Para lograrlo, tenía que rebelarse. Este significado deviene de la etimología de su palabra: folk (pueblo) y lore (saber).
+      </p>
 
-        <section class="destacadas"> 
-            <h3>Otras personalidades destacadas del país</h3>
-        </section>
+      <p>
+          A partir de 1852 hasta 1910, la música argentina (ya fuera de la esfera de influencia española colonizadora) busca insertarse en los grandes centros europeos. Es así que se desarrolla enormemente la <strong>ópera</strong> en nuestro país. En 1857 se construye el Teatro Colón como centro de cultura musical. Incluso, adquiere relevancia mundial y participan de sus muestras artistas de todo el mundo. 
+      </p>
 
-        <article class="costumbres">
+      <p>
+          Arribando en un nuevo siglo, el XIX, se origina el <strong>tango</strong>, otro género característico de nuestro país, declarado <strong>Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO</strong>. Éste surgió como la fusión entre el candombe (propio de la cultura esclava africana de la época) y la milonga, para dar lugar al tango y a sus instrumentos básicos: el piano, violín y bandoneón que reemplazaban a los tambores, flautas y guitarras de los ritmos anteriores. 
+          En primer lugar, el tango venía a representar al sector más pobre de la sociedad y a narrar sus aventuras amorosas e infidelidades. Recién adquirió protagonismo entre la clase social alta en el siglo XX, gracias a su fama mundial y el gusto de las burguesías europeas por ésta música. 
+      </p>
+
+      <p>
+          A principios de 1960 surge el <strong>rock nacional</strong> como la «movida» creada por la  generación más joven para reclamar y hacer escuchar sus voces sobre temas de preocupación social. Sin embargo, el auge de éste finaliza en los inicios de la dictadura militar, en dónde más de 100 artistas locales fueron censurados por elaborar «material sublevador». Aunque luego con la culminación de la dictadura militar argentina, el rock volvió a ocupar el primer lugar en las listas y fueron apareciendo nuevos artistas.
+      </p>
+
+    </div>
+
+    <section class="destacadas"> 
+      <h3>Personalidades destacadas</h3>
+    </section>
+  </article>
+
+  <section class="destacadas"> 
+      <h3>Otras personalidades destacadas del país</h3>
+  </section>
+
+  <div class="celeste bg-[#E8EAF4]">
+    <article class="costumbres">
+        <div class="izquierda text-left mr-[3em] ml-[0.50em]">
             <h2>Costumbres Argentinas</h2>
             <div>
-                <img src="" alt="Personas saludandose con beso">
+                <img src="img/cultura-costumbres-beso.png" alt="Personas saludandose con beso">
                 <p>
-                    <strong>Se saluda con beso</strong>
+                    <strong>Se saluda con beso</strong><br>
                     No importa si estás saludando a tu tía, hermano, amiga, o un desconocido, el argetino enseguida busca rozar cachete con cachete en un tímido pero simpático beso. Esto seguramente va acompañado de una pregunta retórica del estilo ¿Como estás? ¿Todo bien? ¿Qué tal? ¿Cómo andas? 
                 </p>
             </div>
 
             <div>
-                <img src="" alt="Mesa familiar con asado">
+                <img src="img/cultura-costumbres- asado.png" alt="Mesa familiar con asado">
                 <p>
-                    <strong>El asado del domingo</strong>
+                    <strong>El asado del domingo</strong><br>
                     Los domingos en los barrios hay un olor especial, es el humo de las parrillas que cerca del mediodía empiezan a prenderse para disfrutar en familia o con amigos de un buen asado. Cuando se escuche el grito "A comeeeer" todos se acercarán a la mesa, donde permanecerán no solo durante la comida sino también durante la sobre mesa.
                 </p>
             </div>
+        </div>
 
+        <div class="derecha text-right ml-[3em] mr-[0.50em]">
             <div>
-                 <img src="" alt="Personas pasandose un mate">
-                <p>
-                    <strong>El mate se comparte</strong>
-                    Si queres evitar cargadas, apodos o inclusive ser visto como un "amargo", te recomendamos no tomar mate solo si estás con otras personas. Si otras personas estuviesen tomando, se respeta el orden de la ronda, y cuando alguno de ellos agradezca querrá decir que ya no toma más mate por el momento. 
-                </p>
+            <img src="img/cultura-costumbres- mate.png" alt="Personas pasandose un mate">
+            <p>
+                <strong>El mate se comparte</strong><br>
+                Si queres evitar cargadas, apodos o inclusive ser visto como un "amargo", te recomendamos no tomar mate solo si estás con otras personas. Si otras personas estuviesen tomando, se respeta el orden de la ronda, y cuando alguno de ellos agradezca querrá decir que ya no toma más mate por el momento. 
+            </p>
             </div>
-
             <div>
-                <img src="" alt="Personas de fiesta">
+                <img src="img/cultura-costumbres-fiesta.png" alt="Personas de fiesta">
                 <p>
-                    <strong>Las fiestas duran toda la noche</strong>
+                    <strong>Las fiestas duran toda la noche</strong><br>
                     Cuando un argentino ve en las películas estadounidenses que los jóvenes se van a dormir a las 12:00 pm luego de una fiesta no lo pueden comprender. ¡A esa hora recién estaríamos haciendo la previa! Si fue una buena noche, del boliche no se vuelve antes de las 5:00 am.
                 </p>
             </div>
 
             <div>
-                <img src="" alt="Persona hablando con gestos">
+                <img src="img/cultura-costumbres-expresivos.png" alt="Persona hablando con gestos">
                 <p>
-                    <strong>Somos (muy) expresivos</strong>
+                    <strong>Somos (muy) expresivos</strong><br>
                     Hablar como argentino va más allá del idioma; implica adoptar expresiones tanto verbales como gestuales que lo hacen único. 
                     No te asustes si cuando un argentino te está contando algo no deja sus manos quietas y parece que le está dando vida al relato con sus expresiones... no solo es un lenguaje lleno de jerga local sino que también abunda la gesticulación. 
                 </p>
             </div>
-        </article>
-        <div>
-            <div class="ir-festividades">
-                <img src="img/festividades.jpg" alt="Foto de personas en recital " title="Ir a Festivales">
+        </div>
+    </article>
+
+        <div class="ir-subpaginas">
+            <div class="max-w-[300px] m-[2em]">
+                <a href="festividades.html"><h3>Festividades</h3><img src="img/cultura-festividades.png" alt="Foto de personas en recital " title="Ir a Festividades"></a>
             </div>  
 
-            <div class="ir-gastronomia">
-                <img src="img/gastronomia_banner_empanadas.avif" alt="Foto de empanadas" title="Ir a Gastronomía">
+            <div class="max-w-[300px] m-[2em]">
+                <a href="gastronomia.html"><h3>Gastronomía</h3><img src="img/cultura-gastronomia.png" alt="Foto de empanadas" title="Ir a Gastronomía"></a>
             </div>
         </div>
+    </div>
+  </main>
 
-    </main>
+  <footer>
 
-    <footer>
+  </footer>
 
-    </footer>
-
-<script src="js/tailwind.config.js"></script>
-<script src="../node_modules/flyonui/flyonui.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

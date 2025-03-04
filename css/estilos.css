@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Days+One&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
 
 * { box-sizing: border-box }
 
 body {
     margin: 0;
     font-family: "Roboto", serif;
+    
 }
 
 h1 {
@@ -15,9 +18,10 @@ h1 {
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 1.50em;
     padding: 0.50em;
+    font-family: "Roboto", serif;
 }
 
 h3 {
@@ -25,13 +29,19 @@ h3 {
     font-weight: 600;
 }
 
-
 nav {
-    position: absolute;
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* asegura que el nav esté sobre el video */
+    z-index: 50; /* Asegura que esté por encima del contenido */
+    background-color: transparent;
+    padding: 1rem; 
+}
+
+#escarapela {
+    max-width: 90px;
+    height: auto;
 }
 
 #btn { 
@@ -45,97 +55,112 @@ nav {
     #btn:active {background-color: #242f55;}
 
 
-/** HOME **/
-    #home .vid-banner {
-        position: relative;
-        width: 100%;
-        height: 100vh; 
-        overflow: hidden;
-    }
+.vid-banner, .img-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
 
+.img-banner {
+    background-size: cover;
+    background-position: center;
+}
+
+.img-banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+
+/** HOME **/
     #home .background-video {
         width: 100%;
         height: 100%;
         object-fit: cover; 
     }
 
-
     /* seccion de datos con img de fondo */
-        #home .datos {
-            background-image: url('../img/banner_la_boca.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* efecto parallax scroll */
-            height: 100vh; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    #home .datos {
+        background-image: url('../img/banner_la_boca.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* efecto parallax scroll */
+        height: 100vh; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        #home .card {
-            text-align: center;
-            background-color: #b8a974f3;
-            color: white;
-            font-weight: 600;
-            border-radius: 10px;
-            margin: 2em;
-            padding: 1.50em;
-        } #home .card:hover {background-color: #978b5df3;}
+    #home .card {
+        text-align: center;
+        background-color: #b8a974f3;
+        color: white;
+        font-weight: 600;
+        border-radius: 10px;
+        margin: 2em;
+        padding: 1.50em;
+    } #home .card:hover {background-color: #978b5df3;}
 
 
     /* seccion de 'descubri diversidad arg' */
-        #home .diversidad {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; 
-            padding: 20px;
-        }
+    #home .diversidad {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; 
+        padding: 20px;
+    }
 
-        .diversidad div {
-            position: relative;
-            text-align: center;
-            margin: 2em;
-            margin-top: 2em;
-            margin-bottom: 7em;
-        }
+    .diversidad div {
+        position: relative;
+        text-align: center;
+        margin: 2em;
+        margin-top: 2em;
+        margin-bottom: 7em;
+    }
 
-        .diversidad img {
-            height: auto;
-            max-width: 20em;    
-            display: block;
-            border-radius: 15px;
-        }  #home .diversidad img:hover {opacity: 80%;}
+    .diversidad img {
+        height: auto;
+        max-width: 20em;    
+        display: block;
+        border-radius: 15px;
+    }  #home .diversidad img:hover {opacity: 80%;}
             
-        .diversidad p {
-            position: absolute;
-            opacity: 0;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            color: white;
-            font-family: "Roboto";
-            font-weight: 800;
-            font-size: 2em;
-            text-align: center;
-        } .diversidad div:hover p { opacity: 1;}
+    .diversidad p {
+        position: absolute;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        color: white;
+        font-family: "Roboto";
+        font-weight: 800;
+        font-size: 2em;
+        text-align: center;
+    } .diversidad div:hover p { opacity: 1;}
 
     /* seccion de truco */
-        #home .truco {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 4em;
-        }
+    #home .truco {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 4em;
+    }
 
-        #img-truco {
-            max-width: 20em;
-        margin-right: 4em;
-        }
+    #img-truco {
+        max-width: 20em;
+    margin-right: 4em;
+    }
 
-        #txt-truco {
-            max-width: 40em;
-        }
+    #txt-truco {
+        max-width: 40em;
+    }
+
 
 
 /** HISTORIA **/
@@ -144,6 +169,7 @@ nav {
         padding: 1.20em;
     }
 
+    /* imagen de fondo en las franjas primera y tercera */
     .poblamiento { background-image: url(../img/historia-pueblos-originarios.png); }
     .poblamiento:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);}
     .independencia { background-image: url(../img/historia-primera-junta.png); }
@@ -167,17 +193,113 @@ nav {
         text-align: center;
     }
 
+
+
 /* CULTURA */
     .visuales p, .musicales p {
-        margin-bottom: 1em;
+        margin-bottom: 1.20em;
+    }
+    
+    #cultura .background-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+    
+    #cultura .vid-banner h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.5em 1em;
+        border-radius: 10px;
+    }
+    
+    /* costumbres arg */
+    .costumbres {
+        display: flex;
+        justify-content: center; 
+    } 
+
+    .costumbres img  {
+        max-width: 140px;
     }
 
+    .costumbres .izquierda div, .costumbres .derecha div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 0.90em;
+        padding-bottom: 3em;
+    }   .costumbres .derecha img { order: 2 }
+        .costumbres .derecha p { order: 1; }
 
 
+    /* seccion de atajos al final para ir a subpaginas de cultura (gastro/festiv) */
+    .ir-subpaginas {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        text-align: center;
+        gap: 2em;
+    }
 
+    .ir-subpaginas img {
+        border-radius: 10px;
+    }
+    
+    .ir-subpaginas div {
+        position: relative;
+        text-align: center;
+    }
+    
+    .ir-subpaginas h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.5em;
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.3); 
+        padding: 0.5em;
+        border-radius: 5px;
+        opacity: 0;
+    } .ir-subpaginas div:hover h3 {opacity: 1;}
+   
 
+/* GASTRONOMÍA */
+    #gastronomia .img-banner {
+        background-image: url('../cultura/img/gastronomia-banner.png');
+    }
 
-
+    .comidas-tradi div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .comidas-tradi img {
+        width: 50%; 
+        height: auto;
+    }
+    
+    .comidas-tradi p {
+        width: 50%; 
+        padding: 10px; 
+        font-weight: 500;
+    }
 
 
 
@@ -206,15 +328,13 @@ nav {
         .poblamiento { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);}
         .independencia { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-primera-junta.png);}
 
-    
-}
+
+    /* CULTURA */
+        /* costumbres arg */
+        
+
+      
 
 
+    }
 
-/* 
-Notas: 
-    * centrar texto de las cards en diversidad/home
-    * corregir menu del nav + responsive!
-
-
-*/
