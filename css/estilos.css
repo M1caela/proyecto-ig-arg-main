@@ -182,7 +182,7 @@ nav {
         color: white;
     }
 
-    #historia .banner {
+    #historia .banner, #ambiente .banner {
         width: 100%;
         min-height: 500px;
         background-color: #1e2b57;
