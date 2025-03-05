@@ -20,7 +20,6 @@ h1 {
 h2 {
     font-weight: 800;
     font-size: 1.50em;
-    padding: 0.50em;
     font-family: "Roboto", serif;
 }
 
@@ -376,8 +375,18 @@ nav {
     #consejos .derecha img { order: 2; }
     #consejos .derecha p { order: 1; }
 
+    /*  GUIA DE TURISMO */
+        #guia .img-banner {
+            background-image: url(../turismo/img/banner-guia.png);
+        }
 
+        .consejos p, .lufardo p{
+            margin-bottom: 1.20em;
+        }
 
+        #guia li {
+            margin-bottom: 0.30em;
+        }
 
 
 
