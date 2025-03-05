@@ -380,12 +380,13 @@ nav {
             background-image: url(../turismo/img/banner-guia.png);
         }
 
-        .consejos p, .lufardo p{
+        .consejos p {
             margin-bottom: 1.20em;
         }
 
         #guia li {
             margin-bottom: 0.30em;
+            margin-left: 1em;
         }
 
 
@@ -431,7 +432,6 @@ nav {
     } 
 
     .costumbres .derecha img { order: 1 }
-        
 
     /*  TURISMO */
     #turismo .categorias div {
@@ -447,8 +447,16 @@ nav {
 
     #turismo .img-banner {
         height: 120vh; 
-
-
     }
+
+    #guia .consejos, #guia .telefonos, #guia .lunfardo {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    #guia .gracias, #guia .titulo {
+        margin-left: 1em;
+    }
+
 
 }
