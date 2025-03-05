@@ -378,6 +378,7 @@ nav {
     /*  GUIA DE TURISMO */
         #guia .img-banner {
             background-image: url(../turismo/img/banner-guia.png);
+            background-attachment: fixed;
         }
 
         .consejos p {

@@ -73,62 +73,126 @@
         </article>
 
         <div class="celeste bg-[#E8EAF4]">
-        <article>
-            <h2>Deleitate con estos paseos gastronómicos</h2>
-            <div class="paseos">
-                <div class="izquierda text-left mr-[3em] ml-[0.50em]">
-                    <div>
-                        <img src="img/gastronomia-paseos-costanera.png" alt="Puesto de Costanera Sur en CABA">
-                        <h3>En busca del mejor choripán de la Costanera Sur</h3>
-                        <p>Ciudad Autónoma de Buenos Aires</p>
-                        <p>
-                            Cruzando Puerto Madero, el barrio más lujoso de la ciudad de Buenos Aires, se encuentra la verdadera Ruta del Choripán, que es una comida simbólica de los argentinos. El chori es para todos los gustos, permite versiones para todos los bolsillos e ideologías, incluso los veganos y celíacos. ¿Pero dónde encontrar ese clásico de la comida callejera argentina en su mejor versión? Junto al Paseo de la Gloria, donde están los grandes nombres del deporte nacional, los puestos están abiertos las 24 horas del día, los 365 días del año.
-                        </p>
-                    </div>
+        <article class="flex flex-col">
+            <h2 class="m-4 mt-8">Deleitate con estos paseos gastronómicos</h2>
 
-                    <div>
-                        <img src="img/gastronomia-paseos-bodegas.png" alt="Interior de bodega en Mendoza">
-                        <h3>Bodegas y viñedos en Mendoza</h3>
-                        <p>Mendoza</p>
-                        <p>
-                            La tierra del Malbec invita a conjugar una armonía perfecta entre gastronomía identitaria, vinos destacados y el imponente paisaje de la cordillera de los Andes. Viñedos y bodegas abren sus puertas con degustaciones, arte y cultura, paseos en bicicleta y cabalgatas, alojamientos en posadas y spa temáticos. Una experiencia única en el oeste argentino, rodeado de paisajes increíbles.
-                        </p>
-                    </div>
-
-                    <div>
-                        <img src="img/gastronomia-paseos-chaco.png" alt="Comidas de Chaco">
-                        <h3>Sabores de Chaco</h3>
-                        <p>Chaco</p>
-                        <p>
-                            En esta provincia podrás encontrar una fusión de sabores regionales y recetas traídas por inmigrantes: el locro, el chorizo de pescado, las empanadas de charqui, el chipá guazú o el kibebe de zapallo, entre muchas otras comidas regionales típicas. ¿Sabías que en Chaco te esperan tres territorios gastronómicos? El monte Impenetrable en el norte, El Río en las cercanías del Paraná y La Chacra en la zona central. Visitálos y saboreá los manjares de la región Litoral.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="derecha text-right ml-[3em] mr-[0.50em]">
-                    <div>
-                        <img src="img/gastronomia-paseos-chino.png" alt="Locales del Barrio Chino en Belgrano">
-                        <h3>Barrio Chino de Belgrano</h3>
-                        <p>Ciudad Autónoma de Buenos Aires</p>
-                        <p>
-                            Es uno de los polos turísticos de la Ciudad por su variada oferta de comercios y restaurantes de origen oriental. Surgió gracias a una oleada inmigratoria asiática, durante la década de 1980.
-                            Estas familias, chinas, japonesas y taiwanesas, se establecieron en el barrio de Belgrano y cambiaron rápidamente el barrio que hoy es un ícono turístico. Entre restaurantes de cocina asiática, locales de venta de objetos típicos, e incluso templos budistas, podrás disfrutar de una experiencia llena de diversión y deversidad.                   
-                        </p>
-                    </div>
-
-
-                    <div>
-                        <img src="img/gastronomia-paseos-chocolate.png" alt="Chococalte artesanal de Bariloche">
-                        <h3>La Ruta del Chocolate en Bariloche</h3>
-                        <p>Río Negro</p>
-                        <p>
-                            En San Carlos de Bariloche, la capital nacional del chocolate, podes empacharte de este manjar en todas sus formas y sabores. Recorre las chocolaterías, donde el producto se elabora delante de tus ojos y disfruta su diversidad de aromas y gustos.
-                            También podrás visitar el primer Museo del Chocolate de Sudamérica y acercarte al origen de este alimento que conquista paladares en todas las culturas.
-                        </p>
+            <div class="flex p-4"> 
+                <div class="max-w-[700px]">
+                    <div class="relative flex flex-col md:flex-row bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem]">
+                        <div class="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-t-xl md:rounded-r-none md:rounded-l-xl">
+                            <img src="img/gastronomia-paseos-costanera.png" alt="Puesto de la costanera" class="object-cover w-full h-full" />
+                        </div>
+                        <div class="p-6 w-full">
+                            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                                CABA
+                            </h6>
+                            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                En busca del mejor choripán de la Costanera Sur
+                            </h4>
+                            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+                                Cruzando Puerto Madero se encuentra la verdadera Ruta del Choripán. El chori es para todos los gustos, permite versiones para todos los bolsillos e ideologías,
+                                incluso los veganos y celíacos. ¿Pero dónde encontrar ese clásico de la comida callejera argentina en su mejor versión? Junto al Paseo de la Gloria, 
+                                donde están los grandes nombres del deporte nacional, los puestos están abiertos las 24 horas del día, los 365 días del año.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="flex p-4 self-end"> 
+                <div class="max-w-[700px]">
+                    <div class="relative flex flex-col md:flex-row bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem]">
+                        <div class="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-t-xl md:rounded-r-none md:rounded-l-xl">
+                            <img src="img/gastronomia-paseos-chino.png" alt="Barrio Chino" class="object-cover w-full h-full" />
+                        </div>
+                        <div class="p-6 w-full">
+                            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                                CABA
+                            </h6>
+                            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                Barrio Chino de Belgrano
+                            </h4>
+                            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+                                Es uno de los polos turísticos de la Ciudad por su variada oferta de comercios y restaurantes de origen oriental. Surgió gracias a una oleada inmigratoria asiática, durante la década de 1980.
+                                Estas familias, chinas, japonesas y taiwanesas, se establecieron en el barrio y se convirtieron en ícono turístico. Entre restaurantes de cocina asiática 
+                                locales de venta de objetos típicos, e incluso templos budistas, podrás disfrutar de una experiencia llena de diversión y deversidad.                               
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex p-4"> 
+                <div class="max-w-[700px]">
+                    <div class="relative flex flex-col md:flex-row bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem]">
+                        <div class="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-t-xl md:rounded-r-none md:rounded-l-xl">
+                            <img src="img/gastronomia-paseos-bodegas.png" alt="Bodega en Mendoza" class="object-cover w-full h-full" />
+                        </div>
+                        <div class="p-6 w-full">
+                            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                                MENDOZA
+                            </h6>
+                            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                Bodegas y viñedos en Mendoza
+                            </h4>
+                            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+                                La tierra del Malbec invita a conjugar una armonía perfecta entre gastronomía identitaria, vinos destacados y el imponente paisaje de la cordillera de los Andes.
+                                Viñedos y bodegas abren sus puertas con degustaciones, arte y cultura, paseos en bicicleta y cabalgatas, alojamientos en posadas y spa temáticos. Una experiencia única en el oeste argentino, rodeado de paisajes increíbles.                   
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex p-4 self-end"> 
+                <div class="max-w-[700px]">
+                    <div class="relative flex flex-col md:flex-row bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem]">
+                        <div class="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-t-xl md:rounded-r-none md:rounded-l-xl">
+                            <img src="img/gastronomia-paseos-chocolate.png" alt="Chocolta artesanal" class="object-cover w-full h-full" />
+                        </div>
+                        <div class="p-6 w-full">
+                            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                                RÍO NEGRO
+                            </h6>
+                            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                La Ruta del Chocolate en Bariloche
+                            </h4>
+                            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+                                En San Carlos de Bariloche, la capital nacional del chocolate, podes empacharte de este manjar en todas sus formas y sabores. 
+                                Recorre las chocolaterías, donde el producto se elabora delante de tus ojos y disfruta su diversidad de aromas y gustos. 
+                                También podrás visitar el primer Museo del Chocolate de Sudamérica y acercarte al origen de este alimento que conquista paladares en todas las culturas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex p-4"> 
+                <div class="max-w-[700px]">
+                    <div class="relative flex flex-col md:flex-row bg-clip-border rounded-xl bg-white text-gray-700 shadow-md w-full max-w-[48rem]">
+                        <div class="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-t-xl md:rounded-r-none md:rounded-l-xl">
+                            <img src="img/gastronomia-paseos-chaco.png" alt="Platos de Chaco" class="object-cover w-full h-full" />
+                        </div>
+                        <div class="p-6 w-full">
+                            <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-gray-700 uppercase">
+                                CHACO
+                            </h6>
+                            <h4 class="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                Sabores de Chaco
+                            </h4>
+                            <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
+                                En esta provincia podrás encontrar una fusión de sabores regionales y recetas traídas por inmigrantes: el locro, el chorizo de pescado, las empanadas de charqui, el chipá guazú o el kibebe de zapallo, entre muchas otras comidas regionales típicas. 
+                                ¿Sabías que en Chaco te esperan tres territorios gastronómicos? El monte Impenetrable en el norte, El Río en las cercanías del Paraná y La Chacra en la zona central. Visitálos y saboreá los manjares de la región Litoral.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </article>
+        
         </div>
 
         <article class="dato-facturas m-[2em]">
