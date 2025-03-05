@@ -159,7 +159,7 @@ nav {
 
     #txt-truco {
         max-width: 40em;
-    }
+}
 
 
 
@@ -191,11 +191,11 @@ nav {
         align-items: center;
         justify-content: center;
         text-align: center;
-    }
+}
 
 
 
-/* CULTURA */
+/** CULTURA **/
     .visuales p, .musicales p {
         margin-bottom: 1.20em;
     }
@@ -332,6 +332,58 @@ nav {
 
     #festividades .fechas p {
         margin-bottom: 2em;
+}
+
+
+
+/** TURISMO **/
+    #turismo .img-banner {
+        background-image: url(../turismo/img/turismo-banner-sup.png);
+        background-attachment: fixed;
+        height: 150vh; 
+    }
+
+    #turismo .categorias div {
+        height: 570px;
+        width: 460px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2em;
+    }       
+
+    #ir-verano { background-image: url(../turismo/img/turismo-ban-ver.png);}
+    #ir-verano:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-ver.png); }
+
+    #ir-invierno { background-image: url(../turismo/img/turismo-ban-inv.png);}
+    #ir-invierno:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-inv.png);}
+    
+    #ir-todo { background-image: url(../turismo/img/turismo-ban-todo.png);}
+    #ir-todo:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-todo.png);}
+    
+    #consejos {
+        background-image: url(../turismo/img/turismo-banner-inf.png);
+    }
+
+    #consejos .derecha {
+        display: flex;       
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #consejos .derecha img { order: 2; }
+    #consejos .derecha p { order: 1; }
+
+
+
+
+
+
+/* AMBIENTE */
+    #ambiente p, #ambiente ul, #ambiente h3 {
+        margin: 1em;
     }
 
     
@@ -372,6 +424,22 @@ nav {
     .costumbres .derecha img { order: 1 }
         
 
+    /*  TURISMO */
+    #turismo .categorias div {
+        background-attachment: fixed;
+        background-size: cover;
+        text-align: center;
+        max-height: 400px;
+        margin: 0;
+        flex-direction: column;
+        color: white;
+        font-size: 1em;
+    }       
+
+    #turismo .img-banner {
+        height: 120vh; 
+
 
     }
 
+}

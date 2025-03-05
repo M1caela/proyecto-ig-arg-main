@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo | Argentina</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
@@ -15,44 +15,79 @@
     </header>
 
     <main id="turismo">
-        <div>
-            <!-- foto fondo -->
-            <section>
+        <div class="img-banner">
+            <section class="categorias flex justify-center">
                 <div id="ir-verano">
                     <h2>VERANO</h2>
                 </div>
                 <div id="ir-invierno">
                     <h2>INVIERNO</h2>
                 </div>
-                <div id="ir-año">
+                <div id="ir-todo">
                     <h2>TODO EL AÑO</h2>
                 </div>
             </section>
 
-            <p>
-                <!-- ???? introd -->
+            <p class="text-center text-white md:text-lg sm:text-md p-[3em]">
+                Argentina es un país con una enorme diversidad geográfica y cultural, lo que la convierte en un destino atractivo para el turismo. Desde las imponentes Cataratas del Iguazú en el norte hasta los glaciares de la Patagonia en el sur, ofrece paisajes únicos y experiencias inolvidables. Su riqueza natural se complementa con ciudades vibrantes como Buenos Aires, donde el tango y la gastronomía reflejan su identidad. Además, destinos como Mendoza, con sus viñedos, y la región andina, con sus montañas y lagos, hacen de Argentina un lugar ideal para el turismo de aventura, cultural y gastronómico.
             </p>
         </div>
 
-            <article class="ult-eventos">
-                <h2>Últimos eventos y festividades</h2>
-            </article>
+        <article class="ult-eventos">
+            <h2>Últimos eventos y festividades</h2>
+        </article>
             
-            <article class="actividades">
-                <h2>Disfrutá de las actividades en todo el país</h2>
-            </article>
+        <article class="actividades">
+            <h2>Disfrutá de las actividades en todo el país</h2>
+        </article>
 
-            <article class="consejos">
-                <!-- foto fondo -->
-                <h2>Consejos para disfrutar el viaje</h2>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        <article id="consejos">
+            <h2>Consejos para disfrutar el viaje</h2>
 
+            <div class="text-left md:mr-[3em] sm:mr-[0] md:ml-[0.50em] sm:ml-0.50em">
+                <img src="" alt="Icono planificación">
+                <p>
+                    <strong>Planificación</strong> <br>
+                    Organizá un itinerario y dividií el viaje en etapas. Investigá sobre los puntos de interés en cada parada. <br>
+                    Planificá las actividades con anticipación. <br>
+                    Considerá las distancias entre destinos y el tiempo para recorrerlos. <br>
+                </p>
+            </div>
+
+            <div class="derecha md:text-right sm:text-left md:ml-[3em] sm:ml-[0.50em] md:mr-[0.50em] sm:mr-[o]">
+                <p>
+                    <strong>Seguridad</strong> <br>
+                    Tené precaución con los robos y la inseguridad, cuidá los objetos de valor, como cámaras y celulares. <br>
+                    Informate sobre qué zonas evitar, principalmente de noche. <br>
+                    Elegí taxis de empresas registradas. <br>
+                </p>
+                <img src="" alt="Icono de seguridad">
+            </div>
+
+            <div class="text-left md:mr-[3em] sm:mr-[0] md:ml-[0.50em] sm:ml-0.50em">
+                <img src="" alt="Icono de salud">
+                <p>
+                    <strong>Salud </strong> <br>
+                    Protegete del calor con protector solar, gorro y lentes de sol. <br>
+                    Mantenete hidratado. Llevá un botiquín de primeros auxilios. <br>
+                    Usá repelente para mosquitos para evitar enfermedades como el dengue, zika y el chikungunya. <br>
+                </p>
+            </div>
+
+            <div class="derecha md:text-right sm:text-left md:ml-[3em] sm:ml-[0.50em] md:mr-[0.50em] sm:mr-[o]">
+                <p>
+                    <strong>Información</strong> <br>
+                    Verificá con el Ministerio de Asuntos Exteriores del país del viajero cualquier información <br>
+                     relacionada con seguridad, salud, trámites administrativos como la expedición de visados, etc.
+                </p>
+                <img src="" alt="Icono de inofrmación">
+            </div>
+        
+            <div class="text-center">
                 <p><strong>¿Querés saber más?</strong> Hicimos esta guía para vos.</p>
                 <button>Guía del viajero</button>
-            </article>
+            </div>
+        </article>
 
     </main>
 
