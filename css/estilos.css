@@ -362,6 +362,29 @@ nav {
     #ir-todo { background-image: url(../turismo/img/turismo-ban-todo.png);}
     #ir-todo:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-todo.png);}
     
+    /* INVIERNO */
+    #inv-banner-principal {
+        background-image: url(../turismo/img/banner-invierno.png);
+    }
+
+    #conoce-inv, #conoce-td, #conoce-ver {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 100%;
+        height: 380px;
+        background-size: cover;
+     }
+
+    #conoce-inv { background-image: url(../turismo/img/turismo-ban-inv2.png); }
+    #conoce-inv:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-inv2.png); }
+    #conoce-td { background-image: url(../turismo/img/turismo-ban-todo2.png) }
+    #conoce-td:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-todo2.png); }
+    #conoce-ver { background-image: url(../turismo/img/turismo-ban-ver2.png) }
+    #conoce-ver:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-ver2.png); }
+
+
     #consejos {
         background-image: url(../turismo/img/turismo-banner-inf.png);
     }
@@ -375,20 +398,21 @@ nav {
     #consejos .derecha img { order: 2; }
     #consejos .derecha p { order: 1; }
 
-    /*  GUIA DE TURISMO */
-        #guia .img-banner {
-            background-image: url(../turismo/img/banner-guia.png);
-            background-attachment: fixed;
-        }
 
-        .consejos p {
-            margin-bottom: 1.20em;
-        }
+/*  GUIA DE TURISMO */
+    #guia .img-banner {
+        background-image: url(../turismo/img/banner-guia.png);
+        background-attachment: fixed;
+    }
 
-        #guia li {
-            margin-bottom: 0.30em;
-            margin-left: 1em;
-        }
+    .consejos p {
+        margin-bottom: 1.20em;
+    }
+
+    #guia li {
+        margin-bottom: 0.30em;
+        margin-left: 1em;
+    }
 
 
 

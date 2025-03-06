@@ -15,22 +15,184 @@
     </header>
 
     <main id="verano">
-        <div>
+        <div class="img-banner" id="inv-banner-principal">
             <h1>VERANO</h1>
         </div>
 
-        <article>
-            <h2>Destinos imperdibles</h2>
+        <article class="lugares">
+            <h2  class="m-12 md:pl-[6em] sm:text-center md:text-left">Lugares imperdibles</h2>
+
+            <div class="max-w-[70%] m-auto flex justify-center">
+                <!-- Carousel  -->
+                <div class="relative w-full glide-01">
+                    <div class="overflow-hidden" data-glide-el="track">
+                        <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-bariloche.png" alt="Bariloche" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p class="font-semibold">Bariloche, Río Negro<p>
+                                <p>Destino clásico de invierno con paisajes nevados, esquí en el Cerro Catedral y chocolaterías tradicionales.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-ushuaia.png" alt="Ushuaia" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Ushuaia, Tierra del Fuego</p>
+                                <p>La ciudad más austral del mundo, con el Parque Nacional Tierra del Fuego, excursiones en el Canal Beagle y centros de esquí.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-smandes.png" alt="San Martín de los Andes" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">San Martín de los Andes, Neuquén</p>
+                                <p>Ideal para esquiar en Chapelco, recorrer el Camino de los Siete Lagos y disfrutar de la tranquilidad de la Patagonia.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-lenasmdz.png" alt="Mendoza" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Las Leñas, Mendoza</p>
+                                <p>Uno de los centros de esquí más importantes de Sudamérica, perfecto para deportes invernales.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-angostura.png" alt="Villa La Angostura"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Villa La Angostura, Neuquén</p>
+                                <p>Un destino de montaña con paisajes nevados, acceso al Cerro Bayo y arquitectura alpina.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-cerro-castor.png" alt="Cerro Castor"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Cerro Castor, Tierra del Fuego</p>
+                                <p>La pista de esquí más austral del mundo, con nieve de calidad y vistas increíbles.</p>
+                            </div>
+                            
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-cumbrecita.png" alt="La Cumbrecita" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">La Cumbrecita, Córdoba</p>
+                                <p>Un pueblo peatonal con un encanto alpino, senderos entre bosques y cascadas, y clima frío en invierno.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-lugares-calafate.png"alt="Calafate"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">El Calafate, Santa Cruz</p>
+                                <p>Punto de acceso al Glaciar Perito Moreno, con excursiones sobre el hielo y paisajes patagónicos impresionantes.</p>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2 " data-glide-el="controls"> <!-- Controls -->
+                        <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir="<" aria-label="prev slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <title>prev slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                            </svg>
+                        </button>
+                        <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir=">" aria-label="next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <title>next slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </article>
+            
+        <article class="actividades">
+            <h2 class="m-12 md:pl-[6em] sm:text-center md:text-left">Disfrutá de las actividades al sol</h2>
+            <div class="max-w-[70%] m-auto flex justify-center">
+                <div class="relative w-full glide-02">
+                    <div class="overflow-hidden" data-glide-el="track">
+                        <ul class="relative w-full flex">
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-esqui-snowboard.png" alt="Esquí y snowboard en la Patagonia" class="w-full" /></li>
+                                <p class="font-semibold">Esquí y snowboard en la Patagonia</p>
+                                <p>Disfrutá de los mejores centros invernales como Cerro Catedral, Chapelco y Las Leñas.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-trekking-chalten.png" alt="Trekking en El Chaltén" class="w-full" /></li>
+                                <p class="font-semibold">Trekking en El Chaltén, Santa Cruz</p>
+                                <p>Explorá este imponente glaciar con pasarelas panorámicas o excursiones sobre el hielo.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-perros-usuahia.png" alt="Paseo en trineo con perros en Ushuaia" class="w-full" /></li>
+                                <p class="font-semibold">Paseo en trineo con perros en Ushuaia</p>
+                                <p>Una experiencia inolvidable recorriendo los bosques nevados del Fin del Mundo.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-avistaje-valdes.png" alt="Avistaje de fauna en Península Valdés" class="w-full" /></li>
+                                <p class="font-semibold">Avistaje de fauna en Península Valdés, Chubut</p>
+                                <p>Observá ballenas, lobos marinos y pingüinos en su hábitat natural.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-siete-lagos.png" alt="Ruta de los Siete Lagos" class="w-full" /></li>
+                                <p class="font-semibold">Ruta de los Siete Lagos, Neuquén-Río Negro</p>
+                                <p>Un recorrido escénico entre montañas nevadas y lagos de aguas cristalinas.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-termas-capahue.png" alt="Termas en Copahue" class="w-full" /></li>
+                                <p class="font-semibold">Termas en Copahue, Neuquén</p>
+                                <p>Relajate en aguas termales rodeadas de paisajes nevados en plena cordillera.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-vino-mdz.png" alt="Degustación de vinos en Mendoza" class="w-full" /></li>
+                                <p class="font-semibold">Degustación de vinos en Mendoza</p>
+                                <p>Descubrí los mejores vinos argentinos en bodegas con vistas a la Cordillera de los Andes.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/invierno-act-moto-tierrafuego.png" alt="Paseo en motos de nieve en Tierra del Fuego" class="w-full" /></li>
+                                <p class="font-semibold">Paseo en motos de nieve en Tierra del Fuego</p>
+                                <p>Aventura sobre la nieve recorriendo bosques y montañas en circuitos preparados para motos de nieve.</p>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2 " data-glide-el="controls">
+                        <button data-glide-dir="<">←</button>
+                        <button data-glide-dir=">">→</button>
+                    </div>
+                </div>
+            </div>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+            <script>
+                var glide01 = new Glide('.glide-01', {
+                    type: 'carousel',
+                    focusAt: 'center',
+                    perView: 3,
+                    autoplay: 3000,
+                    animationDuration: 700,
+                    gap: 24,
+                    breakpoints: {
+                        1024: { perView: 2 },
+                        640: { perView: 1 }
+                    },
+                });
+            
+                var glide02 = new Glide('.glide-02', {
+                    type: 'carousel',
+                    focusAt: 'center',
+                    perView: 3,
+                    autoplay: 3000,
+                    animationDuration: 700,
+                    gap: 24,
+                    breakpoints: {
+                        1024: { perView: 2 },
+                        640: { perView: 1 }
+                    },
+                });
+            
+                glide01.mount();
+                glide02.mount();
+            </script>
         </article>
 
-        <article>
-            <h2>Disfrutá de estas actividades al sol</h2>
-        </article>
+
 
         <section>
-            <h2>Conocé otros destinos turísticos</h2>
-            <div><h2>VERANO</h2></div>
-            <div><h2>TODO EL AÑO</h2></div>
+            <h2 class="mb-6 mt-[160px] ml-4">Conocé otros destinos turísticos</h2>
+            <div id="conoce-inv"><h2>INVIERNO</h2></div>
+            <div id="conoce-td"><h2>TODO EL AÑO</h2></div>
         </section>
 
     </main>
