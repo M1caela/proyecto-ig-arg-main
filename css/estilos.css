@@ -385,6 +385,12 @@ nav {
     #conoce-ver:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-ver2.png); }
 
 
+     /* VERANO */
+     #ver-banner-principal {
+        background-image: url(../turismo/img/banner-verano.png);
+     }
+
+
     #consejos {
         background-image: url(../turismo/img/turismo-banner-inf.png);
     }
