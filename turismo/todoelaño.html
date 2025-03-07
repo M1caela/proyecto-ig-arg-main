@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo el año | Argentina</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
@@ -14,23 +14,182 @@
         </nav>
     </header>
 
-    <main id="año">
-        <div>
-            <h1>TURISMO <br>TODO EL AÑO</h1>
+    <main id="todo">
+        <div class="img-banner" id="td-banner-principal">
+            <h1>TODO EL AÑO</h1>
         </div>
 
-        <article>
-            <h2>Destinos imperdibles</h2>
+        <article class="lugares">
+            <h2  class="m-12 md:pl-[6em] sm:text-center md:text-left">Lugares imperdibles</h2>
+
+            <div class="max-w-[70%] m-auto flex justify-center">
+                <!-- Carousel  -->
+                <div class="relative w-full glide-01">
+                    <div class="overflow-hidden" data-glide-el="track">
+                        <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-cataratas.png" alt="Cataratas del Iguazú, Misiones" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p class="font-semibold">Cataratas del Iguazú, Misiones<p>
+                                <p>Una de las Siete Maravillas Naturales del Mundo, con impresionantes saltos de agua y selva exuberante.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-grutas.png" alt="Las Grutas, Río Negro" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Las Grutas, Río Negro</p>
+                                <p>Playas de aguas cálidas y arena dorada en la costa atlántica, ideales para disfrutar del mar en verano.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-humahuaca.png" alt="Quebrada de Humahuaca, Jujuy " class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Quebrada de Humahuaca, Jujuy </p>
+                                <p>Paisajes de cerros coloridos, pueblos históricos y cultura andina en un entorno único.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-estereos-ibera.png" alt="Esteros del Iberá, Corrientes" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Esteros del Iberá, Corrientes</p>
+                                <p>Un paraíso de naturaleza y fauna autóctona, perfecto para safaris fotográficos y avistaje de animales.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-valle-calingasta.png" alt="Valle de Calingasta, San Juan"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Valle de Calingasta, San Juan</p>
+                                <p>Paisajes desérticos, montañas imponentes y cielos estrellados para disfrutar del turismo astronómico.Valle de Calingasta, San Juan</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-parana.png" alt="Río Paraná, Entre Ríos"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Río Paraná, Entre Ríos</p>
+                                <p>Playas de río, pesca, deportes acuáticos y naturaleza en las islas del litoral argentino.</p>
+                            </div>
+                            
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-pehuenia.png" alt="Villa Pehuenia, Neuquén" class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Villa Pehuenia, Neuquén</p>
+                                <p> Lagos cristalinos rodeados de bosques de araucarias, ideales para kayak, senderismo y descanso.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-lugares-salinas.png"alt="Salinas Grandes, Jujuy y Salta"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <p  class="font-semibold">Salinas Grandes, Jujuy y Salta</p>
+                                <p>Un inmenso desierto de sal que ofrece vistas impresionantes y experiencias únicas al atardecer.</p>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2 " data-glide-el="controls"> <!-- Controls -->
+                        <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir="<" aria-label="prev slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <title>prev slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                            </svg>
+                        </button>
+                        <button class="inline-flex items-center justify-center w-8 h-8 transition duration-300 border rounded-full lg:w-12 lg:h-12 text-slate-700 border-slate-700 hover:text-slate-900 hover:border-slate-900 focus-visible:outline-none bg-white/20" data-glide-dir=">" aria-label="next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <title>next slide</title>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </article>
+            
+        <article class="actividades">
+            <h2 class="m-12 md:pl-[6em] sm:text-center md:text-left">¡Disfrutá de actividades los 365 días del año!</h2>
+            <div class="max-w-[70%] m-auto flex justify-center">
+                <div class="relative w-full glide-02">
+                    <div class="overflow-hidden" data-glide-el="track">
+                        <ul class="relative w-full flex">
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-snorkel-buceo.png" alt="Snorkel y buceo en Puerto Madryn, Chubut " class="w-full" /></li>
+                                <p class="font-semibold">Snorkel y buceo en Puerto Madryn, Chubut </p>
+                                <p>Explorar el mundo submarino del Golfo Nuevo, hogar de lobos marinos y una variada fauna marina.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-sandboard-dunas.png" alt="Sandboard en las Dunas de Catamarca" class="w-full" /></li>
+                                <p class="font-semibold">Sandboard en las Dunas de Catamarca</p>
+                                <p>Deslizarse por enormes médanos de arena en un entorno desértico y con vistas increíbles.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-delta-bsas.png" alt="Navegación por el Delta del Paraná, Buenos Aires" class="w-full" /></li>
+                                <p class="font-semibold">Navegación por el Delta del Paraná, Buenos Aires</p>
+                                <p>Recorrer en lancha o kayak los laberintos de islas y canales rodeados de naturaleza.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-flamencos.png" alt="Avistaje de flamencos en Laguna Mar Chiquita, Córdoba" class="w-full" /></li>
+                                <p class="font-semibold">Avistaje de flamencos en Laguna Mar Chiquita, Córdoba</p>
+                                <p>Observar estas coloridas aves en uno de los humedales más grandes de Argentina.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-rafting-atuel.png" alt="Rafting en el río Atuel, Mendoza" class="w-full" /></li>
+                                <p class="font-semibold">Rafting en el río Atuel, Mendoza</p>
+                                <p>Descender por rápidos en un paisaje de montañas y cañones imponentes.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-caminata-impenetrable.png" alt="Caminata por el Parque Nacional El Impenetrable, Chaco" class="w-full" /></li>
+                                <p class="font-semibold">Caminata por el Parque Nacional El Impenetrable, Chaco</p>
+                                <p>Explorar uno de los bosques nativos más importantes del país y su biodiversidad.</p>
+                            </div>
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-pesca-pozuelos.png" alt="Pesca en la Laguna de los Pozuelos, Jujuy" class="w-full" /></li>
+                                <p class="font-semibold">Pesca en la Laguna de los Pozuelos, Jujuy</p>
+                                <p>Un lugar ideal para la pesca deportiva y el contacto con la naturaleza en altura.</p>
+                            </div>
+
+                            <div class="md:pr-16">
+                                <li><img src="img/verano-act-bici-cafayate.png" alt="Recorrido en bicicleta por los viñedos de Cafayate, Salta" class="w-full" /></li>
+                                <p class="font-semibold">Recorrido en bicicleta por los viñedos de Cafayate, Salta</p>
+                                <p>Pedalear entre bodegas y paisajes montañosos, degustando vinos locales.</p>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="absolute left-0 flex items-center justify-between w-full h-0 px-4 top-1/2 " data-glide-el="controls">
+                        <button data-glide-dir="<">←</button>
+                        <button data-glide-dir=">">→</button>
+                    </div>
+                </div>
+            </div>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+            <script>
+                var glide01 = new Glide('.glide-01', {
+                    type: 'carousel',
+                    focusAt: 'center',
+                    perView: 3,
+                    autoplay: 3000,
+                    animationDuration: 700,
+                    gap: 24,
+                    breakpoints: {
+                        1024: { perView: 2 },
+                        640: { perView: 1 }
+                    },
+                });
+            
+                var glide02 = new Glide('.glide-02', {
+                    type: 'carousel',
+                    focusAt: 'center',
+                    perView: 3,
+                    autoplay: 3000,
+                    animationDuration: 700,
+                    gap: 24,
+                    breakpoints: {
+                        1024: { perView: 2 },
+                        640: { perView: 1 }
+                    },
+                });
+            
+                glide01.mount();
+                glide02.mount();
+            </script>
         </article>
 
-        <article>
-            <h2>¡No te pierdas estas actividades!</h2>
-        </article>
+
 
         <section>
-            <h2>Conocé otros destinos turísticos</h2>
-            <div><h2>INVIERNO</h2></div>
-            <div><h2>VERANO</h2></div>
+            <h2 class="mb-6 mt-[160px] ml-4">Conocé otros destinos turísticos</h2>
+            <div id="conoce-inv"><h2>INVIERNO</h2></div>
+            <div id="conoce-td"><h2>VERANO</h2></div>
         </section>
 
     </main>
