@@ -4,6 +4,10 @@
 
 * { box-sizing: border-box }
 
+::selection {
+    background-color: #233679;
+}
+
 body {
     margin: 0;
     font-family: "Roboto", serif;
@@ -280,6 +284,7 @@ nav {
     /* GASTRONOMÍA */
     #gastronomia .img-banner {
         background-image: url('../cultura/img/gastronomia-banner.png');
+        background-attachment: fixed;
     }
 
     /* seccion comidas tradicionales */
@@ -323,6 +328,7 @@ nav {
     /* FESTIVIDADES */
     #banner-principal {
         background-image: url('../cultura/img/festividades_banner.jpg');
+        background-attachment: fixed;
     }
 
     #banner-inferior {
@@ -434,6 +440,17 @@ nav {
         margin: 1em;
     }
 
+/* CONTACTO */
+#contact {
+    padding: 25px;
+    height: 890px;
+    width: 100%;
+    background-image: url(../img/contacto-fondo.JPG);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center
+}
     
 
 
