@@ -199,6 +199,19 @@ nav {
 
 
 /** CULTURA **/
+    .fondo-destacadas {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: auto;
+        max-height: 580px;
+        width: auto;
+    }
+
+    .visuales .fondo-destacadas { background-image: url(../cultura/img/banner-cultura-visuales.png); }
+    .musicales .fondo-destacadas { background-image: url(../cultura/img/banner-cultura-musica.png); }
+    #destacadas { background-image: url(../cultura/img/banner-cultura-destacadas.png); }
+
     .visuales p, .musicales p {
         margin-bottom: 1.20em;
     }
@@ -485,6 +498,8 @@ nav {
     .costumbres {
         display: block;
     } 
+
+    
 
     .costumbres .derecha img { order: 1 }
 
