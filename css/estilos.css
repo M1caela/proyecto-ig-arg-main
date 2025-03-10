@@ -109,8 +109,7 @@ nav {
         padding: 1.50em;
     } #home .card:hover {background-color: #978b5df3;}
 
-
-    /* seccion de 'descubri diversidad arg' */
+    /* seccion de 'diversidad arg' */
     .diversidad div {
         background-size: cover;
         background-position: center;
@@ -320,7 +319,6 @@ nav {
 }
 
 
-
 /** TURISMO **/
     #turismo .img-banner {
         background-image: url(../turismo/img/turismo-banner-sup.png);
@@ -365,6 +363,15 @@ nav {
     #conoce-ver { background-image: url(../turismo/img/turismo-ban-ver2.png) }
     #conoce-ver:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../turismo/img/turismo-ban-ver2.png); }
     
+    #consejos {
+        background-position: center;
+        background-size: cover;
+        background-image: url(../turismo/img/turismo-banner-inf.png);
+    }
+
+    #consejos .derecha img { order: 2; }
+    #consejos .derecha p { order: 1; }
+
     /* INVIERNO */
     #inv-banner-principal {
         background-image: url(../turismo/img/banner-invierno.png);
@@ -384,18 +391,6 @@ nav {
     }
 
 
-    #consejos {
-        background-image: url(../turismo/img/turismo-banner-inf.png);
-    }
-
-    #consejos .derecha {
-        display: flex;       
-        flex-direction: row;
-        align-items: center;
-    }
-
-    #consejos .derecha img { order: 2; }
-    #consejos .derecha p { order: 1; }
 
 
 /*  GUIA DE TURISMO */
@@ -481,6 +476,11 @@ nav {
         font-size: 1em;
     }       
 
+    #consejos img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
     #turismo .img-banner {
         height: 120vh; 
     }
@@ -490,9 +490,6 @@ nav {
         margin-right: 2em;
     }
 
-    #guia .gracias, #guia .titulo {
-        margin-left: 1em;
-    }
 
 
 }
