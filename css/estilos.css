@@ -305,8 +305,8 @@ nav {
         .costumbres .derecha p { order: 1; }
         
     /* FESTIVIDADES */
-    #banner-principal {
-        background-image: url('../cultura/img/festividades_banner.jpg');
+    #festividades #banner-principal {
+        background-image: url('../cultura/img/festividades-banner.png');
         background-attachment: fixed;
     }
 
