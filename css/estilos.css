@@ -111,34 +111,15 @@ nav {
 
 
     /* seccion de 'descubri diversidad arg' */
-    #home .diversidad {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap; 
-        padding: 20px;
-    }
-
     .diversidad div {
-        position: relative;
-        text-align: center;
-        margin: 2em;
-        margin-top: 2em;
-        margin-bottom: 7em;
-    }
-
-    .diversidad img {
-        height: auto;
-        max-width: 20em;    
-        display: block;
+        background-size: cover;
+        background-position: center;
         border-radius: 15px;
-    }  #home .diversidad img:hover {opacity: 80%;}
+        margin: 3em;
+    } #home .diversidad img:hover {opacity: 80%;}
             
     .diversidad p {
-        position: absolute;
         opacity: 0;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
         color: white;
         font-family: "Roboto";
         font-weight: 800;
@@ -146,24 +127,10 @@ nav {
         text-align: center;
     } .diversidad div:hover p { opacity: 1;}
 
-    /* seccion de truco */
-    #home .truco {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 4em;
-    }
-
-    #img-truco {
-        max-width: 20em;
-    margin-right: 4em;
-    }
-
-    #txt-truco {
-        max-width: 40em;
-}
-
+    #nieve { background-image: url('../img/nieve.png'); }
+    #montaña { background-image: url('../img/montañas.png'); }
+    #lagos { background-image: url('../img/lagos.png');}
+    #playas { background-image: url('../img/playa.png'); }
 
 
 /** HISTORIA **/
@@ -471,23 +438,23 @@ nav {
 
 @media (max-width: 960px) {
 
-    /**  HOME **/
+    /*  HOME */
     #home .diversidad {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .diversidad img {
-        max-width: 80%; 
-    }
-
     .diversidad p {
-        font-size: 1.2rem;
+        font-size: 2em;
         padding: 3px 7px;
     }
 
-    /** HISTORIA **/
+    #img-truco {
+        display: none;
+    }
+
+    /* HISTORIA */
         /* en el desktop esto sucede al hacer hover pero en mobile se ve mas oscuro por default */
     .poblamiento { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);}
     .independencia { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-primera-junta.png);}

@@ -149,50 +149,37 @@
             </section>
 
             <section>
-                <h2 class="text-white">Explorá la diversidad de Argentina</h2>
-                <div class="diversidad">
-                    <div>
-                        <a href="turismo/invierno.html"> 
-                            <img src="img/nieve.png" alt="Paisaje de nieve"> 
-                            <p>Nieve</p> 
-                        </a> 
-                    </div>
-
-                    <div>
-                        <a href="turismo/todoelaño.html"> 
-                            <img src="img/montañas.png" alt="Paisaje de montañas">
-                            <p>Montaña</p>
-                        </a> 
-                    </div>
-              
-                    <div> 
-                        <a href="turismo/index.html">
-                        <img src="img/lagos.png" alt="Paisaje de lago">
-                        <p>Lagos</p> 
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="turismo/verano.html">
-                        <img src="img/playa.png" alt="Paisaje de playa">
-                        <p>Playas</p> 
-                        </a>
-                    </div>
-                </div>
+                <h2 class="text-white font-bold text-2xl md:text-3xl p-4 text-center">Explorá la diversidad de Argentina</h2>
+                <div class="diversidad flex justify-center align-center text-center">
+                    <a href="turismo/invierno.html"><div id="nieve" class="w-[300px] h-[350px] flex justify-center items-center text-center">
+                      <p>Nieve</p>   
+                     </div></a>
+         
+                     <a href="turismo/index.html"><div id="montaña" class="w-[300px] h-[350px] flex justify-center items-center text-center">
+                         <p>Montaña</p>
+                     </div></a>
+               
+                     <a href="turismo/index.html"><div id="lagos" class="w-[300px] h-[350px] flex justify-center items-center text-center">            
+                         <p>Lagos</p> 
+                     </div></a>
+         
+                     <a href="turismo/verano.html"><div id="playas" class="w-[300px] h-[350px] flex justify-center items-center text-center">               
+                         <p>Playas</p> 
+                     </div></a>
+                 </div>
             </section> 
         </div>
         
-        <section class="truco">
+        <section class="truco p-10 flex justify-center items-center flex-col md:flex-row">
             <div id="img-truco"> 
-                <img src="img/cartas-truco.png" alt="Cartas de truco">
+                <img src="img/cartas-truco.png" alt="Cartas de truco" class="max-w-[300px] md:mr-6">
             </div>
 
-            <div id="txt-truco">
-                <h3>¡Quiero retruco!</h3>
+            <div class="max-w-[600px]">
+                <h3 class="font-semibold text-xl">¡Quiero retruco!</h3>
                 <p>¿Sabías que el truco es uno de los juegos de cartas más famosos en Argentina? Ahora podés disfrutar de este clásico, conocido por su combinación de estrategia, astucia y suerte, en su versión virtual, enfrentándote a amigos o a la inteligencia artificial en partidas dinámicas y desafiantes.<br>
                     Repartí, cantá "¡Truco!" y demostrá quién es el mejor en la mesa.
                 </p>
-
                 <a href="truco/index.html"><button id="btn">JUGAR</button></a>
             </div>
         </section>
