@@ -3,35 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | Argentina</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Juego | ARG</title>
+    <link rel="stylesheet" href="../css/estilos.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
 <!-- <> </> -->
 <body>
     <header> 
-        <nav>
-            <a href="historia.html"></a>
-            <a href="cultura/index.html.html"></a>
-            <a href="noticias.html"></a>
-            <a href="turismo/index.html"></a>
-            <a href="sustentabilidad.html"></a>
-            <a href="truco/index..html"></a>
-            <a href="contacto.html"></a>
-            <a href="desarrollo.html"></a>
-        </nav>
     </header>
 
-    <main id="">
+    <main id="juego">
+        <div class="w-full h-[300px] md:h-[430px] bg-[#1e2b57] text-white text-lg md:text-xl flex justify-center items-center">
+            <h1>¡Quiero retruco!</h1>
+        </div>
+
+        <div class="m-8 md:m-16 flex justify-center flex-col">
+            <p class="text-center">
+                El truco es un apasionante juego de cartas que forma parte del corazón cultural de Argentina y otros países sudamericanos. Se juega con la baraja española de 40 cartas y combina estrategia, 
+                astucia y faroles en una dinámica que invita tanto a la diversión como a la competencia. Más que un simple juego, el Truco es una tradición que reúne a amigos y familias alrededor de risas y conversaciones ingeniosas, 
+                reflejando el espíritu social y creativo de la región.
+            </p>
+            <P class="m-16">
+                <strong>🔍 Aspectos principales del Truco: </strong><br>
+                <span class="font-semibold">Jugadores:</span> Se puede jugar de a dos (mano a mano), en parejas (dos contra dos), o incluso en tríos (tres contra tres) en algunas variantes. <br>
+                <span class="font-semibold">Objetivo:</span> Llegar a un puntaje preestablecido, generalmente 15 o 30 puntos, antes que el oponente. <br>
+                <span class="font-semibold">Rondas:</span> Cada ronda se divide en dos partes principales: Envido (un juego de puntos basado en las cartas de un mismo palo) y Truco (un juego de fuerza donde se enfrentan las cartas en tres manos o "chicos"). <br>
+            </P>
+        </div>
+      
+        <div class="flex flex-col-2 gap-4 justify-center">  <!-- esto se ve en dos recuadros que ocupan media pantalla c/u -->
+            <div class="max-w[40%] border-2 rounded-md m-10 p-6">
+                <h2>Jerarquía de cartas (de mayor a menor):</h2>
+                <p></p>
+            </div>
+
+            <div class="max-w[40%] border-2 rounded-md m-10 p-6">
+                <h2> Dinámica del Truco:</h2>
+                <p></p>
+            </div>
+        </div>
+
+       
+        <div>  <!-- tablero de juego -->
+            <section class="juego">
+                <section class="tablero">
+                    <div class="bg-[#C2D8EC]">
+                        <img src="img/user1.png" class="pt-6 pl-6" >
+                        <div class="cartasJ2 flex justify-center items-center">
+                            <div class="carta m-6"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta1"> </div>
+                            <div class="carta m-6"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta2"> </div>
+                            <div class="carta m-6"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta3"> </div>
+                        </div>
+                    </div> 
+                    <div id="contadorPuntos"> 
+                        <h3>Puntos</h3>
+                        <div class="puntosJ1" title="Mis puntos">
+                            <p id="puntosUser">0</p>
+                        </div>
+                        <div class="puntosJ2" title="Puntos del oponente">   
+                            <p id="puntosBot">0</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F0E3B4]">
+                        <div class="cartasJ1 flex justify-center items-center">
+                            <div class="Usercarta1 m-6"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta1"> </div> 
+                            <div class="Usercarta3 m-6"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta2"> </div>
+                            <div class="Usercarta3 m-6"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta3"> </div>
+                        </div>
+                        <img src="img/user2.png" class="pb-6 pr-6 justify-self-end                        " >
+                    </div>
+                </section>
+
+                
+
+                <!-- mensaje para el ganador -->
+                <div id="ganarCartas" style="display: none;">
+                    <h2 id="mensajeGanar">¡Felicidades! Ganaste el Dundie...</h2>
+                        <h3 class="dundieClass"> "Whitest Sneakers Award" </h3>
+                        <p class="txtDundie">Si tenes las zapatillas más blancas del barrio, como Pam Beesly, entonces este premio es tuyo.</p>
+                        <img src="img/juego-cartas/dundies_pam.gif" alt="Gif de Pam festejando" id="gifDundie">
+                </div>      
+
+                 <!-- mensaje para el perdedor -->
+                <div id="perderCartas" style="display: none;">
+                    <h2 id="mensajeGanar">¡Perdiste el juego! Pero ganaste el Dundie...</h2>
+                        <h3 class="dundieClass"> "Extreme Repulsiveness Award" </h3>
+                        <p class="txtDundie">Si tu jefe te odia tanto como a Toby y las cosas te salen tan mal como a él.. este premio es tuyo.  </p>
+                        <img src="img/juego-cartas/toby2.gif" alt="Gif de Toby molesto" id="gifDundie">
+                </div>      
+
+            </section>
+
+        </div>
+
 
 
     </main>
 
     <footer>
-
     </footer>
 
-
+    <script src="../js/truco.js"></script>
 </body>
 </html>
