@@ -45,58 +45,73 @@
         </div>
 
        
-        <div>  <!-- tablero de juego -->
-            <section class="juego">
-                <section class="tablero">
-                    <div class="bg-[#C2D8EC]">
-                        <img src="img/user1.png" class="pt-6 pl-6" >
-                        <div class="cartasJ2 flex justify-center items-center">
-                            <div class="carta m-6"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta1"> </div>
-                            <div class="carta m-6"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta2"> </div>
-                            <div class="carta m-6"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta3"> </div>
-                        </div>
-                    </div> 
-                    <div id="contadorPuntos"> 
-                        <h3>Puntos</h3>
-                        <div class="puntosJ1" title="Mis puntos">
-                            <p id="puntosUser">0</p>
-                        </div>
-                        <div class="puntosJ2" title="Puntos del oponente">   
-                            <p id="puntosBot">0</p>
+
+        <section> <!-- tablero de juego -->
+            <div class="tablero w-full flex flex-col lg:flex-row justify-center">
+                <div class="contenedor-izq w-full max-w-[90%] lg:max-w-[30%] h-auto lg:h-[600px] p-5 lg:p-10 m-4 lg:m-10 border-3 rounded-md ">
+                    <div id="contadorPuntos" class="flex justify-center mb-4"> 
+                        <div>
+                            <h3 class="text-xl font-bold text-center">PUNTOS</h3>
+                            <div class="flex justify-center">
+                                <div class="puntosJ1 bg-[#F0E3B4] w-[60px] border-1 rounded-md text-center p-3 m-2" title="Mis puntos">
+                                    <p id="puntosUser" class="font-bold">0</p>
+                                    <p class="text-xs">YO</p>
+                                </div>
+                                <div class="puntosJ2 bg-[#C2D8EC] w-[60px] border-1 rounded-md text-center p-3 m-2" title="Puntos del oponente">   
+                                    <p id="puntosBot" class="font-bold">0</p>
+                                    <p class="text-xs">BOT</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="bg-[#F0E3B4]">
-                        <div class="cartasJ1 flex justify-center items-center">
-                            <div class="Usercarta1 m-6"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta1"> </div> 
-                            <div class="Usercarta3 m-6"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta2"> </div>
-                            <div class="Usercarta3 m-6"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta3"> </div>
-                        </div>
-                        <img src="img/user2.png" class="pb-6 pr-6 justify-self-end                        " >
+            
+                    <div class="botones-juego flex flex-wrap justify-center lg:flex-col lg:justify-start mt-4 space-y-2 lg:space-y-0 lg:space-x-0">
+                        <button id="btnJugar" class="jugar w-auto m-1">JUGAR</button>
+                        <button id="btnTruco" class="truco w-auto m-1">TRUCO</button>
+                        <button id="btnTruco" class="retruco w-auto m-1">RETRUCO</button>
+                        <button id="btnTruco" class="valeCuatro w-auto m-1">VALE 4</button>
+                        <button id="btnEnvido" class="envido w-auto m-1">ENVIDO</button>
+                        <button id="btnEnvido" class="realEnvido w-auto m-1">REAL ENVIDO</button>
+                        <button id="btnEnvido" class="faltaEnvido w-auto m-1">FALTA ENVIDO</button>
                     </div>
-                </section>
+                </div>
+            
+                <div class="contenedor-cartas w-full max-w-[90%] lg:max-w-[60%] h-auto lg:h-[601px] m-4 lg:m-10 border-3 rounded-md">
+                    <div class="cartasJ1 bg-[#F0E3B4] flex flex-wrap justify-center p-5 lg:p-10 h-auto lg:h-[300px]">
+                        <div class="Usercarta1 m-3"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta1"> </div> 
+                        <div class="Usercarta2 m-3"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta2"> </div>
+                        <div class="Usercarta3 m-3"><img src="img/reverso-carta.png" alt="Carta" title="Mi carta" id="userCarta3"> </div>
+                    </div>
+            
+                    <div class="cartasJ2 bg-[#C2D8EC] flex flex-wrap justify-center p-5 lg:p-10 h-auto lg:h-[300px]">
+                        <div class="carta m-3"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta1"> </div>
+                        <div class="carta m-3"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta2"> </div>
+                        <div class="carta m-3"><img src="img/reverso-carta.png" alt="Carta" title="Carta del oponente" id="botCarta3"> </div>
+                    </div>
+                </div>
+            </div>
+            
 
-                
+            
 
-                <!-- mensaje para el ganador -->
-                <div id="ganarCartas" style="display: none;">
-                    <h2 id="mensajeGanar">¡Felicidades! Ganaste el Dundie...</h2>
-                        <h3 class="dundieClass"> "Whitest Sneakers Award" </h3>
-                        <p class="txtDundie">Si tenes las zapatillas más blancas del barrio, como Pam Beesly, entonces este premio es tuyo.</p>
-                        <img src="img/juego-cartas/dundies_pam.gif" alt="Gif de Pam festejando" id="gifDundie">
-                </div>      
+            <!-- mensaje para el ganador -->
+            <div id="ganarCartas" style="display: none;">
+                <h2 id="mensajeGanar">¡Felicidades! Ganaste el Dundie...</h2>
+                    <h3 class="dundieClass"> "Whitest Sneakers Award" </h3>
+                    <p class="txtDundie">Si tenes las zapatillas más blancas del barrio, como Pam Beesly, entonces este premio es tuyo.</p>
+                    <img src="img/juego-cartas/dundies_pam.gif" alt="Gif de Pam festejando" id="gifDundie">
+            </div>      
 
-                 <!-- mensaje para el perdedor -->
-                <div id="perderCartas" style="display: none;">
-                    <h2 id="mensajeGanar">¡Perdiste el juego! Pero ganaste el Dundie...</h2>
-                        <h3 class="dundieClass"> "Extreme Repulsiveness Award" </h3>
-                        <p class="txtDundie">Si tu jefe te odia tanto como a Toby y las cosas te salen tan mal como a él.. este premio es tuyo.  </p>
-                        <img src="img/juego-cartas/toby2.gif" alt="Gif de Toby molesto" id="gifDundie">
-                </div>      
+                <!-- mensaje para el perdedor -->
+            <div id="perderCartas" style="display: none;">
+                <h2 id="mensajeGanar">¡Perdiste el juego! Pero ganaste el Dundie...</h2>
+                    <h3 class="dundieClass"> "Extreme Repulsiveness Award" </h3>
+                    <p class="txtDundie">Si tu jefe te odia tanto como a Toby y las cosas te salen tan mal como a él.. este premio es tuyo.  </p>
+                    <img src="img/juego-cartas/toby2.gif" alt="Gif de Toby molesto" id="gifDundie">
+            </div>      
 
-            </section>
+        </section>
 
-        </div>
 
 
 

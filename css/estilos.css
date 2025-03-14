@@ -58,6 +58,18 @@ nav {
     #btn:active {background-color: #242f55;}
 
 
+
+#btnJugar, #btnTruco, #btnEnvido {
+    padding: 0.40em;
+    margin-top: 1em;
+    border-radius: 11px;
+    font-weight: 600;
+}
+
+#btnJugar {background-color:#F2E551 ;} #btnJugar:active {background-color:#bfb43b;}
+#btnTruco {background-color: #FFBABA ;} #btnTruco:active {background-color: #dc9494;}
+#btnEnvido {background-color: #ECC88F;} #btnEnvido:active {background-color: #cfa767;}
+
 .vid-banner, .img-banner {
     position: relative;
     width: 100%;
@@ -389,6 +401,8 @@ nav {
     background-image: url(../turismo/img/banner-todo.png);
     background-attachment: fixed;
     }
+
+    /* TRUCO */
 
 
 
