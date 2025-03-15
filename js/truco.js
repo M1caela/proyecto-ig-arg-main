@@ -1,135 +1,136 @@
-// === Juego de Truco (Versión Mejorada) ===
-
-// Baraja Española de 40 cartas (sin 8 y 9)
-var baraja = [
-    { palo: 'Espadas', valor: 1, fuerza: 14, nombre: '1 de Espadas' },
-    { palo: 'Bastos', valor: 1, fuerza: 13, nombre: '1 de Bastos' },
-    { palo: 'Espadas', valor: 7, fuerza: 12, nombre: '7 de Espadas' },
-    { palo: 'Oros', valor: 7, fuerza: 11, nombre: '7 de Oros' },
+let baraja = [
+    { nombre: "1basto", valor: 19}, { nombre: "1copa", valor: 14}, { nombre: "1espada", valor: 20}, { nombre: "1oro", valor: 14},
+    { nombre: "2basto", valor: 15}, { nombre: "2copa", valor: 15}, { nombre: "2espada", valor: 15}, { nombre: "2oro", valor: 15}, 
+    { nombre: "3basto", valor: 16}, { nombre: "3copa", valor: 16}, { nombre: "3espada", valor: 16}, { nombre: "3oro", valor: 16},
+    { nombre: "4basto", valor: 4}, { nombre: "4copa", valor: 4}, { nombre: "4espada", valor: 4}, { nombre: "4oro", valor: 4},
+    { nombre: "5basto", valor: 5}, { nombre: "5copa", valor: 5}, { nombre: "5espada", valor: 5}, { nombre: "5oro", valor: 5}, 
+    { nombre: "6basto", valor: 6}, { nombre: "6copa", valor: 6}, { nombre: "6espada", valor: 6}, { nombre: "6oro", valor: 6}, 
+    { nombre: "7basto", valor: 7}, { nombre: "7copa", valor: 7}, { nombre: "7espada", valor: 18}, { nombre: "7oro", valor: 17}, 
+    { nombre: "10basto", valor: 10}, { nombre: "10copas", valor: 10}, { nombre: "10espada", valor: 10}, { nombre: "10oro", valor: 10}, 
+    { nombre: "11basto", valor: 11}, { nombre: "11copa", valor: 11}, { nombre: "11espada", valor: 11}, { nombre: "11oro", valor: 11}, 
+    { nombre: "12basto", valor: 12}, { nombre: "12copa", valor: 12}, { nombre: "12espada", valor: 12}, { nombre: "12oro", valor: 12},
 ];
 
-// Resto de la baraja
-var palos = ['Espadas', 'Bastos', 'Oros', 'Copas'];
-var valores = [2, 3, 4, 5, 6, 10, 11, 12];
+let rondasJugadas = 0;  // son 3 rondas por turno
+let puntosJ1 = 0;  // usuario
+let puntosJ2 = 0;  // bot
+let ganoJ1 = 0;
+let ganoJ2 = 0;
+let cartasJ1 = [];
 
-for (var i = 0; i < palos.length; i++) {
-    for (var j = 0; j < valores.length; j++) {
-        baraja.push({ 
-            palo: palos[i], 
-            valor: valores[j], 
-            fuerza: valores[j] <= 7 ? valores[j] : valores[j] - 3, 
-            nombre: valores[j] + ' de ' + palos[i] 
-        });
-    }
-}
 
-var puntosUser = 0;
-var puntosBot = 0;
-var turno = 0; // Indica si es el turno del usuario o del bot
-var manosGanadasUser = 0;
-var manosGanadasBot = 0;
+// repartir cartas
+function repartirCartas(baraja) {
+    cartasJ1 = []; 
 
-// Mezclar la baraja
-function mezclarBaraja() {
-    for (var i = baraja.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = baraja[i];
-        baraja[i] = baraja[j];
-        baraja[j] = temp;
-    }
-}
-
-// Repartir cartas
-function repartirCartas() {
-    var manoUsuario = [];
-    var manoBot = [];
-
-    mezclarBaraja();
-
-    for (var i = 0; i < 3; i++) {
-        manoUsuario.push(baraja.pop());
-        manoBot.push(baraja.pop());
+    function obtenerCartaRandom() {            
+        return baraja[Math.floor(Math.random() * baraja.length)];
     }
 
-    return { manoUsuario: manoUsuario, manoBot: manoBot };
-}
-
-// Mostrar cartas en la interfaz
-function mostrarCartas(manos) {
-    for (var i = 0; i < 3; i++) {
-        document.getElementById('userCarta' + (i + 1)).src = 'img/' + manos.manoUsuario[i].nombre + '.png';
-        document.getElementById('botCarta' + (i + 1)).src = 'img/reverso-carta.png';
-    }
-}
-
-// Iniciar juego
-var manos = repartirCartas();
-mostrarCartas(manos);
-
-// Función para manejar el clic en las cartas del usuario
-function jugarCarta(indice) {
-    if (turno !== 0) return;
-
-    var cartaUser = manos.manoUsuario[indice];
-    var cartaBot = manos.manoBot[indice];
-
-    // Mostrar carta del bot
-    document.getElementById('botCarta' + (indice + 1)).src = 'img/' + cartaBot.nombre + '.png';
-
-    // Determinar el ganador de la mano
-    if (cartaUser.fuerza > cartaBot.fuerza) {
-        manosGanadasUser++;
-    } else if (cartaBot.fuerza > cartaUser.fuerza) {
-        manosGanadasBot++;
+    for (let i = 0; i < 3; i++) {
+        cartasJ1.push(obtenerCartaRandom());
     }
 
-    // Actualizar turno
-    turno = 1;
+    mostrarCartas(cartasJ1);
+}      
 
-    // Si se jugaron las 3 manos, determinar el ganador del Truco
-    if (manosGanadasUser + manosGanadasBot === 3) {
-        determinarGanadorTruco();
-    }
+// mostrar las cartas del jugador en el DOM y agregar eventos de click
+function mostrarCartas(cartasJ1) {
+    let contenedorCartas = document.querySelector('.cartasJ1');
+    contenedorCartas.innerHTML = ''; // limpiar las cartas anteriores
+
+    cartasJ1.forEach(function(carta, index) {       // *con el metodo forEach se le aplica una función a cada elemento del array (en este caso a cada carta del array baraja)*
+        let imagenCarta = `<img src="../truco/img/${carta.nombre}.png" alt="${carta.nombre}" title="Tirar carta" data-index="${index}"> `;
+        contenedorCartas.innerHTML += imagenCarta;  
+    });
+
+    // agregar listeneres a las cartas generadas para el usuario (sino no toma el click del usuario para tirar la carta, porque no es la 'original' sino la generada en dom)
+    let cartasDom = document.querySelectorAll('.cartasJ1 img');
+    cartasDom.forEach(function(cartaDom) {  
+    cartaDom.addEventListener('click', function() {  
+            let indexCarta = cartaDom.getAttribute('data-index');   // *obtener el indice de la carta (posicion dentro del array cartasJ1)*
+            tirarCartaJugador(cartasJ1[indexCarta], cartaDom);      // se accede a la carta específica en la posición del array cartasJ1 que se seleccionó. se muestra en la interfaz con cartaDom
+        });                                                         
+    });
 }
 
-// Determinar el ganador del Truco
-function determinarGanadorTruco() {
-    if (manosGanadasUser > manosGanadasBot) {
-        puntosUser += 1;
-        alert('¡Ganaste el Truco!');
-    } else if (manosGanadasBot > manosGanadasUser) {
-        puntosBot += 1;
-        alert('Perdiste el Truco.');
-    } else {
-        alert('Empate en el Truco.');
-    }
 
-    // Actualizar puntos en pantalla
-    document.getElementById('puntosUser').textContent = puntosUser;
-    document.getElementById('puntosBot').textContent = puntosBot;
+// ahora el usuario puede ver sus cartas, debe clickear alguna para tirarla y comenzar la ronda
+function tirarCartaJugador(cartaUser, cartaDom) {
 
-    // Reiniciar juego
-    reiniciarJuego();
-}
+    // se deshabilitan las cartas clickeadas por el usuario
+    cartaDom.classList.add('disabled');
+    cartaDom.style.opacity = '60%';
+    cartaDom.style.pointerEvents = 'none'; 
 
-// Reiniciar el juego
-function reiniciarJuego() {
-    manosGanadasUser = 0;
-    manosGanadasBot = 0;
-    turno = 0;
-    baraja = baraja.concat(manos.manoUsuario, manos.manoBot); // Devolver cartas a la baraja
-    manos = repartirCartas();
-    mostrarCartas(manos);
-}
 
-// Asociar eventos a las cartas del usuario
-for (var i = 0; i < 3; i++) {
-    (function(index) {
-        document.getElementById('userCarta' + (index + 1)).onclick = function() {
-            jugarCarta(index);
+    // el bot responde con carta al azar, se muestra en el dom
+    let cartaBot = baraja[Math.floor(Math.random() * baraja.length)];
+    let contenedorCartas2 = document.querySelector('.cartasJ2');
+    contenedorCartas2.innerHTML = `<img src="../truco/img/${cartaBot.nombre}.png" alt="${cartaBot.nombre}">`;
+
+
+    // comparar los valores de las cartas 
+        if (cartaUser.valor > cartaBot.valor) {
+            ganoJ1++;  
+        } else if (cartaBot.valor > cartaUser.valor) {
+            ganoJ2++;
+        }  
+
+        rondasJugadas++; 
+        if (rondasJugadas === 3) {  
+            determinarGanador();   // se verifica el ganador del turno al llegar a las 3 rondas
         }
-    })(i);
+  
 }
+
+function determinarGanador() {
+    let totalPuntos = 0;
+
+    /* sumar los puntos apostados ACA SE TIENE QUE TENER EN CUENTA LAS JUGADAS (truco, envido, etc) */
+
+    if (ganoJ1 > ganoJ2) {  
+        puntosJ1 += totalPuntos;
+        let puntosUser = document.querySelector('#puntosUser');
+        puntosUser.innerText = puntosJ1; //  mostrar los puntos del jugador en el contador
+    } 
+    else if (ganoJ2 > ganoJ1) {
+        puntosJ2 += totalPuntos;  
+        let puntosBot = document.querySelector('#puntosBot');
+        puntosBot.innerText = puntosJ2;  // mostrar los puntos del bot
+    } 
+   
+     // verificar si alguien alcanzó 30 puntos
+     if (puntosJ1 >= 30 || puntosJ2 >= 30) {
+        finalizarJuego();
+    } else {
+        iniciarNuevoTurno();
+    }
+}
+
+function finalizarJuego() {
+    if(puntosJ1 >= 30) {
+        document.querySelector('#ganarCartas').style.display = 'block'
+    } else {
+        document.querySelector('#perderCartas').style.display = 'block'
+    }
+}
+
+function iniciarNuevoTurno() {
+    rondasJugadas = 0;
+    ganoJ1 = 0;
+    ganoJ2 = 0;
+    repartirCartas(baraja);
+}
+
+
+let btnJugar = document.querySelector('#btnJugar') 
+btnJugar.addEventListener('click', function() {
+    repartirCartas(baraja); 
+});
+
+
+
 
 
 // por cada turno son 3 rondas
