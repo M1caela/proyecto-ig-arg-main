@@ -144,8 +144,7 @@ btnJugar.addEventListener('click', function() {
 /* 
 - tienen que figurar todos los botones de jugadas siempre, pero deshabilitados,
     se habilitan cuando corresponda.
-
-- juegaUser / juegaBot 
+- juegaUser / juegaBot según corresponda (agregar esta lógica)
 
 
 */
