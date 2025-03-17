@@ -3,14 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego | ARG</title>
-    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Juego de truco | ARG</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
-<!-- <> </> -->
 <body>
-    <header> 
+    <header>
+        <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-xl font-bold"><img id="escarapela" src="../img/escarapela.webp" alt="Escarapela" title="Inicio"></div>
+    
+                <!-- Botón hamburguesa (Mobile) -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
+                    </svg>
+                </button>
+    
+                <!-- Menú -->
+                <ul id="menu" class="hidden md:flex space-x-6">
+                    <li><a href="../historia.html" class="font-semibold hover:text-[#111E4A]">Historia</a></li>
+    
+                    <!-- CULTURA -->
+                    <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
+                        <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                            Cultura
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-cultura" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="../cultura/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
+                            <li><a href="../cultura/gastronomia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
+                            <li><a href="../cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
+                        </ul>
+                    </li>
+                    <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
+                        <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                            Lugares increibles
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="../turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>
+                            <li><a href="../turismo/invierno.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
+                            <li><a href="../turismo/verano.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../guia.html" class="font-semibold hover:text-[#111E4A]">Guía de turismo</a>
+                    </li>
+                    <li>
+                        <a href="../sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a>
+                    </li>
+                </ul>
+    
+                <!-- Menú Mobile -->
+                <div id="mobile-menu"
+                    class="hidden fixed top-0 right-0 w-64 h-full bg-[#233679] shadow-lg flex flex-col p-6 md:hidden">
+                    <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
+                    <ul class="mt-6 space-y-4">
+                        <li><a href="../historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
+    
+                        <!-- CULTURA MOBILE -->
+                        <li>
+                            <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                                onclick="toggleDropdown('mobile-cultura')">
+                                Cultura
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul id="mobile-cultura" class="hidden ml-4">
+                                <li><a href="../cultura/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Cultura</a></li>
+                                <li><a href="../cultura/gastronomia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Gastronomía</a></li>
+                                <li><a href="../cultura/festividades.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Festividades</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                                onclick="toggleDropdown('mobile-turismo')">
+                                Lugares increibles
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul id="mobile-turismo" class="hidden ml-4">
+                                <li><a href="../turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Ver todo</a></li>
+                                <li><a href="../turismo/invierno.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Invierno</a></li>
+                                <li><a href="../turismo/verano.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Verano</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../guia.html" class="font-semibold hover:text-[#8492C7]">Guía de turismo</a></li>
+                        <li><a href="../sustentabilidad.html" class="font-semibold hover:text-[#8492C7]">Ambiente</a></li>
+                        <li><a href="index.html" class="font-semibold hover:text-[#8492C7]">Jugá al Truco</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main id="juego">
@@ -32,32 +139,59 @@
             </P>
         </div>
       
-        <div class="flex flex-col-2 gap-4 justify-center">  <!-- esto se ve en dos recuadros que ocupan media pantalla c/u -->
-            <div class="max-w[40%] border-2 rounded-md m-10 p-6">
+        <div class="flex flex-col md:flex-row gap-4 justify-center">  <!-- esto se ve en dos recuadros que ocupan media pantalla c/u -->
+            <div class="max-w[40%] border-2 rounded-md m-6 md:m-10 p-8">
                 <h2>Jerarquía de cartas (de mayor a menor):</h2>
-                <p></p>
+                <ul>
+                    <li>▹ 1 de Espadas</li>
+                    <li>▹ 1 de Bastos</li>
+                    <li>▹ 7 de Espadas</li>
+                    <li>▹ 7 de Oros</li>
+                    <li>▹ 3</li>
+                    <li>▹ 2</li>
+                    <li>▹ 1 (Copas y Oros)</li>
+                    <li>▹ 12</li>
+                    <li>▹ 11</li>
+                    <li>▹ 10</li>
+                    <li>▹ 7 (Copas y Bastos)</li>
+                    <li>▹ 6, 5, 4</li>
+                </ul>
             </div>
 
-            <div class="max-w[40%] border-2 rounded-md m-10 p-6">
+
+
+            <div class="max-w[40%] border-2 rounded-md m-6 md:m-10 p-8">
+                <h2>Valor de las jugadas</h2>
+                <!--  tabla con valores de envido etc 
+                  ref. https://www.bureaudejuegos.com/reglas-truco/ -->
+            </div>
+
+            <div class="max-w[40%] border-2 rounded-md m-6 md:m-10 p-6 md:p-10">
                 <h2> Dinámica del Truco:</h2>
-                <p></p>
+                <ol>
+                    <li><span class="font-semibold">Reparto:</span> Cada jugador recibe 3 cartas.</li>
+                    <li><span class="font-semibold">Envido:</span> Se canta antes de jugar cartas sobre la mesa. Solo se puede cantar si se tienen al menos dos cartas del mismo palo. Se juega a la par del truco, pero se resuelve antes de jugar las cartas.</li>
+                    <li><span class="font-semibold">Truco:</span> Se juega en tres manos (mejor de dos). El que gane dos de tres manos se lleva el punto o puntos en juego.</li>
+                    <li><span class="font-semibold">Cantos:</span> Se pueden hacer distintos cantos como Truco, Re-Truco y Vale Cuatro para aumentar la apuesta.</li>
+                    <li><span class="font-semibold">Anotación:</span> Los puntos se van sumando a lo largo de la partida hasta que un equipo o jugador alcanza el puntaje necesario para ganar.</li>
+                </ol>
             </div>
         </div>
 
        
 
-        <section> <!-- tablero de juego -->
+        <section id="fondo-truco"> <!-- tablero de juego -->
             <div class="tablero w-full flex flex-col lg:flex-row justify-center">
-                <div class="contenedor-izq w-full max-w-[90%] lg:max-w-[30%] h-auto lg:h-[600px] p-5 lg:p-10 m-4 lg:m-10 border-3 rounded-md ">
+                <div class="contenedor-izq bg-white w-full max-w-[90%] lg:max-w-[30%] h-auto lg:h-[600px] p-5 lg:p-10 m-4 lg:m-10 border-3 rounded-md ">
                     <div id="contadorPuntos" class="flex justify-center mb-4"> 
                         <div>
                             <h3 class="text-xl font-bold text-center">PUNTOS</h3>
                             <div class="flex justify-center">
-                                <div class="puntosJ1 bg-[#F0E3B4] w-[60px] border-1 rounded-md text-center p-3 m-2" title="Mis puntos">
+                                <div class="puntosJ1 border-1 rounded-md bg-[#F0E3B4] w-[60px] text-center p-3 m-2" title="Mis puntos">
                                     <p id="puntosUser" class="font-bold">0</p>
                                     <p class="text-xs">YO</p>
                                 </div>
-                                <div class="puntosJ2 bg-[#C2D8EC] w-[60px] border-1 rounded-md text-center p-3 m-2" title="Puntos del oponente">   
+                                <div class="puntosJ2 border-1 rounded-md bg-[#C2D8EC] w-[60px] text-center p-3 m-2" title="Puntos del oponente">   
                                     <p id="puntosBot" class="font-bold">0</p>
                                     <p class="text-xs">BOT</p>
                                 </div>
@@ -90,36 +224,22 @@
                     </div>
                 </div>
             </div>
-            
-
-            
-
-            <!-- mensaje para el ganador -->
-            <div id="ganarCartas" style="display: none;">
-                <h2 id="mensajeGanar">¡Felicidades! Ganaste el Dundie...</h2>
-                    <h3 class="dundieClass"> "Whitest Sneakers Award" </h3>
-                    <p class="txtDundie">Si tenes las zapatillas más blancas del barrio, como Pam Beesly, entonces este premio es tuyo.</p>
-                    <img src="img/juego-cartas/dundies_pam.gif" alt="Gif de Pam festejando" id="gifDundie">
-            </div>      
-
-                <!-- mensaje para el perdedor -->
-            <div id="perderCartas" style="display: none;">
-                <h2 id="mensajeGanar">¡Perdiste el juego! Pero ganaste el Dundie...</h2>
-                    <h3 class="dundieClass"> "Extreme Repulsiveness Award" </h3>
-                    <p class="txtDundie">Si tu jefe te odia tanto como a Toby y las cosas te salen tan mal como a él.. este premio es tuyo.  </p>
-                    <img src="img/juego-cartas/toby2.gif" alt="Gif de Toby molesto" id="gifDundie">
-            </div>      
-
         </section>
-
-
-
 
     </main>
 
-    <footer>
+    <footer class="footer footer-horizontal footer-center bg-[#74ACDF] p-8 flex flex-col justify-center">
+        <div class="flex justify-center items-center text-center"> 
+        <aside>
+            <img src="../img/escarapela.webp" alt="Escarapela argentina" class="max-w-[120px] m-auto">
+            <p class="font-bold text-white text-xl">ARG</p>
+            <div class="text-white font-semibold"><a href="../contacto.html">Contacto</a> | <a href="../desarrollo.html">Sobre el desarrollo de la web</a></div>
+            <p class="text-white text-xs">Copyright © 2025 - All right reserved</p>
+        </aside>
+        </div>
     </footer>
 
+    <script src="../js/navbar.js"></script>
     <script src="../js/truco.js"></script>
 </body>
 </html>

@@ -6,18 +6,126 @@
     <title>Historia | ARG</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 
 <body>
-    <header> 
+    <header>
+        <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-xl font-bold"><img id="escarapela" src="img/escarapela.webp" alt="Escarapela" title="Inicio"></div>
+    
+                <!-- Botón hamburguesa (Mobile) -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
+                    </svg>
+                </button>
+    
+                <!-- Menú -->
+                <ul id="menu" class="hidden md:flex space-x-6">
+                    <li><a href="historia.html" class="font-semibold hover:text-[#111E4A]">Historia</a></li>
+    
+                    <!-- CULTURA -->
+                    <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
+                        <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                            Cultura
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-cultura" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="cultura/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
+                            <li><a href="cultura/gastronomia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
+                            <li><a href="cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
+                        </ul>
+                    </li>
+                    <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
+                        <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                            Lugares increibles
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>
+                            <li><a href="turismo/invierno.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
+                            <li><a href="turismo/verano.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="guia.html" class="font-semibold hover:text-[#111E4A]">Guía de turismo</a>
+                    </li>
+                    <li>
+                        <a href="sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a>
+                    </li>
+                    <li>
+                        <a href="truco/index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a>
+                    </li>
+                </ul>
+    
+                <!-- Menú Mobile -->
+                <div id="mobile-menu"
+                    class="hidden fixed top-0 right-0 w-64 h-full bg-[#233679] shadow-lg flex flex-col p-6 md:hidden">
+                    <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
+                    <ul class="mt-6 space-y-4">
+                        <li><a href="historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
+    
+                        <!-- CULTURA MOBILE -->
+                        <li>
+                            <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                                onclick="toggleDropdown('mobile-cultura')">
+                                Cultura
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul id="mobile-cultura" class="hidden ml-4">
+                                <li><a href="cultura/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Cultura</a></li>
+                                <li><a href="cultura/gastronomia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Gastronomía</a></li>
+                                <li><a href="cultura/festividades.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Festividades</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                                onclick="toggleDropdown('mobile-turismo')">
+                                Lugares increibles
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul id="mobile-turismo" class="hidden ml-4">
+                                <li><a href="turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Ver todo</a></li>
+                                <li><a href="turismo/invierno.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Invierno</a></li>
+                                <li><a href="turismo/verano.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Verano</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="guia.html" class="font-semibold hover:text-[#8492C7]">Guía de turismo</a></li>
+                        <li><a href="sustentabilidad.html" class="font-semibold hover:text-[#8492C7]">Ambiente</a></li>
+                        <li><a href="truco/index.html" class="font-semibold hover:text-[#8492C7]">Jugá al Truco</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main id="historia">
 
         <div class="banner">
-            <h1>
+            <h1 class="text-lg md:text-2xl font-bold">
                 HISTORIA DE ARGENTINA: <br>
                 Desde sus primeros habitantes a la consolidación del Estado Nacional
             </h1>
@@ -25,7 +133,7 @@
 
         <div class="contenido">
             <section class="poblamiento">
-                <h3>El Poblamiento: Los Primeros Habitantes del Territorio</h3>
+                <h3 class="font-semibold">El Poblamiento: Los Primeros Habitantes del Territorio</h3>
                 <p>
                     Mucho antes de que las primeras expediciones europeas llegaran a estas tierras, el actual territorio argentino ya estaba habitado por diversas culturas indígenas. Se estima que los primeros grupos humanos llegaron hace aproximadamente 13.000 años,
                     desplazándose desde el norte del continente hacia la región patagónica. Eran comunidades nómades que se dedicaban a la caza y la recolección, adaptándose a los diversos paisajes y climas de la región.
@@ -35,7 +143,7 @@
             </section>
 
             <section>               
-                <h3>La Conquista: La Llegada de los Europeos y la Colonia</h3>
+                <h3 class="font-semibold">La Conquista: La Llegada de los Europeos y la Colonia</h3>
                 <p>
                     El siglo XVI trajo consigo un cambio radical en la historia de estas tierras. En 1516, el navegante Juan Díaz de Solís fue el primer europeo en llegar al estuario del Río de la Plata, aunque su expedición terminó en tragedia cuando fue atacado por los pueblos indígenas.A pesar de este desenlace, los españoles no tardaron en volver.
                     En 1536, Pedro de Mendoza intentó fundar la primera Buenos Aires, pero los constantes enfrentamientos con los querandíes llevaron al fracaso del asentamiento. En 1580, Juan de Garay refundó la ciudad, asegurando el dominio español sobre la región del Río de la Plata. A lo largo de los siglos XVI y XVII, 
@@ -45,7 +153,7 @@
             </section>
 
             <section class="independencia">               
-                <h3>La Lucha por la Independencia: El Camino Hacia la Libertad</h3>
+                <h3 class="font-semibold">La Lucha por la Independencia: El Camino Hacia la Libertad</h3>
                 <p>
                     El siglo XIX marcó un antes y un después en la historia del país. Las invasiones inglesas de 1806 y 1807 demostraron la vulnerabilidad del dominio español y fortalecieron el sentimiento de autonomía en Buenos Aires. Pero el verdadero punto de quiebre llegó en 1808, cuando Napoleón Bonaparte invadió España y obligó a abdicar al rey Fernando VII.
                     Esto dejó un vacío de poder que abrió las puertas a los movimientos independentistas en toda América Latina. El 25 de mayo de 1810, Buenos Aires tomó la iniciativa y estableció la Primera Junta de gobierno, iniciando un proceso de ruptura con España. Sin embargo, la independencia definitiva no se lograría sino hasta seis años después.
@@ -55,7 +163,7 @@
             </section>
 
             <section>                
-                <h3>La Consolidación del Estado Nacional: De las Guerras Civiles a la Unidad</h3>
+                <h3 class="font-semibold">La Consolidación del Estado Nacional: De las Guerras Civiles a la Unidad</h3>
                 <p> 
                     Después de la independencia, Argentina atravesó décadas de inestabilidad y conflictos internos. La falta de un acuerdo sobre cómo debía organizarse el país llevó a una serie de guerras civiles entre unitarios (que defendían un gobierno centralizado en Buenos Aires) y federales (que abogaban por la autonomía de las provincias).
                     Uno de los personajes más influyentes de este periodo fue Juan Manuel de Rosas, quien gobernó la Confederación Argentina con mano dura entre 1829 y 1852. Su caída dio paso a un nuevo intento de organización nacional que culminó con la sanción de la Constitución de 1853.
@@ -77,6 +185,6 @@
         </aside>
     </footer>
 
-
+<script src="js/navbar.js"></script>
 </body>
 </html>

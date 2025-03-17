@@ -46,13 +46,9 @@
                         <li><a href="cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
                     </ul>
                 </li>
-
-                <li><a href="noticias.html" class="font-semibold hover:text-[#111E4A]">Noticias</a></li>
-
-                <!-- TURISMO -->
                 <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
                     <button class="font-semibold hover:text-[#111E4A] flex items-center">
-                        Turismo
+                        Lugares increibles
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,13 +56,20 @@
                         </svg>
                     </button>
                     <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
-                        <li><a href="turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Turismo</a></li>
-                        <li><a href="turismo/guia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Guía de turismo</a></li>
+                        <li><a href="turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>
+                        <li><a href="turismo/invierno.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
+                        <li><a href="turismo/verano.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
                     </ul>
                 </li>
-
-                <li><a href="sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a></li>
-                <li><a href="truco/index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a></li>
+                <li>
+                    <a href="guia.html" class="font-semibold hover:text-[#111E4A]">Guía de turismo</a>
+                </li>
+                <li>
+                    <a href="sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a>
+                </li>
+                <li>
+                    <a href="truco/index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a>
+                </li>
             </ul>
 
             <!-- Menú Mobile -->
@@ -93,14 +96,10 @@
                             <li><a href="cultura/festividades.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Festividades</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="noticias.html" class="font-semibold hover:text-[#8492C7]">Noticias</a></li>
-
-                    <!-- TURISMO MOBILE -->
                     <li>
                         <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
                             onclick="toggleDropdown('mobile-turismo')">
-                            Turismo
+                            Lugares increibles
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -108,11 +107,12 @@
                             </svg>
                         </button>
                         <ul id="mobile-turismo" class="hidden ml-4">
-                            <li><a href="turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Turismo</a></li>
-                            <li><a href="turismo/guia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Guía de turismo</a></li>
+                            <li><a href="turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Ver todo</a></li>
+                            <li><a href="turismo/invierno.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Invierno</a></li>
+                            <li><a href="turismo/verano.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Verano</a></li>
                         </ul>
                     </li>
-
+                    <li><a href="guia.html" class="font-semibold hover:text-[#8492C7]">Guía de turismo</a></li>
                     <li><a href="sustentabilidad.html" class="font-semibold hover:text-[#8492C7]">Ambiente</a></li>
                     <li><a href="truco/index.html" class="font-semibold hover:text-[#8492C7]">Jugá al Truco</a></li>
                 </ul>
@@ -193,7 +193,8 @@
             <p class="text-white text-xs">Copyright © 2025 - All right reserved</p>
         </aside>
     </footer>
-      
+
+<script src="js/navbar.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

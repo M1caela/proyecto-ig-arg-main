@@ -10,8 +10,114 @@
 </head>
 
 <body>
-    <header> 
-        <nav>
+    <header>
+        <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-xl font-bold"><img id="escarapela" src="img/escarapela.webp" alt="Escarapela" title="Inicio"></div>
+    
+                <!-- Botón hamburguesa (Mobile) -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
+                    </svg>
+                </button>
+    
+                <!-- Menú -->
+                <ul id="menu" class="hidden md:flex space-x-6">
+                    <li><a href="historia.html" class="font-semibold hover:text-[#111E4A]">Historia</a></li>
+    
+                    <!-- CULTURA -->
+                    <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
+                        <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                            Cultura
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-cultura" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="cultura/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
+                            <li><a href="cultura/gastronomia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
+                            <li><a href="cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
+                        </ul>
+                    </li>
+                    <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
+                        <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                            Lugares increibles
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                            <li><a href="turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>
+                            <li><a href="turismo/invierno.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
+                            <li><a href="turismo/verano.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="guia.html" class="font-semibold hover:text-[#111E4A]">Guía de turismo</a>
+                    </li>
+                    <li>
+                        <a href="sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a>
+                    </li>
+                    <li>
+                        <a href="truco/index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a>
+                    </li>
+                </ul>
+    
+                <!-- Menú Mobile -->
+                <div id="mobile-menu"
+                    class="hidden fixed top-0 right-0 w-64 h-full bg-[#233679] shadow-lg flex flex-col p-6 md:hidden">
+                    <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
+                    <ul class="mt-6 space-y-4">
+                        <li><a href="historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
+    
+                        <!-- CULTURA MOBILE -->
+                        <li>
+                            <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                                onclick="toggleDropdown('mobile-cultura')">
+                                Cultura
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul id="mobile-cultura" class="hidden ml-4">
+                                <li><a href="cultura/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Cultura</a></li>
+                                <li><a href="cultura/gastronomia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Gastronomía</a></li>
+                                <li><a href="cultura/festividades.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Festividades</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                                onclick="toggleDropdown('mobile-turismo')">
+                                Lugares increibles
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <ul id="mobile-turismo" class="hidden ml-4">
+                                <li><a href="turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Ver todo</a></li>
+                                <li><a href="turismo/invierno.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Invierno</a></li>
+                                <li><a href="turismo/verano.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Verano</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="guia.html" class="font-semibold hover:text-[#8492C7]">Guía de turismo</a></li>
+                        <li><a href="sustentabilidad.html" class="font-semibold hover:text-[#8492C7]">Ambiente</a></li>
+                        <li><a href="truco/index.html" class="font-semibold hover:text-[#8492C7]">Jugá al Truco</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -71,7 +177,7 @@
 
             <article class="lunfardo mb-[5em] mt-[3em]">
                 <h2 class="text-2xl font-semibold mb-4 pl-4">Familiarizate con algunas expresiones argentinas</h2>
-                <p class="mb-[1em]">Breve diccionario de palabras que te van a venir bien:</p>
+                <p class="mb-[1em] pl-4">Breve diccionario de palabras que te van a venir bien:</p>
 
                 <ul>
                     <li>● <strong>Bondi:</strong> Colectivo o micro (también se usa para decir que se generó conflicto).</li>
@@ -103,6 +209,6 @@
         </aside>
     </footer>
 
-
+<script src="js/navbar.js"></script>
 </body>
 </html>
