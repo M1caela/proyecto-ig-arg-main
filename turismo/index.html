@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo | ARG</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Turismo | ARG</title>    
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
@@ -14,7 +13,7 @@
         <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
             <div class="container mx-auto flex justify-between items-center">
                 <!-- Logo -->
-                <div class="text-xl font-bold"><img id="escarapela" src="../img/escarapela.webp" alt="Escarapela" title="Inicio"></div>
+                <div class="text-xl font-bold"><a href="../index.html"><img id="escarapela" src="../img/escarapela.webp" alt="Escarapela" title="Inicio"></a></div>
     
                 <!-- Botón hamburguesa (Mobile) -->
                 <button id="menu-toggle" class="md:hidden focus:outline-none">
@@ -356,19 +355,21 @@
             
                 <div class="text-center p-6 mb-10">
                     <p class="text-lg md:text-xl"><strong>¿Querés saber más?</strong> Hicimos esta guía para vos.</p>
-                    <button id="btn">Guía del viajero</button>
+                    <a href="../guia.html"><button id="btn">Guía del viajero</button></a>
                 </div>
             </div>
         </article>
     </main>
 
     <footer class="footer footer-horizontal footer-center bg-[#74ACDF] p-8 flex flex-col justify-center">
+        <div class="flex justify-center items-center text-center"> 
         <aside>
-            <img class= "w-[120px]" src="../img/escarapela.webp" alt="Escarapela argentina" >
+            <img class= "w-[120px] m-auto" src="../img/escarapela.webp" alt="Escarapela argentina" >
             <p class="font-bold text-white text-xl">ARG</p>
             <div class="text-white font-semibold"><a href="../contacto.html">Contacto</a> | <a href="../desarrollo.html">Sobre el desarrollo de la web</a></div>
             <p class="text-white text-xs">Copyright © 2025 - All right reserved</p>
         </aside>
+        </div>
     </footer>
 
 <script src="../js/navbar.js"></script>

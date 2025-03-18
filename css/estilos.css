@@ -5,7 +5,7 @@
 * { box-sizing: border-box }
 
 ::selection {
-    background-color: #233679;
+    background-color: #74ACDF;
 }
 
 body {
@@ -65,7 +65,7 @@ nav {
     overflow: hidden;
 }
 
-.img-banner {
+.img-banner, .vid-banner {
     background-size: cover;
     background-position: center;
 }
