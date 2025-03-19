@@ -255,11 +255,11 @@ nav {
         font-size: 1.5em;
         font-weight: bold;
         background: rgba(0, 0, 0, 0.3); 
-        padding: 0.5em;
+        padding: 0.2em;
         border-radius: 5px;
         opacity: 0;
     } .ir-subpaginas div:hover h3 {opacity: 1;}
-   
+
 
     /* GASTRONOMÍA */
     #gastronomia .img-banner {
@@ -510,5 +510,8 @@ nav {
     }
 
 
+    .ir-subpaginas h3 {
+        font-size: 1em;
+    }
 
 }
