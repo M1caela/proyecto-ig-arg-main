@@ -81,10 +81,11 @@ nav {
 
 
 /** HOME **/
+
     #home .background-video {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;  
     }
 
     /* seccion de datos con img de fondo */
@@ -92,7 +93,7 @@ nav {
         background-image: url('../img/banner_la_boca.jpg');
         background-size: cover;
         background-position: center;
-        background-attachment: fixed; /* efecto parallax scroll */
+        background-attachment: fixed;
         height: 100vh; 
         display: flex;
         align-items: center;
