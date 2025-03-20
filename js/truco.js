@@ -12,14 +12,19 @@ let baraja = [
 ];
 
 let rondasJugadas = 0;  // son 3 rondas por turno
-let ganoJ1 = 0;
+let ganoJ1 = 0; // este es un contador interno por ronda
 let ganoJ2 = 0;
 
-let cartasJ1 = [];
-let cartasJ2 = [];
+let cartasJ1 = []; // usuario
+let cartasJ2 = []; // bot
 
-let puntosJ1 = 0;  // usuario
-let puntosJ2 = 0;  // bot
+let puntosJ1 = 0;  // este es el contador de puntos de la partida
+let puntosJ2 = 0;  
+
+let manosJugadas = 0; // contador interno para saber quien empieza el turno
+let turnoJugador = true; 
+let cartaJugadorActual = null; // ultima carta jugada
+let cartaBotActual = null;
 
 // repartir cartas
 function repartirCartas(baraja) {
@@ -60,81 +65,114 @@ function mostrarCartas(cartasJ1) {
 }
 
 function tirarCartaJugador(cartaUser, cartaDom) {
+    if (!turnoJugador) return;  // Si no es el turno del jugador, se ignora la acción 
+
     cartaDom.classList.add('disabled');
     cartaDom.style.opacity = '60%';
     cartaDom.style.pointerEvents = 'none'; 
 
     // Guardar la carta jugada por el usuario para comparar después
     cartaJugadorActual = cartaUser;
-    
-    if (rondasJugadas === 0) {  
-        // Primera ronda: El jugador siempre juega primero, el bot debe responder
-        tirarCartaBot(cartaUser); 
-    } 
-    else if (cartaBotActual) {  
-        // Si el bot ya jugó su carta, comparar
-        compararCartas(cartaJugadorActual, cartaBotActual);
-        cartaJugadorActual = null;
-        cartaBotActual = null;
-    }
+    turnoJugador = false; // Cambia el turno al bot
 
+    tirarCartaBot(); // El bot responde automáticamente
+    
+    /*
+        if (rondasJugadas === 0) {  
+            // Primera ronda: El jugador siempre juega primero, el bot debe responder
+            tirarCartaBot(cartaUser); 
+            compararCartas(cartaUser, cartaBot)
+        } 
+        else if (rondasJugadas >= 1) {  
+            compararCartas(cartaJugadorActual, cartaBotActual);
+            cartaJugadorActual = null;
+            cartaBotActual = null;
+        }
+    */
 }
 
+function tirarCartaBot() {
+    if (turnoJugador) return; // Si no es el turno del bot, no hace nada
 
-function tirarCartaBot(cartaUser, indexCarta) {
     let cartaBot = baraja[Math.floor(Math.random() * baraja.length)];
     let contenedorCartas2 = document.querySelector('.cartasJ2');
     contenedorCartas2.innerHTML = `
     <img src="../truco/img/${cartaBot.nombre}.png" alt="${cartaBot.nombre}">`;
 
-     // Guardar la carta jugada por el bot para comparar después
-     cartaBotActual = cartaBot;
-    
-     if (rondasJugadas === 0) {  
-        // Si es la primera ronda, comparar inmediatamente
-        compararCartas(cartaJugadorActual, cartaBotActual);
-        cartaJugadorActual = null;
-        cartaBotActual = null;
-    }
-    else if (cartaJugadorActual) {  
-        // Si el jugador ya jugó, comparar
-        compararCartas(cartaJugadorActual, cartaBotActual);
-        cartaJugadorActual = null;
-        cartaBotActual = null;
-    }
+    cartaBotActual = cartaBot;
+    turnoJugador = true; // Cambia el turno al usuario
+
+    compararCartas(); // Compara las cartas para definir quién juega la siguiente
+
+    /*
+        // Guardar la carta jugada por el bot para comparar después
+        cartaBotActual = cartaBot;
+        
+        if (rondasJugadas === 0) {  
+            // Si es la primera ronda, comparar inmediatamente
+            compararCartas(cartaJugadorActual, cartaBotActual);
+            cartaJugadorActual = null;
+            cartaBotActual = null;
+        }
+        else if (cartaJugadorActual) {  
+            // Si el jugador ya jugó, comparar
+            compararCartas(cartaJugadorActual, cartaBotActual);
+            cartaJugadorActual = null;
+            cartaBotActual = null;
+        }
+    */
 }
 
 
-// esta funcion debe aplicarse cuando ambos jugadores jugaron sus cartas, para definir quien sigue //
 function compararCartas(cartaUser, cartaBot) { 
-        if (cartaUser.valor > cartaBot.valor) {
-            ganoJ1++;
-            puntosJ1++; //gana un punto por haber ganado la mano (+ lo que se halla cantado)
-            turnoJugador = true;
-        } else if (cartaBot.valor > cartaUser.valor) {
-            ganoJ2++;
-            puntosJ2++;
-            turnoJugador = false;
-        }  
+    if (!cartaJugadorActual || !cartaBotActual) return;
 
-        rondasJugadas++; 
-        if (rondasJugadas === 3) {  
-            determinarGanador();   // se verifica el ganador de la mano al quedarse sin cartas
+    if (cartaJugadorActual.valor > cartaBotActual.valor) {
+        ganoJ1++;   
+        turnoJugador = true;
+    } else if (cartaBotActual.valor > cartaJugadorActual.valor) {
+        ganoJ2++;
+        turnoJugador = false;
+    }  
+
+    rondasJugadas++; 
+
+    if (rondasJugadas === 3) {  
+        manosJugadas++ // se contabiliza mano para saber quien empieza la siguiente
+        determinarGanador();   // se verifica el ganador de la mano al quedarse sin cartas
+    } else {
+        if (!turnoJugador) {  // Solo si es el turno del bot, juega automáticamente
+            setTimeout(tirarCartaBot, 2000); 
         }
-  
+    }
+
+     // Limpia las cartas jugadas actuales para la próxima ronda
+     cartaJugadorActual = null;
+     cartaBotActual = null;
 }   
+
+function habilitarCartasJugador() {
+    let cartasJugador = document.querySelectorAll('.cartasJ1 img');
+    cartasJugador.forEach(function(carta) {
+        if (!carta.classList.contains('disabled')) {
+            carta.style.pointerEvents = 'auto';  // Habilitar clics en las cartas disponibles
+            carta.style.opacity = '100%';        // Restaurar la opacidad para indicar que se puede jugar
+        }
+    });
+}
 
 // en totalPuntos se deben tener en cuenta las juagadas tipo envido, etc //
 function determinarGanador() {
     if (ganoJ1 > ganoJ2) {  
-        // puntosJ1 += totalPuntos; //
+        puntosJ1++; //gana un punto por haber ganado la mano (+ lo que se halla cantado)
+       
         let puntosUser = document.querySelector('#puntosUser');
-        puntosUser.innerText = puntosJ1; //  mostrar los puntos del jugador en el contador
+        puntosUser.innerText = puntosJ1; 
     } 
     else if (ganoJ2 > ganoJ1) {
-        // puntosJ2 += totalPuntos;  //
+        puntosJ2++;
         let puntosBot = document.querySelector('#puntosBot');
-        puntosBot.innerText = puntosJ2;  // mostrar los puntos del bot
+        puntosBot.innerText = puntosJ2; 
     } 
    
      // verificar si alguien alcanzó 30 puntos
@@ -143,10 +181,19 @@ function determinarGanador() {
     } else {
         ganoJ1 = 0 // esto se reinicia antes de repartir, ya que este contador sirve para comparar quien jugó la mejor de las 3 rondas
         ganoJ2 = 0
-        turnoJugador = false; // Ahora empieza el bot en la próxima ronda 
+        rondasJugadas = 0;
         repartirCartas(baraja);
+
+        if (manosJugadas % 2 == 0) { 
+            turnoJugador = true;  
+            habilitarCartasJugador();
+        } else if (manosJugadas % 2 == 1) {
+            turnoJugador = false;
+            setTimeout(tirarCartaBot, 2000); // El bot inicia la mano
+        }
     }
 }
+
 
 function finalizarJuego() {
     if(puntosJ1 >= 30) {

@@ -1,105 +1,144 @@
-let turnoJugador = true; // El jugador empieza siempre en la primera ronda
-let cartasJugador = [];
-let cartasBot = [];
-let ganoJ1 = 0;
-let ganoJ2 = 0;
-let rondasJugadas = 0;
+let baraja = [
+    { nombre: "1basto", valor: 19}, { nombre: "1copa", valor: 14}, { nombre: "1espada", valor: 20}, { nombre: "1oro", valor: 14},
+    { nombre: "2basto", valor: 15}, { nombre: "2copa", valor: 15}, { nombre: "2espada", valor: 15}, { nombre: "2oro", valor: 15}, 
+    { nombre: "3basto", valor: 16}, { nombre: "3copa", valor: 16}, { nombre: "3espada", valor: 16}, { nombre: "3oro", valor: 16},
+    { nombre: "4basto", valor: 4}, { nombre: "4copa", valor: 4}, { nombre: "4espada", valor: 4}, { nombre: "4oro", valor: 4},
+    { nombre: "5basto", valor: 5}, { nombre: "5copa", valor: 5}, { nombre: "5espada", valor: 5}, { nombre: "5oro", valor: 5}, 
+    { nombre: "6basto", valor: 6}, { nombre: "6copa", valor: 6}, { nombre: "6espada", valor: 6}, { nombre: "6oro", valor: 6}, 
+    { nombre: "7basto", valor: 7}, { nombre: "7copa", valor: 7}, { nombre: "7espada", valor: 18}, { nombre: "7oro", valor: 17}, 
+    { nombre: "10basto", valor: 10}, { nombre: "10copas", valor: 10}, { nombre: "10espada", valor: 10}, { nombre: "10oro", valor: 10}, 
+    { nombre: "11basto", valor: 11}, { nombre: "11copa", valor: 11}, { nombre: "11espada", valor: 11}, { nombre: "11oro", valor: 11}, 
+    { nombre: "12basto", valor: 12}, { nombre: "12copa", valor: 12}, { nombre: "12espada", valor: 12}, { nombre: "12oro", valor: 12},
+];
 
-// Repartir cartas al jugador y al bot
-function repartirCartas(baraja) {
-    baraja = baraja.sort(() => Math.random() - 0.5); // Mezclar baraja
+// Variables principales
+var cartasJugador = [];
+var cartasBot = [];
+var rondasGanadasJugador = 0;
+var rondasGanadasBot = 0;
+var puntosJugador = 0;
+var puntosBot = 0;
+var puntosApostados = 0;
+var turnoActual = 'jugador';
+var inicioMano = 'jugador'; // Alterna después de cada mano completa
+var rondaActual = 1;
 
-    cartasJugador = baraja.slice(0, 3); // 3 cartas para el jugador
-    cartasBot = baraja.slice(3, 6);     // 3 cartas para el bot
-    mostrarCartas(cartasJugador);       // Mostrar las cartas del jugador
-
-    // Limpiar el área de cartas del bot
-    let contenedorCartas2 = document.querySelector('.cartasJ2');
-    contenedorCartas2.innerHTML = `
-        <div class="carta m-3"><img src="img/reverso-carta.png" alt="Carta del oponente"></div>
-        <div class="carta m-3"><img src="img/reverso-carta.png" alt="Carta del oponente"></div>
-        <div class="carta m-3"><img src="img/reverso-carta.png" alt="Carta del oponente"></div>
-    `;
-
-    rondasJugadas = 0;
-    turnoJugador = true; // Reiniciar para que siempre empiece el jugador en cada nueva partida
+// Función para barajar y repartir cartas
+function barajarCartas() {
+    repartirCartas(baraja)
 }
 
-// Mostrar cartas del jugador en el DOM
+function repartirCartas(baraja) {
+    cartasJ1 = []; 
+
+    function obtenerCartaRandom() {            
+        return baraja[Math.floor(Math.random() * baraja.length)];
+    }
+
+    for (let i = 0; i < 3; i++) {
+        cartasJ1.push(obtenerCartaRandom());
+        cartasJ2.push(obtenerCartaRandom());
+    }
+
+    mostrarCartas(cartasJ1);
+}      
+
+// mostrar las cartas del jugador en el DOM y agregar eventos de click
 function mostrarCartas(cartasJ1) {
     let contenedorCartas = document.querySelector('.cartasJ1');
-    contenedorCartas.innerHTML = ''; // Limpiar cartas anteriores
+    contenedorCartas.innerHTML = ''; // limpiar las cartas anteriores
 
-    cartasJ1.forEach(function(carta, index) {       
+    cartasJ1.forEach(function(carta, index) {       // *con el metodo forEach se le aplica una función a cada elemento del array (en este caso a cada carta del array baraja)*
         let imagenCarta = `<img src="../truco/img/${carta.nombre}.png" alt="${carta.nombre}" title="Tirar carta" data-index="${index}"> `;
         contenedorCartas.innerHTML += imagenCarta;  
     });
 
+    // agregar listeneres a las cartas generadas para el usuario (sino no toma el click del usuario para tirar la carta, porque no es la 'original' sino la generada en dom)
     let cartasDom = document.querySelectorAll('.cartasJ1 img');
     cartasDom.forEach(function(cartaDom) {  
         cartaDom.addEventListener('click', function() {  
-            if (turnoJugador) { // Si es el turno del jugador, puede tirar la carta
-                let indexCarta = cartaDom.getAttribute('data-index');
-                tirarCartaJugador(cartasJugador[indexCarta], cartaDom, indexCarta);
-            }
-        });                                                         
+            if (turnoJugador) { // puede tirar si es su turno
+                let indexCarta = cartaDom.getAttribute('data-index');   // *obtener el indice de la carta (posicion dentro del array cartasJ1)*
+                tirarCartaJugador(cartasJ1[indexCarta], cartaDom);      // se accede a la carta específica en la posición del array cartasJ1 que se seleccionó. se muestra en la interfaz con cartaDom
+            } 
+        });                                                          
     });
 }
 
-// Jugada del usuario
-function tirarCartaJugador(cartaUser, cartaDom, indexCarta) {
-    // Deshabilitar la carta que se jugó
-    cartaDom.classList.add('disabled');
-    cartaDom.style.opacity = '60%';
-    cartaDom.style.pointerEvents = 'none';
-
-    // Juega el bot después
-    tirarCartaBot(cartaUser, indexCarta);
+// Función para iniciar una nueva mano (3 rondas)
+function iniciarMano() {
+    cartasJugador = barajarCartas();
+    cartasBot = barajarCartas();
+    rondasGanadasJugador = 0;
+    rondasGanadasBot = 0;
+    rondaActual = 1;
+    turnoActual = inicioMano;
 }
 
-// Jugada del bot
-function tirarCartaBot(cartaUser, indexCarta) {
-    let cartaBot = cartasBot[indexCarta]; // El bot juega la carta correspondiente al índice
-    let contenedorCartas2 = document.querySelector('.cartasJ2');
+// Función para manejar el turno del jugador
+function tirarCartaJugador(carta) {
+    if (turnoActual !== 'jugador') return;
 
-    contenedorCartas2.innerHTML = `
-        <img src="../truco/img/${cartaBot.nombre}.png" alt="${cartaBot.nombre}">
-    `;
+    var cartaJugador = carta;
+    var cartaBot = cartasBot.pop();
 
-    // Comparar valores de las cartas
-    if (cartaUser.valor > cartaBot.valor) {
-        ganoJ1++;
-        turnoJugador = true;  // Si el jugador ganó, sigue jugando él en la próxima carta
-    } else if (cartaBot.valor > cartaUser.valor) {
-        ganoJ2++;
-        turnoJugador = false; // Si el bot ganó, ahora él juega primero en la próxima carta
-    } 
+    compararCartas(cartaJugador, cartaBot);
 
-    rondasJugadas++;
-
-    if (rondasJugadas === 3) {  
+    if (rondaActual > 3) {
         determinarGanador();
-    }
-}
-
-// Determina quién ganó la ronda actual
-function determinarGanador() {
-    if (ganoJ1 > ganoJ2) {
-        alert("Ganaste la ronda!");
     } else {
-        alert("Perdiste la ronda!");
+        turnoActual = 'bot';
+        if (turnoActual === 'bot') {
+            setTimeout(tirarCartaBot, 1000);
+        }
     }
-
-    // Reiniciar contadores
-    ganoJ1 = 0;
-    ganoJ2 = 0;
-
-    // Cambiar quien empieza la próxima ronda
-    turnoJugador = false; // Ahora empieza el bot en la próxima ronda
-    repartirCartas(baraja); // Repartir nuevas cartas para la siguiente ronda
 }
+
+// Función para el turno del bot
+function tirarCartaBot() {
+    if (turnoActual !== 'bot') return;
+
+    var cartaJugador = cartasJugador.pop();
+    var cartaBot = cartasBot.pop();
+
+    compararCartas(cartaJugador, cartaBot);
+
+    if (rondaActual > 3) {
+        determinarGanador();
+    } else {
+        turnoActual = 'jugador';
+    }
+}
+
+// Función para comparar cartas
+function compararCartas(cartaJugador, cartaBot) {
+    if (cartaJugador > cartaBot) {
+        rondasGanadasJugador++;
+        turnoActual = 'jugador';
+    } else if (cartaBot > cartaJugador) {
+        rondasGanadasBot++;
+        turnoActual = 'bot';
+    }
+    rondaActual++;
+}
+
+// Función para determinar el ganador de la mano
+function determinarGanador() {
+    if (rondasGanadasJugador > rondasGanadasBot) {
+        puntosJugador += puntosApostados;
+        inicioMano = 'jugador'; // El jugador inicia la próxima mano
+    } else if (rondasGanadasBot > rondasGanadasJugador) {
+        puntosBot += puntosApostados;
+        inicioMano = 'bot'; // El bot inicia la próxima mano
+    }
+    // Aquí actualizarías el DOM con los puntos obtenidos
+}
+
+// Iniciar el juego por primera vez
+
+
 
 let btnJugar = document.querySelector('#btnJugar') 
 btnJugar.addEventListener('click', function() {
-    repartirCartas(baraja); 
+  iniciarMano();
 });
