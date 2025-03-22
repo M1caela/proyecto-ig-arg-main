@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos| ARG</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+<header>
+    <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-xl font-bold"><a href="../index.html"><img id="escarapela" src="../img/escarapela.webp" alt="Escarapela" title="Inicio"></a></div>
+
+            <!-- Botón hamburguesa (Mobile) -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menú -->
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="../historia.html" class="font-semibold hover:text-[#111E4A]">Historia</a></li>
+
+                <!-- CULTURA -->
+                <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
+                    <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                        Cultura
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-cultura" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                        <li><a href="../cultura/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
+                        <li><a href="../cultura/gastronomia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
+                        <li><a href="../cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
+                    </ul>
+                </li>
+                <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
+                    <button class="font-semibold hover:text-[#111E4A] flex items-center">
+                        Lugares increibles
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#233679] text-white mt-2 rounded-lg shadow-lg">
+                        <li><a href="../turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>
+                        <li><a href="../turismo/invierno.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
+                        <li><a href="../turismo/verano.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../guia.html" class="font-semibold hover:text-[#111E4A]">Guía de turismo</a>
+                </li>
+                <li>
+                    <a href="../sustentabilidad.html" class="font-semibold hover:text-[#111E4A]">Ambiente</a>
+                </li>
+                <li>
+                    <a href="index.html" class="font-semibold hover:text-[#111E4A]">Jugá al Truco</a>
+                </li>
+            </ul>
+
+            <!-- Menú Mobile -->
+            <div id="mobile-menu"
+                class="hidden fixed top-0 right-0 w-64 h-full bg-[#233679] shadow-lg flex flex-col p-6 md:hidden">
+                <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
+                <ul class="mt-6 space-y-4">
+                    <li><a href="../historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
+
+                    <!-- CULTURA MOBILE -->
+                    <li>
+                        <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                            onclick="toggleDropdown('mobile-cultura')">
+                            Cultura
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="mobile-cultura" class="hidden ml-4">
+                            <li><a href="../cultura/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Cultura</a></li>
+                            <li><a href="../cultura/gastronomia.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Gastronomía</a></li>
+                            <li><a href="../cultura/festividades.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Festividades</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                            onclick="toggleDropdown('mobile-turismo')">
+                            Lugares increibles
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="mobile-turismo" class="hidden ml-4">
+                            <li><a href="../turismo/index.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Ver todo</a></li>
+                            <li><a href="../turismo/invierno.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Invierno</a></li>
+                            <li><a href="../turismo/verano.html" class="font-semibold block px-2 py-1 hover:text-[#8492C7]">Verano</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../guia.html" class="font-semibold hover:text-[#8492C7]">Guía de turismo</a></li>
+                    <li><a href="../sustentabilidad.html" class="font-semibold hover:text-[#8492C7]">Ambiente</a></li>
+                    <li><a href="index.html" class="font-semibold hover:text-[#8492C7]">Jugá al Truco</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="w-full h-[300px] md:h-[430px] bg-[#1e2b57] text-white text-lg md:text-xl flex justify-center items-center">
+        <h1>Sección de juegos</h1>
+    </div>
+
+    <div class="contenedor-juego flex flex-col items-center justify-center m-10">
+
+        <div class="previa-quiz-personaje p-6 outline rounded-sm w-[70%] min-h-[300px] flex flex-col justify-center items-center">
+            <h1>¿Querés saber qué personaje argentino sos?</h1>
+            <button id="btnJugarPersonajes" class="rounded-md text-white  font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
+        </div>
+
+        <div class="juego-quiz-personaje p-6 outline rounded-sm w-[70%] flex flex-col justify-center items-center text-center hidden">
+            <div id="pregunta" class="outline rounded-sm p-2 m-4 mb-6 font-semibold"></div>
+            <button id="respuesta1" class="outline rounded-sm p-2 m-4"></button>
+            <button id="respuesta2" class="outline rounded-sm p-2 m-4"></button>
+            <button id="respuesta3" class="outline rounded-sm p-2 m-4"></button>
+            <button id="respuesta4" class="outline rounded-sm p-2 m-4"></button>
+            <button id="respuesta5" class="outline rounded-sm p-2 m-4"></button>
+            <button id="respuesta6" class="outline rounded-sm p-2 m-4"></button>
+        </div>
+
+        <div class="resultado-personaje p-6 outline rounded-sm w-[70%] flex flex-col justify-center items-center text-center hidden">
+        </div>
+
+
+    </div>
+
+</main>
+
+<footer class="footer footer-horizontal footer-center bg-[#74ACDF] p-8 flex flex-col justify-center">
+    <div class="flex justify-center items-center text-center"> 
+    <aside>
+        <img src="../img/escarapela.webp" alt="Escarapela argentina" class="max-w-[120px] m-auto">
+        <p class="font-bold text-white text-xl">ARG</p>
+        <div class="text-white font-semibold"><a href="../contacto.html">Contacto</a> | <a href="../desarrollo.html">Sobre el desarrollo de la web</a></div>
+        <p class="text-white text-xs">Copyright © 2025 - All right reserved</p>
+    </aside>
+    </div>
+</footer>
+
+<script src="../js/juego-que-personaje-sos.js"></script>
+<script src="../js/navbar.js"></script>
+</body>
+</html>
