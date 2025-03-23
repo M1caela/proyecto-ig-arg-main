@@ -114,22 +114,46 @@ let preguntasConocimientos = [
 let preguntaActualConocimientos = 0;
 let puntajeConocimientos = 0;
 
+document.querySelector('#btnJugarConocimiento').onclick = iniciarJuegoConocimiento;
+function iniciarJuegoConocimiento() {
+    document.querySelector('.previa-quiz-conocimiento').style.display = 'none';
+    document.querySelector('.juego-quiz-conocimiento').style.display = 'block';
+    mostrarPreguntaConocimientos();
+}
+
+// Función para actualizar la barra de progreso
+function actualizarBarraProgreso() {
+    const progressBar = document.querySelector('#p01d');
+    const progressLabel = document.querySelector('#p01d-label');
+    
+    // Calcular el porcentaje de progreso basado en la pregunta actual
+    const porcentaje = Math.floor((preguntaActualConocimientos / preguntasConocimientos.length) * 100);
+    
+    // Actualizar el valor y el texto de la barra de progreso
+    progressBar.value = porcentaje;
+    progressLabel.innerHTML = `<span class="sr-only">progreso</span> ${porcentaje}%`;
+    
+    // Ajustar el ancho del label según el progreso
+    progressLabel.style.width = `${porcentaje}%`;
+}
+
 function mostrarPreguntaConocimientos() {
     let preguntaElemento = document.querySelector('#preguntaConocimiento');
-    let pregunta = preguntasConocimientos[preguntaActualConocimientos];
+    let pregunta = preguntasConocimientos[preguntaActualConocimientos]; //  toma la pregunta actual del array preguntas (para esto funciona contabilizar preguntaActualConocimientos)
     preguntaElemento.innerText = pregunta.pregunta;
 
-    pregunta.respuestas.forEach(function(opcion, index) {
+    pregunta.respuestas.forEach(function(opcion, index) { // se recorren array de respuestas (dentro de preguntas) // opcion es cada objeto, index el nro de cada respuesta
         let respuestaElemento = document.querySelector('#respuestaConocimiento' + (index + 1));
         if (respuestaElemento) {
             respuestaElemento.innerText = opcion.texto;
             respuestaElemento.style.display = 'block';
             respuestaElemento.style.backgroundColor = '';
 
+            // se captura el click de cada respuesta
             respuestaElemento.onclick = function() {
                 if (opcion.correcta) {
                     respuestaElemento.style.backgroundColor = 'green';
-                    puntajeConocimientos++;
+                    puntajeConocimientos++; // se suma para el puntje final y se muestra un color según correcto o incorrecto
                 } else {
                     respuestaElemento.style.backgroundColor = 'red';
                 }
@@ -140,7 +164,9 @@ function mostrarPreguntaConocimientos() {
 }
 
 function siguientePreguntaConocimientos() {
-    preguntaActualConocimientos++;
+    preguntaActualConocimientos++;  // se suma para pasar a la siguiente posición del array preguntas{
+    actualizarBarraProgreso(); 
+
     if (preguntaActualConocimientos < preguntasConocimientos.length) {
         mostrarPreguntaConocimientos();
     } else {
@@ -149,15 +175,46 @@ function siguientePreguntaConocimientos() {
 }
 
 function mostrarResultadoFinalConocimientos() {
-    let resultadoElemento = document.querySelector('#resultado');
-    resultadoElemento.innerText = 'Puntaje final: ' + puntajeConocimientos + ' de ' + preguntasConocimientos.length;
-    resultadoElemento.style.display = 'block';
+    document.querySelector('.juego-quiz-conocimiento').style.display = 'none';
+
+    let resultadoElementoConocimiento = document.querySelector('.resultado-conocimiento');
+
+    // calcular el porcentaje de respuestas correctas para mostrar mensaje según nivel
+    const porcentaje = (puntajeConocimientos / preguntasConocimientos.length) * 100;
+    let imagenSrc = '';
+    let mensajeNivel = '';
+    
+    if (porcentaje <= 20) {
+        imagenSrc = 'img/nivel1.png';
+        mensajeNivel = '¡Nunca es tarde para seguir aprendiendo!';
+    } else if (porcentaje <= 40) {
+        imagenSrc = 'img/nivel2.png';
+        mensajeNivel = 'Conoces algo de Argentina, pero siempre se puede mejorar.';
+    } else if (porcentaje <= 60) {
+        imagenSrc = 'img/nivel3.png';
+        mensajeNivel = 'Tienes un conocimiento promedio sobre Argentina, ¡seguí asi!';
+    } else if (porcentaje <= 80) {
+        imagenSrc = 'img/nivel4.png';
+        mensajeNivel = '¡Muy bien! Conocés bastante sobre Argentina.';
+    } else {
+        imagenSrc = 'img/nivel5.png';
+        mensajeNivel = '¡Felicitaciones! Sos todo un experto.';
+    }
+
+    resultadoElementoConocimiento.innerHTML = 
+        `<div class="flex flex-col justify-center items-center m-auto p-6">
+            <img src="${imagenSrc}" alt="Nivel de conocimiento" class="flex justify-center items-center m-auto w-64 h-auto mb-4">
+            <h2 class="font-bold text-xl mb-2">${mensajeNivel}</h2> 
+            <h1 class="font-bold text-2xl mb-4"> Puntaje final: ${puntajeConocimientos}/${preguntasConocimientos.length}</h1> 
+
+            <a href="index.html"><button class="rounded-md text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">Volver a jugar</button></a>
+            <a href="#juego1">Jugar quiz de personalidades</a">
+        </div>` // se muestra mensaje según cantidad de rtas correctas 
+    ;
+    resultadoElementoConocimiento.style.display = 'block';
 }
 
-function iniciarJuegoConocimiento() {
-    document.querySelector('.previa-quiz-conocimiento').style.display = 'none';
-    document.querySelector('.juego-quiz-conocimiento').style.display = 'block';
-    mostrarPreguntaConocimientos();
-}
 
-document.querySelector('#btnJugarConocimiento').onclick = iniciarJuegoConocimiento;
+// agregar sonidos de bien/mal
+// css: el fondo tiene margenes blancos que no deberia
+
