@@ -1,3 +1,5 @@
+//     QUIZ 1 - ¿Qué personaje argentino sos?   //
+
 let puntajes = [0, 0, 0, 0, 0]; // 5 personajes posibles
 
 let preguntas = [
