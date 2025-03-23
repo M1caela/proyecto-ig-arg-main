@@ -11,8 +11,7 @@
 body, main {
     margin: 0;
     font-family: "Roboto", serif;
-    
-}
+    }  
 
 h1 {
     font-weight: 800;
@@ -33,11 +32,11 @@ h3 {
 }
 
 nav {
-    position: fixed; /* Fijo en la parte superior */
+    position: fixed; /* fijo en la parte superior */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 50; /* Asegura que esté por encima del contenido */
+    z-index: 50; /* }asegura que esté encima del contenido */
     background-color: transparent;
     padding: 1rem; 
 }
@@ -81,7 +80,6 @@ nav {
 
 
 /** HOME **/
-
     #home .background-video {
         width: 100%;
         height: 100%;
@@ -162,8 +160,6 @@ nav {
         justify-content: center;
         text-align: center;
 }
-
-
 
 /** CULTURA **/
     .fondo-destacadas {
@@ -424,33 +420,16 @@ nav {
     background-position: center
 }
     
-/* TRUCO
-    #fondo-truco {
-        background-image: url(../truco/img/fondo-truco.png);
-        background-size: cover;
-        background-position: center;
-    }
-
-    #btnJugar, #btnTruco, #btnEnvido {
-        padding: 0.40em;
-        margin-top: 1em;
-        border-radius: 11px;
-        font-weight: 600;
-    }
-
-    #btnJugar {background-color:#F2E551 ;}  #btnJugar:hover {background-color:#d0c54c;} #btnJugar:active {background-color:#a49a2c;}
-    #btnTruco {background-color: #FFBABA ;}  #btnTruco:hover {background-color: #da8282;} #btnTruco:active {background-color: #b86d6d;}
-    #btnEnvido {background-color: #ECC88F;}  #btnEnvido:hover {background-color: #cfa054;} #btnEnvido:active {background-color: #af8748;} 
- */
-
 /* JUEGO */
-#fondo-juego { 
-    height: 100%;
+#juego { 
+    min-height: 220vh; 
     width: 100%;
+    margin: 0;
+    padding: 0;
     background-image: url(../juego/img/fondo.png);
-     background-size: cover;  
-     background-repeat: no-repeat;
-     background-position: center;
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -481,13 +460,10 @@ nav {
     .poblamiento { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);}
     .independencia { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-primera-junta.png);}
 
-
     /* CULTURA */
     .costumbres {
         display: block;
     } 
-
-    
 
     .costumbres .derecha img { order: 1 }
 
@@ -516,7 +492,6 @@ nav {
         margin-left: 2em;
         margin-right: 2em;
     }
-
 
     .ir-subpaginas h3 {
         font-size: 1em;

@@ -15,7 +15,6 @@
     <header>
         <nav class= "left-0 w-full bg-transparent text-white p-4 z-10">
             <div class="container mx-auto flex justify-between items-center">
-                <!-- Logo -->
                 <div class="text-xl font-bold"><a href="../index.html"><img id="escarapela" src="../img/escarapela.webp" alt="Escarapela" title="Inicio"></a></div>
     
                 <!-- Botón hamburguesa (Mobile) -->
@@ -32,7 +31,6 @@
                 <ul id="menu" class="hidden md:flex space-x-6">
                     <li><a href="../historia.html" class="font-semibold hover:text-[#111E4A]">Historia</a></li>
     
-                    <!-- CULTURA -->
                     <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
                         <button class="font-semibold hover:text-[#111E4A] flex items-center">
                             Cultura
@@ -80,8 +78,7 @@
                     <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
                     <ul class="mt-6 space-y-4">
                         <li><a href="../historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
-    
-                        <!-- CULTURA MOBILE -->
+
                         <li>
                             <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
                                 onclick="toggleDropdown('mobile-cultura')">
@@ -422,7 +419,7 @@
 
         <h2 class="mt-16 ml-2 md:ml-8 text-black font-semibold text-lg md:text-2xl">Otras personalidades destacadas del país</h2>
         <div class="fondo-destacadas" id="destacadas">
-            <section class="destacadas p-6 m-6">     
+            <section class="destacadas p-6">     
                 <div class="max-w-[70%] m-auto flex justify-center">
                     <div class="relative w-full glide-03">
                         <div class="overflow-hidden" data-glide-el="track">
@@ -575,11 +572,9 @@
         </div>
 
         <div class="celeste bg-[#E8EAF4]">
-
-
-        <article class="costumbres">
-            <div class="izquierda text-left p-4">
-                <h2 class="font-semibold text-lg md:text-xl m-2">Costumbres Argentinas</h2>
+        <article class="costumbres p-8">
+            <div class="izquierda text-left">
+                <h2 class="font-semibold text-xl md:text-2xl pb-6">Costumbres Argentinas</h2>
                 <div>
                     <img src="img/cultura-costumbres-beso.png" alt="Personas saludandose con beso">
                     <p>
