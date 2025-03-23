@@ -137,6 +137,24 @@ function actualizarBarraProgreso() {
     progressLabel.style.width = `${porcentaje}%`;
 }
 
+const audioSeleccionCorrecta = new Audio('sonidos/correcto.mp3');
+function reproducirSonidoCorrecto () {
+    audioSeleccionCorrecta.currentTime = 0; 
+    audioSeleccionCorrecta.play()
+}
+
+const audioSeleccionErronea = new Audio('sonidos/incorrecto.mp3');
+function reproducirSonidoErroneo () {
+    audioSeleccionErronea.currentTime = 0; 
+    audioSeleccionErronea.play()
+}
+
+const audioFinalizarJuego = new Audio('sonidos/finish-game-conocimiento.mp3');
+function reproducirSonidoFinalizarConocimiento () {
+    audioFinalizarJuego.play()
+}
+
+
 function mostrarPreguntaConocimientos() {
     let preguntaElemento = document.querySelector('#preguntaConocimiento');
     let pregunta = preguntasConocimientos[preguntaActualConocimientos]; //  toma la pregunta actual del array preguntas (para esto funciona contabilizar preguntaActualConocimientos)
@@ -154,8 +172,10 @@ function mostrarPreguntaConocimientos() {
                 if (opcion.correcta) {
                     respuestaElemento.style.backgroundColor = 'green';
                     puntajeConocimientos++; // se suma para el puntje final y se muestra un color según correcto o incorrecto
+                    reproducirSonidoCorrecto()
                 } else {
                     respuestaElemento.style.backgroundColor = 'red';
+                    reproducirSonidoErroneo()
                 }
                 setTimeout(siguientePreguntaConocimientos, 1000);
             };
@@ -176,14 +196,13 @@ function siguientePreguntaConocimientos() {
 
 function mostrarResultadoFinalConocimientos() {
     document.querySelector('.juego-quiz-conocimiento').style.display = 'none';
+    reproducirSonidoFinalizarConocimiento()
 
     let resultadoElementoConocimiento = document.querySelector('.resultado-conocimiento');
-
-    // calcular el porcentaje de respuestas correctas para mostrar mensaje según nivel
-    const porcentaje = (puntajeConocimientos / preguntasConocimientos.length) * 100;
+    const porcentaje = (puntajeConocimientos / preguntasConocimientos.length) * 100; // calcular el porcentaje de rtas correctas para mostrar mensaje según nivel
     let imagenSrc = '';
     let mensajeNivel = '';
-    
+
     if (porcentaje <= 20) {
         imagenSrc = 'img/nivel1.png';
         mensajeNivel = '¡Nunca es tarde para seguir aprendiendo!';
@@ -215,6 +234,5 @@ function mostrarResultadoFinalConocimientos() {
 }
 
 
-// agregar sonidos de bien/mal
 // css: el fondo tiene margenes blancos que no deberia
 

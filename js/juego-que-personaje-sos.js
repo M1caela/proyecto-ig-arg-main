@@ -170,21 +170,31 @@ function iniciarJuego() {
     mostrarPregunta();
 };
 
-// Función para actualizar la barra de progreso
 function actualizarBarraProgresoPersonaje() {
     const progressBar = document.querySelector('#p02d');
     const progressLabel = document.querySelector('#p02d-label');
     
-    // Calcular el porcentaje de progreso basado en la pregunta actual
+    // calcular el porcentaje de progreso basado en la pregunta actual
     const porcentaje = Math.floor((preguntaActual / preguntas.length) * 100);
-    
-    // Actualizar el valor y el texto de la barra de progreso
     progressBar.value = porcentaje;
     progressLabel.innerHTML = `<span class="sr-only">progreso</span> ${porcentaje}%`;
     
-    // Ajustar el ancho del label según el progreso
+    // ajustar el ancho del label según el progreso
     progressLabel.style.width = `${porcentaje}%`;
-}
+};
+
+// cuando se clickea una rta se reproduce el sonido
+const audioSeleccion = new Audio('sonidos/select.mp3');
+function reproducirSonidoSeleccion() {
+    audioSeleccion.currentTime = 0;    // reiniciar el audio si ya estaba reproduciéndose
+    audioSeleccion.play()  
+};
+
+// cuando se muestra el resultado suena otro sonido
+const audioFinalizar = new Audio('sonidos/finish-game-personaje.mp3');
+function reproducirSonidoFinalizar () {
+    audioFinalizar.play()
+};
 
 function mostrarPregunta() {
     let preguntaElemento = document.querySelector('#pregunta');
@@ -198,8 +208,8 @@ function mostrarPregunta() {
 
         // capturar el click de cada rta
         respuestaElemento.onclick = function() {
-            console.log("Se hizo clic en la opción: " + opcion.texto); 
             puntajes[opcion.personaje]++; // suma un punto al personaje vinculado a esa opcion // puntajes es el contdor de cada personaje
+            reproducirSonidoSeleccion();
             siguientePregunta();
         };
     });
@@ -220,6 +230,7 @@ function mostrarResultado() {
     document.querySelector('.juego-quiz-personaje').style.display = 'none';
     let personajeGanador = puntajes.indexOf(Math.max(...puntajes));
 
+    reproducirSonidoFinalizar ()
     let resultadoElemento = document.querySelector('.resultado-personaje');
         resultadoElemento.innerHTML = `
             <div class="flex flex-col justify-center items-center m-auto p-6">
@@ -234,5 +245,4 @@ function mostrarResultado() {
         resultadoElemento.style.display = 'block';
 }
 
-// sonido al clickear respuesta
 
