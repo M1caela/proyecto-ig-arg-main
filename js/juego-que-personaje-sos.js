@@ -162,8 +162,29 @@ btnJugarPersonajes.addEventListener('click', function(){
 function iniciarJuego() {
     document.querySelector('.juego-quiz-personaje').style.display = 'block';
     document.querySelector('.previa-quiz-personaje').style.display = 'none';
+
+    preguntaActual = 0;
+    puntajes = [0, 0, 0, 0, 0]; // Reiniciar puntajes
+    actualizarBarraProgresoPersonaje();
+
     mostrarPregunta();
 };
+
+// Función para actualizar la barra de progreso
+function actualizarBarraProgresoPersonaje() {
+    const progressBar = document.querySelector('#p02d');
+    const progressLabel = document.querySelector('#p02d-label');
+    
+    // Calcular el porcentaje de progreso basado en la pregunta actual
+    const porcentaje = Math.floor((preguntaActual / preguntas.length) * 100);
+    
+    // Actualizar el valor y el texto de la barra de progreso
+    progressBar.value = porcentaje;
+    progressLabel.innerHTML = `<span class="sr-only">progreso</span> ${porcentaje}%`;
+    
+    // Ajustar el ancho del label según el progreso
+    progressLabel.style.width = `${porcentaje}%`;
+}
 
 function mostrarPregunta() {
     let preguntaElemento = document.querySelector('#pregunta');
@@ -186,6 +207,7 @@ function mostrarPregunta() {
 
 function siguientePregunta() {
     preguntaActual++; // se suma para pasar a la siguiente posición del array preguntas
+    actualizarBarraProgresoPersonaje();
         
     if (preguntaActual < preguntas.length) {
         mostrarPregunta();
@@ -212,4 +234,5 @@ function mostrarResultado() {
         resultadoElemento.style.display = 'block';
 }
 
+// sonido al clickear respuesta
 
