@@ -8,7 +8,7 @@
     background-color: #74ACDF;
 }
 
-body {
+body, main {
     margin: 0;
     font-family: "Roboto", serif;
     
@@ -391,11 +391,6 @@ nav {
     background-attachment: fixed;
     }
 
-    /* TRUCO */
-
-
-
-
 /*  GUIA DE TURISMO */
     #guia .img-banner {
         background-image: url(../turismo/img/banner-guia.png);
@@ -429,7 +424,7 @@ nav {
     background-position: center
 }
     
-/* TRUCO */
+/* TRUCO
     #fondo-truco {
         background-image: url(../truco/img/fondo-truco.png);
         background-size: cover;
@@ -446,6 +441,19 @@ nav {
     #btnJugar {background-color:#F2E551 ;}  #btnJugar:hover {background-color:#d0c54c;} #btnJugar:active {background-color:#a49a2c;}
     #btnTruco {background-color: #FFBABA ;}  #btnTruco:hover {background-color: #da8282;} #btnTruco:active {background-color: #b86d6d;}
     #btnEnvido {background-color: #ECC88F;}  #btnEnvido:hover {background-color: #cfa054;} #btnEnvido:active {background-color: #af8748;} 
+ */
+
+/* JUEGO */
+#fondo-juego { 
+    height: 100%;
+    width: 100%;
+    background-image: url(../juego/img/fondo.png);
+     background-size: cover;  
+     background-repeat: no-repeat;
+     background-position: center;
+}
+
+
 
 
 /*///////////  RESPONSIVE MOBILE  ////////////*/
