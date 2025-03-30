@@ -432,12 +432,24 @@ nav {
     background-position: center;
 }
 
+/* MAPA */
+
+/* version illustrator
+.provincia.hovered {
+    fill: #3b82f6 !important;
+    stroke: #1e40af !important;
+    }
+*/
+
 
 
 
 /*///////////  RESPONSIVE MOBILE  ////////////*/
 
 @media (max-width: 960px) {
+
+
+
 
     /*  HOME */
     #home .diversidad {
