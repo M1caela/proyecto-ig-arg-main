@@ -4,8 +4,6 @@
 let enviarBtn = document.getElementById('enviar');
 
 const validate = (e) => {
-    e.preventDefault();
-
     const email = document.getElementById('email');
     const message = document.getElementById('message');
     const formulario = document.getElementById('formulario');
@@ -30,9 +28,9 @@ const validate = (e) => {
         return false;
     }
 
-    // Si todo está bien:
-    alert('¡Gracias por tu mensaje! Se envió correctamente.');
-    formulario.submit();
+    // esto interfiere con formsubmit //
+    // alert('¡Gracias por tu mensaje! Se envió correctamente.');
+    // formulario.submit();
 };
 
 enviarBtn.addEventListener('click', validate);
