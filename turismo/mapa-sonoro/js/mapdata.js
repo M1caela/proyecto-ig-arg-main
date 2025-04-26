@@ -12,6 +12,8 @@ var simplemaps_countrymap_mapdata={
     border_size: 1.5,
     all_states_inactive: "no",
     all_states_zoomable: "yes",
+    popups: "detect",  // al dejar detect aca y on_click en locations, los popup de provincias son automaticos y los de puntos de audio son manuales //
+    
     
     //Location defaults
     location_description: "Location description",
@@ -58,7 +60,8 @@ var simplemaps_countrymap_mapdata={
     popup_corners: 5,
     popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
     popup_nocss: "no",
-    
+
+
     //Advanced settings
     div: "map",
     auto_load: "yes",
@@ -66,7 +69,6 @@ var simplemaps_countrymap_mapdata={
     images_directory: "default",
     fade_time: 0.1,
     link_text: "View Website",
-    popups: "detect",
     state_image_url: "",
     state_image_position: "",
     location_image_url: ""
@@ -175,8 +177,8 @@ var simplemaps_countrymap_mapdata={
 
   locations: {
     "0": {
-      lat: -38.951,
-      lng: -68.061,
+      lat: "-42.06192145656334",
+      lng: "-71.60873390171793",
       name: "Afilador de cuchillos",
       description:
         `<div class="p-4 bg-orange-50 rounded-lg">
@@ -192,237 +194,555 @@ var simplemaps_countrymap_mapdata={
           </audio>
         </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/8c78NMoiMWgqXpca8"
+      popup: "on_click",
     },
+
     "1": {
       lat: "-42.06192145656334",
       lng: "-71.60873390171793",
       name: "Bandurrias",
       description:
-        `<div class="p-4 bg-orange-50 rounded-lg">
+        `<div class="p-4 bg-orange-50 rounded-lg id="tooltip-neuquen">
           <h3 class="text-lg font-bold mb-2">Lago Puelo</h3>
           <audio 
             controls 
             class="w-full mt-2 rounded-lg"
             style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
             <source 
-              src="audio/afilador-neuquen.wav" 
+              src="audios/bandurrias-lago-puelo.mp3" 
               type="audio/mpeg">
             Tu navegador no soporta audio HTML5
           </audio>
         </div>`,
       color: "green",
-      url: "https://maps.app.goo.gl/KeSk8kGdqsxtBYwN8",
+      popup: "on_click",
       type: "square"
     },
+
     "2": {
       lat: "-37.25996997245717",
       lng: "-56.97551614657866",
       name: "Playa",
       color: "blue",
-      description: "Villa Gessel",
-      url: "https://maps.app.goo.gl/Yhi9za5YnFzsZdtv7"
+      description:
+      `<div class="p-4 bg-orange-50 rounded-lg">
+      <h3 class="text-lg font-bold mb-2">Villa Gessel</h3>
+      <audio 
+        controls 
+        class="w-full mt-2 rounded-lg"
+        style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <source 
+          src="audios/buenos-aires-villa-gesel-playa.mp3" 
+          type="audio/mpeg">
+        Tu navegador no soporta audio HTML5
+      </audio>
+    </div>`,
+       popup: "on_click",
     },
+
     "3": {
       lat: "-34.60745745966817",
       lng: "-58.374534628837644",
       name: "Subte D",
-      description: "Captal Federal",
+      description:
+      `<div class="p-4 bg-orange-50 rounded-lg">
+      <h3 class="text-lg font-bold mb-2">Capital Federal</h3>
+      <audio 
+        controls 
+        class="w-full mt-2 rounded-lg"
+        style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <source 
+          src="audios/caba-subte-linea-d.mp3" 
+          type="audio/mpeg">
+        Tu navegador no soporta audio HTML5
+      </audio>
+    </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/1AmDZvnhURFnhBBq8"
+      popup: "on_click",
     },
+
     "4": {
       name: "Caballos comiendo",
-      description: "El Bolsón",
+      description: 
+      `<div class="p-4 bg-orange-50 rounded-lg">
+      <h3 class="text-lg font-bold mb-2">El Bolsón</h3>
+      <audio 
+        controls 
+        class="w-full mt-2 rounded-lg"
+        style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <source 
+          src="audios/caballos_comiendo_el_bolson.mp3" 
+          type="audio/mpeg">
+        Tu navegador no soporta audio HTML5
+      </audio>
+    </div>`,
       lng: "-71.52138500000005",
       color: "green",
       lat: "-41.97267149367572",
-      url: "https://maps.app.goo.gl/hfHw9nKsKZxL9jgPA",
+      popup: "on_click",
       type: "square"
     },
+
     "5": {
       name: "Camping El Maitén",
-      description: "Río Negro",
+      description: 
+      `<div class="p-4 bg-orange-50 rounded-lg">
+      <h3 class="text-lg font-bold mb-2">Río Negro</h3>
+      <audio 
+        controls 
+        class="w-full mt-2 rounded-lg"
+        style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+        <source 
+          src="audios/camping_maiten_rio_negro.mp3" 
+          type="audio/mpeg">
+        Tu navegador no soporta audio HTML5
+      </audio>
+    </div>`,
       color: "orange",
       lat: "-41.592199168062315",
       lng: "-71.75916207453336",
-      url: "https://maps.app.goo.gl/auyBwuaZhjE8ae4v5"
+      popup: "on_click",
     },
+
     "6": {
       name: "Cañadón",
-      description: "Chubut",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Chubut</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/canadon_chubut.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "blue",
       lat: "-45.65052040766693",
       lng: "-67.62058481051065",
-      url: "https://maps.app.goo.gl/APusL8AFJxAjc17z5"
+      popup: "on_click",
     },
+
     "7": {
       name: "Dique El Jumeal",
-      description: "San Fernando del Valle de Catamarca",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">San Fernando del Valle de Catamarca</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/san-fernando-del-valle-de-catamarca-dique-el-jumeal.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "blue",
       lat: "-28.456459454707026",
       lng: "-65.80920728867783",
-      url: "https://maps.app.goo.gl/bVgRDzD6sZwDoQhQ8"
+      popup: "on_click",
     },
-    "8": {
-      name: "Ciudad de Formosa",
-      color: "orange",
-      description: "Formosa",
-      lat: "-26.18570670146087",
-      lng: "-58.17797641002891",
-      url: "https://maps.app.goo.gl/VLfMSJARGQ27qiS49"
-    },
+
     "9": {
       name: "Colibríes",
-      description: "Los Laguitos",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Los Laguitos</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/colibries_los_laguitos.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "green",
       lat: "-41.77136454312768",
       lng: "-71.72730057452326",
-      url: "https://maps.app.goo.gl/Hzq2wWkTsE6TB2av9",
+      popup: "on_click",
       type: "square"
     },
+
     "10": {
       name: "Conmemoración al Gauchito Gil",
       color: "orange",
-      description: "Mercedes",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Mercedes</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/corrientes-mercedes-conmemoracion-gauchito-gil.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       lat: "-29.18433646800446",
       lng: "-58.077441638096076",
-      url: "https://maps.app.goo.gl/2fSBMqDaNT3uCmgM8"
+      popup: "on_click",
     },
+
     "11": {
       name: "Desemboque del Rió Epuyen",
-      description: "Lago puelo",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Lago Puelo</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/desemboque__rio_epuyen.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "blue",
-      url: "https://maps.app.goo.gl/rVpdWwpoBT982rzi7",
+      popup: "on_click",
       lat: "-42.101366515419905",
       lng: " -71.45515108334693"
     },
+
     "12": {
       name: "Puerto Formosa",
-      description: "Formosa",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Formosa</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/formosa-puerto-formosa.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "blue",
-      url: "https://maps.app.goo.gl/A9qWSbJEBGJeLAKh7",
+      popup: "on_click",
       lat: "-26.181328915624707",
       lng: "-58.16218671575612"
     },
+
     "13": {
       name: "Hinchada de Fútbol",
-      description: "Bahía Blanca",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Bahía Blanca</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/hinchada_de_futbol_bahia_blanca.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/73HibYh7R1fMZHg29",
+      popup: "on_click",
       lat: "-38.67931599119548",
       lng: "-62.22397409274401"
     },
-    "14": {
-      description: "Río Quemquemtreu",
+
+    "14": { 
       name: "La Saladita",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Río Quemquemtreu</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/saladita_san_jose.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/7CzR2yVWoykJqooP7",
+      popup: "on_click",
       lat: "-38.95188616135663",
       lng: "-68.06390590639303"
     },
+
     "15": {
       name: "Parque de las juventudes",
       color: "orange",
-      description: "La Rioja",
-      url: "https://maps.app.goo.gl/pLHFBAg2SgX2LC6L8",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">La Rioja</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/la-rioja-parque-de-las-juventudes.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
+        popup: "on_click",
       lat: "-29.42873694161048",
       lng: " -66.86443296165069"
     },
+
     "17": {
       name: "Parque Nacional Iguazú",
       color: "orange",
-      description: "Misiones",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Misiones</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/misiones-parque-nacional-iguazu.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       lat: "-25.68275414111277",
       lng: "-54.45455882625491",
-      url: "https://maps.app.goo.gl/Sp1YQCJ61u4NuHX17"
+      popup: "on_click",
     },
+
     "18": {
       name: "Oración a la bandera",
-      description: "Buenos Aires",
+      description:
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Buenos Aires</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/oracion_a_la_bandera_bahia.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/PEUr1kiukJCMSpJw9",
+      popup: "on_click",
       lat: "-36.96211815550293",
       lng: "-59.77604392359922"
     },
+
     "19": {
       name: "Perito Moreno",
       color: "green",
-      description: "Santa Cruz",
-      url: "https://maps.app.goo.gl/67yGpSwXZMKtprLz9",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Santa Cruz</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/perito_moreno.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
+        popup: "on_click",
       lat: "-46.59110488746542",
       lng: "-70.92789590475755",
       type: "square"
     },
+
     "20": {
       name: "Partido de fútbol",
-      description: "Buenos Aires",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Buenos Aires</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/personas_jugando_al_futbol.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/gbNwv4YwQPnuSUEf6",
+      popup: "on_click",
       lat: "-34.58244871913193",
       lng: " -58.57955769246438"
     },
+
     "21": {
       name: "Portal del Río Motoco",
-      description: "Río Negro",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Río Negro</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/rio_motoco_rio_negro.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "blue",
       lat: "-41.97545987223488",
       lng: "-71.7073878168401",
-      url: "https://maps.app.goo.gl/MkcJuz1f4vQHdsvU9"
+      popup: "on_click",
     },
+
     "22": {
       name: "Puente de los aplausos",
       color: "blue",
-      description: "Corcovado",
-      url: "https://maps.app.goo.gl/KAFeQnv2iFs68NyGA",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Corcovado</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/puente de los aplausos_quemquemtreu.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
+        popup: "on_click",
       lat: "-43.54337715791161",
       lng: " -71.48735013209244"
     },
+
     "23": {
       name: "Río blanco",
-      description: "Jujuy",
+      description:
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Jujuy</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/rio_blanco.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "blue",
-      url: "https://maps.app.goo.gl/Q9eGXJzyHXMDPTzU9",
+      popup: "on_click",
       lat: "-24.22561434660955",
       lng: "-65.23619139630763"
     },
+
     "24": {
-      color: "blue",
-      description: "Salta",
       name: "Río San Lorenzo",
-      url: "https://maps.app.goo.gl/MBTpEvD8qRhiiPNA6",
+      color: "blue",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Salta</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/salta-rio-san-lorenzo.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
+        popup: "on_click",
       lat: "-24.813687826650135",
       lng: "-65.40013263304377"
     },
+
     "25": {
       name: "Campanas de la Parroquia San Carlos",
       color: "orange",
-      description: "Sunchales",
-      url: "https://maps.app.goo.gl/dQruHRMQnAZgnWKV8",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Sunchales</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/sunchales-parroquia-san-carlos-borromeo.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
+        popup: "on_click",
       lat: "-30.94363136296227",
       lng: "-61.560567723006635"
     },
-    "26": {
-      description: "Tierra del Fuego",
+
+    "26": { 
       name: "Café bar en Ushuaia",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Tierra del Fuego</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/tierra-del-fuego-ushuaia-bar-cafe.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "orange",
       lat: "-54.80248189059729",
       lng: "-68.3065824461191",
-      url: "https://maps.app.goo.gl/ZoQHToUJmmLuEyg9A"
+      popup: "on_click",
     },
+
     "27": {
       name: "Ciudad sagrada de los Quilmes",
-      description: "Tafí del Valle",
+      description: 
+         `<div class="p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Tafí del Valle</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/tucuman-tafi-del-valle-ciudad-sagrada-de-los-quilmes.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
       color: "orange",
-      url: "https://maps.app.goo.gl/7cuAGCoX9d4ZQnLz5",
+      popup: "on_click",
       lat: "-26.46516927783299",
       lng: "-66.03674168875926"
     },
+
     "28": {
-      color: "orange",
-      description: "Bahia Blanca",
       name: "Vendedor ambulante",
-      url: "https://maps.app.goo.gl/CrTU7DxVGuFobP9q7",
+      color: "orange",
+      description: 
+         `<div class="etiqueta p-4 bg-orange-50 rounded-lg">
+          <h3 class="text-lg font-bold mb-2">Bahia Blanca</h3>
+          <audio 
+            controls 
+            class="w-full mt-2 rounded-lg"
+            style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
+            <source 
+              src="audios/verdulero_ambulante_bahia_blanca.mp3" 
+              type="audio/mpeg">
+            Tu navegador no soporta audio HTML5
+          </audio>
+        </div>`,
+        popup: "on_click",
       lat: "-38.704323449791175",
       lng: "-62.27010889009599"
     }
@@ -532,23 +852,3 @@ var simplemaps_countrymap_mapdata={
   regions: {}
 };
 
-
-  $(document).ready(function () {
-    var timeout;
-  
-    // Seleccionamos los tooltips generados por SimpleMaps
-    $(".map-tooltip").hover(
-        function () {
-            // Al hacer hover, mostramos el tooltip inmediatamente y cancelamos cualquier timeout previo
-            clearTimeout(timeout);
-            $(this).stop(true, true).fadeIn();
-        },
-        function () {
-            var tooltip = $(this);
-            // Cuando se deja de hacer hover, ocultamos después de 5 segundos
-            timeout = setTimeout(function () {
-                tooltip.fadeOut();
-            }, 8000);
-        }
-    );
-  });
