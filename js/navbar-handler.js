@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-// ========== Funciones una vez cargado el navbar ==========
+// una vez cargado el navbar:
 function iniciarNavbarFunciones() {
     let closeTimeout;
 
-    // Mostrar/ocultar dropdowns (con delay)
+    // Menu desplegable con delay
     window.openDropdown = function (id) {
         clearTimeout(closeTimeout);
         const el = document.getElementById(id);
@@ -36,38 +36,40 @@ function iniciarNavbarFunciones() {
     };
 
     window.closeDropdown = function (id) {
-        closeTimeout = setTimeout(function () {
+        closeTimeout = setTimeout(() => {
             const el = document.getElementById(id);
             if (el) el.classList.add("hidden");
         }, 300);
     };
 
-    // Menú hamburguesa
+    // menú mobile
     const toggleBtn = document.getElementById("menu-toggle");
     const closeBtn = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
 
     if (toggleBtn && mobileMenu) {
-        toggleBtn.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
-        });
+        toggleBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
     }
 
     if (closeBtn && mobileMenu) {
-        closeBtn.addEventListener("click", function () {
-            mobileMenu.classList.add("hidden");
-        });
+        closeBtn.addEventListener("click", () => mobileMenu.classList.add("hidden"));
     }
 
-    // Mostrar navbar solo arriba del todo
-    const navbar = document.querySelector("nav");
+    // cambiar fondo al hacer scroll
     if (navbar) {
-        window.addEventListener("scroll", function () {
-            if (window.scrollY === 0) {
-                navbar.style.display = "block";
-            } else {
-                navbar.style.display = "none";
-            }
-        });
+    window.addEventListener("scroll", () => {
+    console.log("scrollY:", window.scrollY); // ver si se activa el evento
+
+    if (window.scrollY > 10) {
+      navbar.classList.remove("bg-transparent");
+      navbar.classList.add("bg-[#233679]");
+      console.log("🟦 Fondo cambiado a color");
+    } else {
+      navbar.classList.remove("bg-[#233679]");
+      navbar.classList.add("bg-transparent");
+      console.log("⬜ Fondo transparente");
     }
+  });
 }
+}
+

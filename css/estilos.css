@@ -36,8 +36,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 50; /* }asegura que esté encima del contenido */
-    background-color: transparent;
+    z-index: 50; /* asegura que esté encima del contenido */
     padding: 1rem; 
 }
 
