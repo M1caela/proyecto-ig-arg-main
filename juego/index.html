@@ -68,14 +68,75 @@
         </div>
     </div>
 
+    <div id="juego3" class="contenedor-dados flex flex-col items-center justify-center m-10">
+         <div class="previa-dados p-6 outline rounded-sm w-[70%] min-h-[300px] flex flex-col justify-center items-center bg-white">
+            <h1>La generala: uno de los más famosos del país</h1>
+            <button id="btnDados" class="rounded-md text-white  font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
+        </div>
+        
+        <div id="secccionInfo" class="juego-dados p-6 outline rounded-sm w-[70%] flex flex-col justify-center items-center text-center bg-white hidden"></div>
+            <section class="tableroDados">
+                <div class="jugadores">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Escalera</th>
+                            <th>Full</th>
+                        </tr>
+                        <tr>
+                            <td id="nombreUser">Jugador</td>
+                            <td></td>
+                            <td> </td>
+                        </tr>
+    
+                        <tr>
+                            <td id="nombreDwight">Dwigth</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                </div>  
+
+                <div class="botonTirar">
+                    <button id="btnTirarDado"> TIRAR DADOS </button>
+                    
+                </div>
+                <p class="instruccionBtn">Presiona el botón, luego espera para ver los dados del oponente.</p>
+            </section>
+
+            <div class="seccionDados">
+                <img src=" img/dados/01.png" alt="Imagen de dado" title="Dado sorteado">
+                <img src=" img/dados/04.png" alt="Imagen de dado" title="Dado sorteado">
+                <img src=" img/dados/06.png" alt="Imagen de dado" title="Dado sorteado">
+                <img src=" img/dados/03.png" alt="Imagen de dado" title="Dado sorteado">
+                <img src=" img/dados/04.png" alt="Imagen de dado" title="Dado sorteado"> 
+            </div>
+        </div>
+
+        <!-- mensaje para ganador -->
+        <div class="mensaje" id="ganarDados" style="display: none;">
+            <h2>¡Felicidades! </h2>
+            <img src="img/" alt="Foto">
+        </div>
+
+        <!-- mensaje para perdedor -->
+        <div class="mensaje" id="perderDados" style="display: none;">
+            <h2>¡Perdiste!<br></h2>
+            <img src="img/" alt="Foto">
+        </div> 
+
+    </div>
+
 </main>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
 
+<script src="../js/juego-dados.js"></script>  
 <script src="../js/juego-que-personaje-sos.js"></script>
 <script src="../js/juego-cuanto-sabes.js"></script>
 <script src="../js/navbar-handler.js"></script> 
 <script src="../js/footer-handler.js"></script> 
+
 </body>
 </html>

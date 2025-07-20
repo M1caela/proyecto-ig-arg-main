@@ -431,31 +431,150 @@ nav {
     background-position: center;
 }
 
-/* MAPA */
+/* DADOS */
+/********     JUEGO DE DADOS     ********/
 
-
-/* .tt_custom_sm {
-    overflow-y: scroll !important;
-    max-height: 100px;
-} */
-
-
-/* version illustrator
-.provincia.hovered {
-    fill: #3b82f6 !important;
-    stroke: #1e40af !important;
+    #juegoDados hr {
+        margin-top: 5em;
+        margin-bottom: 5em;
     }
-*/
+
+    .tableroDados {
+        width: 95%;
+        display: flex;
+        height: 20em;
+        margin: 1em;
+        margin-bottom: 20em;
+    }
+
+    /* sección izquierda que ocupa el 30% del ancho */
+    #seccionInfo {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height: 100%; 
+        margin-left: 6em;
+    }
+
+    .jugadores {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        width: 30%;
+        font-size: 0.70em;
+        font-weight: 600;
+    }
+        .jugadores table th { 
+            width: 16em;
+            background-color: rgba(88, 152, 117, 0.76); 
+            color: rgb(32, 52, 36);
+            padding-left: 0.40em;
+            padding-right: 0.40em;
+        }
+
+        .jugadores table td { 
+            width: 16em;
+            text-align: center;
+            border: 2px solid rgb(61, 99, 70); 
+        }
+
+        .jugadores table tr { 
+            width: 16em;
+        }
+
+        #nombreUser, #nombreDwight {
+            background-color:rgba(142, 187, 163, 0.76);
+        }
+
+    .botonTirar {
+        width: 20%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+
+    }
+    
+ .tableroDados .instruccionBtn {
+        font-size: 0.90em;
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: 60%;
+    }
+
+    #btnTirarDado {
+        width: 6em;
+        height: 6em;
+        font-size: 1em;
+        font-weight: 600;
+        border-radius: 50px;
+        border: 4px solid rgb(46, 95, 75);
+        background-color: rgb(134, 228, 176);
+        color: rgb(27, 59, 46);
+    } #btnTirarDado:hover { background-color: rgb(113, 181, 144); }
+    #btnTirarDado:active { background-color: rgb(144, 209, 174); }
 
 
 
 
-/*///////////  RESPONSIVE MOBILE  ////////////*/
+    /* sección derecha  */
+    .seccionDados {
+        height: 60%;
+        width: 65%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #atajoCartas {
+        background-color:rgb(124, 124, 173);
+        color: white;
+        font-family: "Poppins", sans-serif;
+        border: 0 solid;
+        border-radius: 18px;
+        float: right;
+        margin: 1em;
+        margin-top: 34em;
+        width: 12em;
+    } #atajoCartas:hover {background-color: rgb(97, 97, 138);}
+    
+    
+
+    .seccionDados img {
+        align-self: center;
+        height: auto;
+        width: 5em;
+        border-radius: 6px;
+        margin: 1.20em;
+    }
+
+    /* ganar juego */
+    #ganarDados, #perderDados {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    #ganarDados img, #perderDados img {
+        width: 22em;
+        margin-top: 3em;
+        margin-bottom: 2em;
+    }
+
+
+
+    
+
+
+/*///////////   MOBILE  ////////////*/
 
 @media (max-width: 960px) {
-
-
-
 
     /*  HOME */
     #home .diversidad {
