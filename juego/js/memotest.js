@@ -21,19 +21,25 @@ document.addEventListener("DOMContentLoaded", function () {
   var btnReiniciar = document.getElementById("btnReiniciarMemotest");
   var indicadorTurno = document.getElementById("turnoActual");
 
-  btnJugar.addEventListener("click", iniciarJuego);
-  btnReiniciar.addEventListener("click", iniciarJuego);
+  btnJugar.addEventListener("click", function () {
+    previa.classList.add("hidden");
+    instrucciones.classList.remove("hidden");
+  });
+
+  // instrucciones previas al juego, el tablero carga luego de aceptar
+  var instrucciones = document.getElementById("instruccionesMemotest");
+  var btnAceptar = document.getElementById("btnAceptarInstrucciones");
+  btnAceptar.addEventListener("click", function () {
+    instrucciones.classList.add("hidden");
+    juego.classList.remove("hidden");
+    iniciarJuego();
+  });
+
 
   function iniciarJuego() {
-    // se hace visible el tablero de juego en el mismo contenedor
-    previa.classList.add("hidden");
-    juego.classList.remove("hidden");
-    mensaje.textContent = "";
-      // btnReiniciar.classList.add("hidden");
-
-    // se reinicia para no arrastrar lo anterior
-    carta1 = null;
-    carta2 = null;
+// se hace visible el tablero de juego en el mismo contenedor
+    carta1 = null;  
+    carta2 = null; // se reinicia para no arrastrar lo anterior
     bloqueo = false;
     aciertosJugador = 0;
     aciertosBot = 0;

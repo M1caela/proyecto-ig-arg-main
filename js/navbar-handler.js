@@ -64,9 +64,9 @@ function iniciarNavbarFunciones() {
     // es transparente al principio y azul al bajar
     if (window.scrollY > 10) {
       navbar.classList.remove("bg-transparent");
-      navbar.classList.add("bg-[#233679]");
+      navbar.classList.add("bg-[#1e2b57]");
     } else {
-      navbar.classList.remove("bg-[#233679]");
+      navbar.classList.remove("bg-[#1e2b57]");
       navbar.classList.add("bg-transparent");
     }
   });
