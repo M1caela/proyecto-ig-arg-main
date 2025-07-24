@@ -20,7 +20,7 @@ let preguntasConocimientos = [
         ]
     },
     {
-        pregunta: '¿En qué año se declaró la independencia de Argentina?',
+        pregunta: '¿En qué año se declaró la independencia del país?',
         respuestas: [
             { texto: '1816', correcta: true },
             { texto: '1806', correcta: false },
@@ -29,7 +29,7 @@ let preguntasConocimientos = [
         ]
     },
     {
-        pregunta: '¿Qué provincia argentina es conocida por su producción de vino?',
+        pregunta: '¿Cuál de estas provincias es reconocida por su producción de vino?',
         respuestas: [
             { texto: 'Tucumán', correcta: false },
             { texto: 'Mendoza ', correcta: true },
@@ -47,7 +47,7 @@ let preguntasConocimientos = [
         ]
     },
     {
-        pregunta: '¿Cuál es el deporte nacional de Argentina?',
+        pregunta: '¿Cuál de los siguientes es el deporte nacional?',
         respuestas: [
             { texto: 'Golf', correcta: false },
             { texto: 'Tenis', correcta: false },
@@ -83,7 +83,7 @@ let preguntasConocimientos = [
         ]
     },
     {
-        pregunta: '¿Cuál es la moneda oficial de Argentina?',
+        pregunta: '¿Cuál es la moneda oficial?',
         respuestas: [
             { texto: 'Real', correcta: false },
             { texto: 'Peso', correcta: true },
@@ -205,19 +205,19 @@ function mostrarResultadoFinalConocimientos() {
 
     if (porcentaje <= 20) {
         imagenSrc = 'img/nivel1.png';
-        mensajeNivel = '¡Nunca es tarde para seguir aprendiendo!';
+        mensajeNivel = '¡Nunca es tarde para seguir aprendiendo! 😌 Recorré la web para conocér más. ';
     } else if (porcentaje <= 40) {
         imagenSrc = 'img/nivel2.png';
-        mensajeNivel = 'Conoces algo de Argentina, pero siempre se puede mejorar.';
+        mensajeNivel = 'Conocés algo de Argentina, pero siempre se puede mejorar. 🙂';
     } else if (porcentaje <= 60) {
         imagenSrc = 'img/nivel3.png';
-        mensajeNivel = 'Tienes un conocimiento promedio sobre Argentina, ¡seguí asi!';
+        mensajeNivel = 'Tenés un conocimiento promedio sobre Argentina, ¡En esta web podés mejorarlo!';
     } else if (porcentaje <= 80) {
         imagenSrc = 'img/nivel4.png';
         mensajeNivel = '¡Muy bien! Conocés bastante sobre Argentina.';
     } else {
         imagenSrc = 'img/nivel5.png';
-        mensajeNivel = '¡Felicitaciones! Sos todo un experto.';
+        mensajeNivel = '¡Felicitaciones! Sos todo un experto. 🫡';
     }
 
     resultadoElementoConocimiento.innerHTML = 
