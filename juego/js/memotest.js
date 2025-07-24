@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-}); // ?
+
 
 function turnoBot() {
     bloqueo = true;
@@ -136,32 +136,25 @@ function turnoBot() {
     cartaBot2.classList.add("descubierta");
 
     setTimeout(function () {
-      // if (cartaBot1.dataset.nombre === cartaBot2.dataset.nombre) {
-      //   aciertosBot++;
-      //   if (aciertosJugador + aciertosBot === provincias.length) {
-      //     mostrarGanador();
-      //   } else {
-      //     setTimeout(turnoBot, 1000); // El bot vuelve a jugar si acierta
-      //   }
-      // } else {
-      //   cartaBot1.classList.remove("descubierta");
-      //   cartaBot2.classList.remove("descubierta");
-      //   turnoJugador = true;
-      //   actualizarIndicadorTurno();
-      //   bloqueo = false;
-      // }
+        // se verifica si coinciden
+        if (cartaBot1.dataset.nombre === cartaBot2.dataset.nombre) {
+          aciertosBot++;
+          if (aciertosJugador + aciertosBot === piezas.length) {
+            mostrarGanador();
+          } else {
+            turnoJugador = true;
+            actualizarIndicadorTurno();
+            bloqueo = false;
+          }
+        } else {
+          cartaBot1.classList.remove("descubierta");
+          cartaBot2.classList.remove("descubierta");
 
-      // se verifica si coinciden
-      if (cartaBot1.dataset.nombre === cartaBot2.dataset.nombre) {
-      aciertosBot++;
-      if (aciertosJugador + aciertosBot === provincias.length) {
-        mostrarGanador();
-      } else {
-        turnoJugador = true;
-        actualizarIndicadorTurno();
-        bloqueo = false;
-      }
-    }
+          // cambio de turno
+          turnoJugador = true;
+          actualizarIndicadorTurno();
+          bloqueo = false;
+        }
     }, 1000);
   }
 
@@ -170,13 +163,13 @@ function turnoBot() {
     btnReiniciar.classList.remove("hidden");
 
     if (aciertosJugador > aciertosBot) {
-      mensaje.textContent = "¡Ganaste! 🎉";
+      mensaje.textContent = "¡Ganaste! Felicidades 🎉";
     } else if (aciertosBot > aciertosJugador) {
-      mensaje.textContent = "Perdiste. El bot fue más rápido 😔";
+      mensaje.textContent = "Perdiste 😓 ¡Quizás la próxima!";
     } else {
       mensaje.textContent = "¡Empate!";
     }
   }
 
-
+}); // cierre de DOMContentLoaded
 
