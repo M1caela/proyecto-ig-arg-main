@@ -17,7 +17,33 @@
 <main id="juego">
 
     <div class="w-full h-[300px] md:h-[350px] bg-[#1e2b57] text-white text-lg md:text-xl flex justify-center items-center">
-        <h1>Sección de juegos</h1>
+        <h1>Sección de mini-juegos</h1>
+    </div>
+
+    <div id="juegoMemotest" class="contenedor-juego-memotest flex flex-col items-center justify-center m-10 mt-16">
+        <div class="previa-memotest p-6 outline rounded-sm w-[70%] min-h-[300px] flex flex-col justify-center items-center bg-white">
+            <h1>Memotest</h1>
+            <button id="btnJugarMemotest" class="rounded-md text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
+        </div>
+
+        <div id="instruccionesMemotest" class="p-6 outline rounded-sm w-[70%] flex flex-col justify-center items-center bg-white text-center hidden">
+            <h2 class="text-xl font-semibold mb-4">¿Cómo jugar?</h2>
+            <p class="mb-4">
+                Este es un juego de memoria por turnos.<br>
+                En cada ronda, vos y el bot se turnan para dar vuelta dos cartas.<br>
+                Si las cartas coinciden, sumás un punto. Si no, se vuelven a tapar.<br>
+                El jugador con más pares descubiertos al final... ¡gana!
+            </p>
+            <button id="btnAceptarInstrucciones" class="rounded-md text-white font-semibold px-4 py-2 bg-[#74ACDF] hover:bg-[#4F8DC6]">Aceptar</button>
+        </div>
+
+
+        <div class="juego-memotest p-6 outline rounded-sm w-[70%] flex flex-col justify-center m-auto items-center text-center bg-white hidden">
+            <p id="turnoActual" class="font-semibold text-lg text-blue-700 mb-4">Tu turno</p>
+            <div id="tableroMemotest" class="grid grid-cols-4 gap-3 justify-center items-center my-6"></div>
+            <p id="mensajeFinalMemotest" class="text-green-700 font-bold text-lg mt-4"></p>
+            <button id="btnReiniciarMemotest" class="mt-4 rounded bg-[#74ACDF] text-white font-semibold px-4 py-2 hidden">Reiniciar</button>
+        </div>
     </div>
 
     <div id="juego1" class="contenedor-juego-personajes flex flex-col items-center justify-center m-10 mt-16 ">
@@ -65,20 +91,6 @@
         </div>
 
         <div class="resultado-conocimiento bg-white p-6 outline rounded-sm w-[70%] flex flex-col justify-center items-center text-center hidden">
-        </div>
-    </div>
-
-    <div id="juegoMemotest" class="contenedor-juego-memotest flex flex-col items-center justify-center m-10 mt-16">
-        <div class="previa-memotest p-6 outline rounded-sm w-[70%] min-h-[300px] flex flex-col justify-center items-center bg-white">
-            <h1>¿Podés encontrar todas las provincias argentinas?</h1>
-            <button id="btnJugarMemotest" class="rounded-md text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
-        </div>
-
-        <div class="juego-memotest p-6 outline rounded-sm w-[70%] flex flex-col justify-center m-auto items-center text-center bg-white hidden">
-            <p id="turnoActual" class="font-semibold text-lg text-blue-700 mb-4">Tu turno</p>
-            <div id="tableroMemotest" class="grid grid-cols-4 gap-3 justify-center items-center my-6"></div>
-            <p id="mensajeFinalMemotest" class="text-green-700 font-bold text-lg mt-4"></p>
-            <button id="btnReiniciarMemotest" class="mt-4 rounded bg-[#74ACDF] text-white font-semibold px-4 py-2 hidden">Reiniciar</button>
         </div>
     </div>
 </main>

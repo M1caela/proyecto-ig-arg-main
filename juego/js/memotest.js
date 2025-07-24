@@ -86,14 +86,18 @@ document.addEventListener("DOMContentLoaded", function () {
         aciertosJugador++;
         carta1 = null;
         carta2 = null;
-        bloqueo = false;
+
 
         // si ya se encontraron todas, termina el juego
         if (aciertosJugador + aciertosBot === piezas.length) {
           mostrarGanador();
+        } else {
+          turnoJugador = false;
+          actualizarIndicadorTurno();
+          setTimeout(turnoBot, 1000);
         }
       } else {
-        // sino, se vuelven a "dar vuelta" las cartas y cambia el turno
+        // sino, se vuelven a "dar vuelta" las cartas 
         setTimeout(function () {
           carta1.classList.remove("descubierta");
           carta2.classList.remove("descubierta");
