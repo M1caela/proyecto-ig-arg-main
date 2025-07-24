@@ -56,20 +56,30 @@ function iniciarNavbarFunciones() {
     }
 
     // cambiar fondo al hacer scroll
+    const navbar = document.getElementById("navbar");
     if (navbar) {
     window.addEventListener("scroll", () => {
     console.log("scrollY:", window.scrollY); // ver si se activa el evento
 
+    // es transparente al principio y azul al bajar
     if (window.scrollY > 10) {
       navbar.classList.remove("bg-transparent");
       navbar.classList.add("bg-[#233679]");
-      console.log("🟦 Fondo cambiado a color");
     } else {
       navbar.classList.remove("bg-[#233679]");
       navbar.classList.add("bg-transparent");
-      console.log("⬜ Fondo transparente");
     }
   });
 }
+    // Para submenús del menú mobile
+    window.toggleDropdown = function (id) {
+        const el = document.getElementById(id);
+          console.log("Clic en toggleDropdown:", id, el); // 👈 esto debería aparecer
+
+        if (el) {
+            el.classList.toggle("hidden");
+        }
+    };
+
 }
 
