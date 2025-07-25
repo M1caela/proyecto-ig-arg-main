@@ -56,17 +56,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // mostrar en pantalla las piezas 
     for (var i = 0; i < cartas.length; i++) {
-      var div = document.createElement("div");
-      div.className = "cartaMemotest"; 
-      div.dataset.nombre = cartas[i]; // guardar nombre para dsp verificar si dos coinciden
+      var carta = document.createElement("div");
+      carta.className = "cartaMemotest";
+      carta.dataset.nombre = cartas[i];  // guardar nombre para dsp verificar si dos coinciden 
 
+      // efecto al dar vuelta la carta (+ css)
+      var inner = document.createElement("div");
+      inner.className = "carta-inner";
+
+      var frente = document.createElement("div");
+      frente.className = "carta-frente";
+
+      var dorso = document.createElement("div");
+      dorso.className = "carta-dorso";
+
+      // mostrar imagen según indice
       var img = document.createElement("img");
       img.src = "img/memotest/" + cartas[i] + ".png";
       img.alt = cartas[i];
+      
+      dorso.appendChild(img);
+      inner.appendChild(frente);
+      inner.appendChild(dorso);
+      carta.appendChild(inner);
 
-      div.appendChild(img);
-      div.addEventListener("click", revelarCarta); // al clickear la carta, se "da vuelta"
-      tablero.appendChild(div); 
+      carta.addEventListener("click", revelarCarta); // al clickear la carta, se "da vuelta"
+      tablero.appendChild(carta); 
     }
   }
 

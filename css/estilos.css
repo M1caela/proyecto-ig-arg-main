@@ -452,6 +452,52 @@ nav {
   display: block;
 }
 
+/* ESTILOS PARA DAR VUELTA LA FICHA */
+
+.cartaMemotest {
+  width: 80px;
+  height: 80px;
+  perspective: 800px;
+}
+
+.carta-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s; /* suavizar el giro */
+  transform-style: preserve-3d; /* efecto tridimensional para las dos caras */
+}
+
+
+.cartaMemotest.descubierta .carta-inner {
+  transform: rotateY(180deg);
+} /* cuando se agrega la clase .descubierta (con js), se rota 180° para mostrar el dorso */
+
+.carta-frente, .carta-dorso {
+  position: absolute; /* permite q se superpongan */
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.carta-frente {
+  background-color: #1e88e5;
+}
+
+.carta-dorso {
+  transform: rotateY(180deg);
+  background-color: #1e88e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carta-dorso img {
+  width: 90%;
+}
+
+
 
 
 /*///////////   MOBILE  ////////////*/
