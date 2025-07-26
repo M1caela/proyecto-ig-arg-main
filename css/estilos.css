@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* COLORES
+
+azul oscuro  #1e2b57; 
+celeste      #74ACDF;
+amarillo     #b8a974f3;
+
+*/
 
 
 * { box-sizing: border-box }
@@ -502,7 +510,7 @@ nav {
 
 /*///////////   MOBILE  ////////////*/
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
 
     /*  HOME */
     #home .diversidad {
@@ -516,9 +524,6 @@ nav {
         padding: 3px 7px;
     }
 
-    #img-truco {
-        display: none;
-    }
 
     /* HISTORIA */
         /* en el desktop esto sucede al hacer hover pero en mobile se ve mas oscuro por default */
@@ -531,6 +536,14 @@ nav {
     } 
 
     .costumbres .derecha img { order: 1 }
+
+    .costumbres .izquierda div, .costumbres .derecha div {
+        display: block;
+    } 
+
+    .costumbres img  {
+        max-width: 240px;
+    }
 
     /*  TURISMO */
     #turismo .categorias div {

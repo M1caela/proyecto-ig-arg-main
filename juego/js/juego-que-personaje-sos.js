@@ -4,7 +4,7 @@ let puntajes = [0, 0, 0, 0, 0]; // 5 personajes posibles
 
 let preguntas = [
     {
-        pregunta: "Al elegir una temática para un libro, películaa/serie o podcast, generalmente prefiero...",
+        pregunta: "Al elegir una temática para un libro, película/serie o podcast, generalmente prefiero...",
         respuestas: [
             { texto: "Relatos de superación personal.", personaje: 2 },
             { texto: "Historias emotivas e introspectivas.", personaje: 3 },
