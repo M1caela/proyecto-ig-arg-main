@@ -169,16 +169,53 @@ function mostrarPreguntaConocimientos() {
 
             // se captura el click de cada respuesta
             respuestaElemento.onclick = function() {
+                deshabilitarBotones();
                 if (opcion.correcta) {
                     respuestaElemento.style.backgroundColor = 'green';
                     puntajeConocimientos++; // se suma para el puntje final y se muestra un color según correcto o incorrecto
                     reproducirSonidoCorrecto()
                 } else {
-                    respuestaElemento.style.backgroundColor = 'red';
                     reproducirSonidoErroneo()
+                    respuestaElemento.style.backgroundColor = 'red';
+                    mostrarRespuestaCorrecta();
+                    
                 }
-                setTimeout(siguientePreguntaConocimientos, 1000);
+                setTimeout(siguientePreguntaConocimientos, 2000);
             };
+        }
+    });
+}
+
+function deshabilitarBotones() {
+    for (let i = 1; i <= 4; i++) {
+        let boton = document.querySelector('#respuestaConocimiento' + i);
+        if (boton) {
+            boton.onclick = null; // Remover el evento click
+            boton.style.pointerEvents = 'none'; // Deshabilitar interacción
+        }
+    }
+}
+
+// Función para habilitar todos los botones de respuesta
+function habilitarBotones() {
+    for (let i = 1; i <= 4; i++) {
+        let boton = document.querySelector('#respuestaConocimiento' + i);
+        if (boton) {
+            boton.style.pointerEvents = 'auto'; // Rehabilitar interacción
+        }
+    }
+}
+
+// Función para mostrar la respuesta correcta en gris
+function mostrarRespuestaCorrecta() {
+    let pregunta = preguntasConocimientos[preguntaActualConocimientos];
+    
+    pregunta.respuestas.forEach(function(opcion, index) {
+        if (opcion.correcta) {
+            let respuestaCorrecta = document.querySelector('#respuestaConocimiento' + (index + 1));
+            if (respuestaCorrecta) {
+                respuestaCorrecta.style.backgroundColor = '#888888'; // Color gris para la respuesta correcta
+            }
         }
     });
 }
@@ -188,6 +225,7 @@ function siguientePreguntaConocimientos() {
     actualizarBarraProgreso(); 
 
     if (preguntaActualConocimientos < preguntasConocimientos.length) {
+        habilitarBotones(); 
         mostrarPreguntaConocimientos();
     } else {
         mostrarResultadoFinalConocimientos();
@@ -232,7 +270,4 @@ function mostrarResultadoFinalConocimientos() {
     ;
     resultadoElementoConocimiento.style.display = 'block';
 }
-
-
-// css: el fondo tiene margenes blancos que no deberia
 

@@ -50,7 +50,7 @@ function getNavbarHTML() {
                     </svg>
                 </button>
                 <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#1e2b57] text-white mt-2 rounded-lg shadow-lg min-w-48">
-                    <li><a href="TURISMO_MAPA-SONORO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Mapa sonoro</a></li>
+                    <li><a href="TURISMO_MAPA" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Mapa sonoro</a></li>
                     <li><a href="TURISMO_INVIERNO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
                     <li><a href="TURISMO_VERANO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
                     <li><a href="TURISMO_TURISMO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>  
@@ -97,7 +97,7 @@ function getNavbarHTML() {
                         </svg>
                     </button>
                     <ul id="mobile-turismo" class="hidden ml-4 mt-2 space-y-2">
-                        <li><a href="TURISMO_MAPA-SONORO" class="block py-1 font-semibold hover:text-[#8492C7]">Mapa sonoro</a></li>
+                        <li><a href="TURISMO_MAPA" class="block py-1 font-semibold hover:text-[#8492C7]">Mapa sonoro</a></li>
                         <li><a href="TURISMO_INVIERNO" class="block py-1 font-semibold hover:text-[#8492C7]">Invierno</a></li>
                         <li><a href="TURISMO_VERANO" class="block py-1 font-semibold hover:text-[#8492C7]">Verano</a></li>
                         <li><a href="TURISMO_TURISMO" class="block py-1 font-semibold hover:text-[#8492C7]">Ver todo</a></li>  
@@ -192,7 +192,7 @@ function loadNavbar() {
 function createRoutes(basePath) {
     return {
         index: basePath + 'index.html',
-        escarapela: basePath + 'img/escarapela.webp',
+        escarapela: basePath + '/img/escarapela.webp',
         historia: basePath + 'historia.html',
         cultura: {
             cultura: basePath + 'cultura/cultura.html',
