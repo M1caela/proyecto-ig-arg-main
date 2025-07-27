@@ -1,7 +1,6 @@
 <!-- navbar -->
     <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white p-4 z-[9999] transition-colors duration-300">
 
-
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="text-xl font-bold"><a href="/index.html"><img id="escarapela" src="/img/escarapela.webp" alt="Escarapela" title="Inicio"></a></div>
@@ -64,16 +63,17 @@
         </ul>
 
         <!-- Menú Mobile -->
-        <div id="mobile-menu"
-            class="hidden fixed top-0 right-0 w-64 h-full bg-[#1e2b57] shadow-lg flex flex-col p-6 md:hidden">
+            <div id="mobile-menu" class="hidden fixed top-0 right-0 w-64 h-full bg-[#1e2b57] shadow-lg flex flex-col p-6 md:hidden">
+
             <button id="close-menu" class="self-end text-white text-2xl">&times;</button>
             <ul class="mt-6 space-y-4">
                 <li><a href="/historia.html" class="font-semibold hover:text-[#8492C7]">Historia</a></li>
 
                 <!-- CULTURA MOBILE -->
                 <li>
-                    <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
-                        onclick="toggleDropdown('mobile-cultura')">
+                    <!-- <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                        onclick="toggleDropdown('mobile-cultura')"> -->
+                        <button class="dropdown-toggle" data-target="mobile-cultura">
                         Cultura
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -88,8 +88,10 @@
                     </ul>
                 </li>
                 <li>
-                    <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
-                        onclick="toggleDropdown('mobile-turismo')">
+                    <!-- <button class="w-full text-left flex items-center justify-between font-semibold hover:text-[#8492C7]"
+                        onclick="toggleDropdown('mobile-turismo')"> -->
+                        <button class="dropdown-toggle" data-target="mobile-turismo">
+
                         Lugares increibles
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">

@@ -316,7 +316,7 @@ nav {
 
     #banner-inferior {
         background-image: url('../cultura/img/festividades-banner-inf.png');
-    }
+    } #banner-inferior:hover { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../cultura/img/festividades-banner-inf.png');}
 
     #festividades .fechas p {
         margin-bottom: 2em;

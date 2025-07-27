@@ -3,9 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!placeholder) return;
 
     // Calcular ruta relativa a navbar.html
-    let path = window.location.pathname;
-    let depth = path.split("/").length - 2;
-    let relativePath = "../".repeat(depth) + "navbar.html";
+    const relativePath = "/navbar.html";
+
 
     fetch(relativePath)
         .then((response) => {
@@ -13,13 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.text();
         })
         .then((html) => {
-            placeholder.innerHTML = html;
+            placeholder.insertAdjacentHTML("beforeend", html);
             console.log("✅ Navbar cargado correctamente.");
 
-            // Ejecutar scripts del navbar SOLO una vez que fue insertado en el DOM
+            // Ejecutar scrpts del navbar SOLO una vez que fue insertado en el DOM
             iniciarNavbarFunciones();
         })
         .catch((error) => {
+            console.error("Error al cargar el navbar:", error);
+        })
+
+         .catch((error) => {
             console.error("Error al cargar el navbar:", error);
         });
 });
@@ -42,7 +45,7 @@ function iniciarNavbarFunciones() {
         }, 300);
     };
 
-    // menú mobile
+      // MENÚ MOBILE //
     const toggleBtn = document.getElementById("menu-toggle");
     const closeBtn = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -55,31 +58,45 @@ function iniciarNavbarFunciones() {
         closeBtn.addEventListener("click", () => mobileMenu.classList.add("hidden"));
     }
 
+    // submenus
+     document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-target");
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.toggle("hidden");
+            }
+        });
+    });
+
+
     // cambiar fondo al hacer scroll
     const navbar = document.getElementById("navbar");
     if (navbar) {
-    window.addEventListener("scroll", () => {
-    console.log("scrollY:", window.scrollY); // ver si se activa el evento
+        window.addEventListener("scroll", () => {
+            console.log("scrollY:", window.scrollY); // ver si se activa el evento
 
-    // es transparente al principio y azul al bajar
-    if (window.scrollY > 10) {
-      navbar.classList.remove("bg-transparent");
-      navbar.classList.add("bg-[#1e2b57]");
-    } else {
-      navbar.classList.remove("bg-[#1e2b57]");
-      navbar.classList.add("bg-transparent");
+            // es transparente al principio y azul al bajar
+            if (window.scrollY > 10) {
+            navbar.classList.remove("bg-transparent");
+            navbar.classList.add("bg-[#1e2b57]");
+            } else {
+                navbar.classList.remove("bg-[#1e2b57]");
+                navbar.classList.add("bg-transparent");
+            }
+        });
     }
-  });
-}
-    // Para submenús del menú mobile
-    window.toggleDropdown = function (id) {
-        const el = document.getElementById(id);
-          console.log("Clic en toggleDropdown:", id, el); // 👈 esto debería aparecer
 
-        if (el) {
-            el.classList.toggle("hidden");
-        }
-    };
+  
 
 }
 
+    // submenús
+    // window.toggleDropdown = function (id) {
+    //     const el = document.getElementById(id);
+    //       console.log("Clic en toggleDropdown:", id, el);
+
+    //     if (el) {
+    //         el.classList.toggle("hidden");
+    //     }
+    // };
