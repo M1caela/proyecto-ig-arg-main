@@ -1,0 +1,125 @@
+/* navbar-styles.css */
+
+/* Animaciones para el menú mobile */
+#mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 16rem; /* w-64 */
+    height: 100vh;
+    background-color: rgba(30, 43, 87, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#mobile-menu.show {
+    transform: translateX(0);
+}
+
+#mobile-menu.hidden {
+    transform: translateX(100%);
+}
+
+/* Contenido del menú mobile */
+#mobile-menu ul {
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+#mobile-menu ul li {
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+#mobile-menu ul li a {
+    display: block;
+    padding: 0.5rem 0;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
+}
+
+#mobile-menu ul li a:hover {
+    color: #8492C7;
+}
+
+/* Dropdowns dentro del menú mobile */
+#mobile-menu ul ul {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid #8492C7;
+}
+
+#mobile-menu ul ul li {
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+#mobile-menu ul ul li a {
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Animación para las flechas de dropdown */
+.dropdown-toggle svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+.dropdown-toggle svg.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Animaciones para dropdowns desktop */
+#navbar ul ul {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease-in-out;
+}
+
+#navbar ul ul:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Efectos hover mejorados */
+#navbar a {
+    transition: color 0.2s ease-in-out;
+}
+
+/* Estilos para la página activa */
+#navbar a.active {
+    color: #74ACDF !important;
+    font-weight: 600;
+}
+
+/* Mejoras responsivas */
+@media (max-width: 768px) {
+    #mobile-menu {
+        backdrop-filter: blur(10px);
+        background-color: rgba(30, 43, 87, 0.95);
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
+        color: white;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    .dropdown-toggle:hover {
+        color: #8492C7;
+    }
+}
