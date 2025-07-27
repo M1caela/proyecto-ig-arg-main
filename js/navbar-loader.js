@@ -1,4 +1,4 @@
-// navbar-loader-inline.js
+// navbar-loader-improved.js
 document.addEventListener('DOMContentLoaded', function() {
     loadNavbar();
 });
@@ -10,8 +10,8 @@ function getNavbarHTML() {
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="text-xl font-bold">
-            <a href="/index.html">
-                <img id="escarapela" src="/img/escarapela.webp" alt="Escarapela" title="Inicio">
+            <a href="INDEX_LINK">
+                <img id="escarapela" src="IMG_ESCARAPELA" alt="Escarapela" title="Inicio">
             </a>
         </div>
 
@@ -24,7 +24,7 @@ function getNavbarHTML() {
 
         <!-- Menú Desktop -->
         <ul id="menu" class="hidden md:flex space-x-6">
-            <li><a href="/historia.html" class="font-semibold hover:text-[#74ACDF]">Historia</a></li>
+            <li><a href="HISTORIA_LINK" class="font-semibold hover:text-[#74ACDF]">Historia</a></li>
 
             <!-- CULTURA -->
             <li class="relative group" onmouseenter="openDropdown('dropdown-cultura')" onmouseleave="closeDropdown('dropdown-cultura')">
@@ -35,9 +35,9 @@ function getNavbarHTML() {
                     </svg>
                 </button>
                 <ul id="dropdown-cultura" class="absolute left-0 hidden bg-[#1e2b57] text-white mt-2 rounded-lg shadow-lg min-w-48">
-                    <li><a href="/cultura/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
-                    <li><a href="/cultura/gastronomia.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
-                    <li><a href="/cultura/festividades.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
+                    <li><a href="CULTURA_CULTURA" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Cultura</a></li>
+                    <li><a href="CULTURA_GASTRONOMIA" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Gastronomía</a></li>
+                    <li><a href="CULTURA_FESTIVIDADES" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Festividades</a></li>
                 </ul>
             </li>
 
@@ -50,16 +50,16 @@ function getNavbarHTML() {
                     </svg>
                 </button>
                 <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#1e2b57] text-white mt-2 rounded-lg shadow-lg min-w-48">
-                    <li><a href="/turismo/mapa-sonoro/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Mapa sonoro</a></li>
-                    <li><a href="/turismo/invierno.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
-                    <li><a href="/turismo/verano.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
-                    <li><a href="/turismo/index.html" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>  
+                    <li><a href="TURISMO_MAPA-SONORO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Mapa sonoro</a></li>
+                    <li><a href="TURISMO_INVIERNO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
+                    <li><a href="TURISMO_VERANO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
+                    <li><a href="TURISMO_TURISMO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>  
                 </ul>
             </li>
 
-            <li><a href="/guia.html" class="font-semibold hover:text-[#74ACDF]">Guía turística</a></li>
-            <li><a href="/sustentabilidad.html" class="font-semibold hover:text-[#74ACDF]">Ambiente</a></li>
-            <li><a href="/juego/index.html" class="font-semibold hover:text-[#74ACDF]">¡Juegos!</a></li>
+            <li><a href="GUIA_LINK" class="font-semibold hover:text-[#74ACDF]">Guía turística</a></li>
+            <li><a href="SUSTENTABILIDAD_LINK" class="font-semibold hover:text-[#74ACDF]">Ambiente</a></li>
+            <li><a href="JUEGOS_LINK" class="font-semibold hover:text-[#74ACDF]">¡Juegos!</a></li>
         </ul>
     </div>
 
@@ -70,7 +70,7 @@ function getNavbarHTML() {
         <div class="mt-16 px-4">
             <ul class="space-y-4">
                 <li>
-                    <a href="/historia.html" class="block py-2 font-semibold hover:text-[#8492C7]">Historia</a>
+                    <a href="HISTORIA_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">Historia</a>
                 </li>
 
                 <!-- CULTURA MOBILE -->
@@ -82,9 +82,9 @@ function getNavbarHTML() {
                         </svg>
                     </button>
                     <ul id="mobile-cultura" class="hidden ml-4 mt-2 space-y-2">
-                        <li><a href="/cultura/index.html" class="block py-1 font-semibold hover:text-[#8492C7]">Cultura</a></li>
-                        <li><a href="/cultura/gastronomia.html" class="block py-1 font-semibold hover:text-[#8492C7]">Gastronomía</a></li>
-                        <li><a href="/cultura/festividades.html" class="block py-1 font-semibold hover:text-[#8492C7]">Festividades</a></li>
+                        <li><a href="CULTURA_CULTURA" class="block py-1 font-semibold hover:text-[#8492C7]">Cultura</a></li>
+                        <li><a href="CULTURA_GASTRONOMIA" class="block py-1 font-semibold hover:text-[#8492C7]">Gastronomía</a></li>
+                        <li><a href="CULTURA_FESTIVIDADES" class="block py-1 font-semibold hover:text-[#8492C7]">Festividades</a></li>
                     </ul>
                 </li>
 
@@ -97,21 +97,21 @@ function getNavbarHTML() {
                         </svg>
                     </button>
                     <ul id="mobile-turismo" class="hidden ml-4 mt-2 space-y-2">
-                        <li><a href="/turismo/mapa-sonoro/index.html" class="block py-1 font-semibold hover:text-[#8492C7]">Mapa sonoro</a></li>
-                        <li><a href="/turismo/invierno.html" class="block py-1 font-semibold hover:text-[#8492C7]">Invierno</a></li>
-                        <li><a href="/turismo/verano.html" class="block py-1 font-semibold hover:text-[#8492C7]">Verano</a></li>
-                        <li><a href="/turismo/index.html" class="block py-1 font-semibold hover:text-[#8492C7]">Ver todo</a></li>  
+                        <li><a href="TURISMO_MAPA-SONORO" class="block py-1 font-semibold hover:text-[#8492C7]">Mapa sonoro</a></li>
+                        <li><a href="TURISMO_INVIERNO" class="block py-1 font-semibold hover:text-[#8492C7]">Invierno</a></li>
+                        <li><a href="TURISMO_VERANO" class="block py-1 font-semibold hover:text-[#8492C7]">Verano</a></li>
+                        <li><a href="TURISMO_TURISMO" class="block py-1 font-semibold hover:text-[#8492C7]">Ver todo</a></li>  
                     </ul>
                 </li>
 
                 <li>
-                    <a href="/guia.html" class="block py-2 font-semibold hover:text-[#8492C7]">Guía turística</a>
+                    <a href="GUIA_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">Guía turística</a>
                 </li>
                 <li>
-                    <a href="/sustentabilidad.html" class="block py-2 font-semibold hover:text-[#8492C7]">Ambiente</a>
+                    <a href="SUSTENTABILIDAD_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">Ambiente</a>
                 </li>
                 <li>
-                    <a href="/juego/index.html" class="block py-2 font-semibold hover:text-[#8492C7]">¡Juegos!</a>
+                    <a href="JUEGOS_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">¡Juegos!</a>
                 </li>
             </ul>
         </div>
@@ -129,71 +129,86 @@ function loadNavbar() {
 
     // Determinar la ruta base según la ubicación actual
     const currentPath = window.location.pathname;
-    let basePath = '';
-    
-    // Contar niveles de profundidad para determinar la ruta relativa
-    const pathSegments = currentPath.split('/').filter(segment => segment !== '');
-    const depth = pathSegments.length;
-    
     console.log('Current path:', currentPath);
-    console.log('Path segments:', pathSegments);
-    console.log('Depth:', depth);
     
-    // Si estamos en una subcarpeta, necesitamos subir niveles
-    if (depth > 1) {
-        basePath = '../'.repeat(depth - 1);
-    }
+    // Detectar el nivel de profundidad basado en la estructura conocida
+    let basePath = '';
+    let level = 'root'; // root, level1, level2
     
-    // Si estamos en el root o index, no necesitamos prefijo
-    if (currentPath === '/' || currentPath.endsWith('index.html') || depth <= 1) {
+    if (currentPath === '/' || currentPath.endsWith('/index.html') || currentPath === '/index.html') {
+        // Estamos en el root
         basePath = './';
+        level = 'root';
+    } else if (currentPath.includes('/cultura/') || currentPath.includes('/turismo/') || currentPath.includes('/juegos/')) {
+        if (currentPath.includes('/turismo/mapa-sonoro/')) {
+            // Estamos en nivel 2 (subcarpeta de turismo)
+            basePath = '../../';
+            level = 'level2';
+        } else {
+            // Estamos en nivel 1 (carpeta principal)
+            basePath = '../';
+            level = 'level1';
+        }
+    } else {
+        // Archivos en el root como historia.html, guia.html, etc.
+        basePath = './';
+        level = 'root';
     }
 
-    console.log('Base path determinado:', basePath);
+    console.log('Nivel detectado:', level);
+    console.log('Base path:', basePath);
 
-    // Obtener HTML del navbar
-    const navbarHTML = getNavbarHTML();
+    // Crear las rutas específicas
+    const routes = createRoutes(basePath);
     
-    // Ajustar todas las rutas en el HTML del navbar
-    const adjustedHtml = adjustNavbarPaths(navbarHTML, basePath);
-    console.log('HTML del navbar ajustado');
+    // Obtener HTML del navbar y reemplazar placeholders
+    let navbarHTML = getNavbarHTML();
+    
+    // Reemplazar todos los placeholders
+    navbarHTML = navbarHTML.replace(/INDEX_LINK/g, routes.index);
+    navbarHTML = navbarHTML.replace(/IMG_ESCARAPELA/g, routes.escarapela);
+    navbarHTML = navbarHTML.replace(/HISTORIA_LINK/g, routes.historia);
+    navbarHTML = navbarHTML.replace(/CULTURA_CULTURA/g, routes.cultura.index);
+    navbarHTML = navbarHTML.replace(/CULTURA_GASTRONOMIA/g, routes.cultura.gastronomia);
+    navbarHTML = navbarHTML.replace(/CULTURA_FESTIVIDADES/g, routes.cultura.festividades);
+    navbarHTML = navbarHTML.replace(/TURISMO_MAPA/g, routes.turismo.mapa);
+    navbarHTML = navbarHTML.replace(/TURISMO_INVIERNO/g, routes.turismo.invierno);
+    navbarHTML = navbarHTML.replace(/TURISMO_VERANO/g, routes.turismo.verano);
+    navbarHTML = navbarHTML.replace(/TURISMO_TURISMO/g, routes.turismo.index);
+    navbarHTML = navbarHTML.replace(/GUIA_LINK/g, routes.guia);
+    navbarHTML = navbarHTML.replace(/SUSTENTABILIDAD_LINK/g, routes.sustentabilidad);
+    navbarHTML = navbarHTML.replace(/JUEGOS_LINK/g, routes.juegos);
+    
+    console.log('HTML del navbar con rutas aplicadas');
     
     // Insertar en el DOM
-    navbarPlaceholder.innerHTML = adjustedHtml;
+    navbarPlaceholder.innerHTML = navbarHTML;
     console.log('Navbar insertado en DOM');
-    
-    // Verificar que el contenido se insertó correctamente
-    const insertedNav = document.getElementById('navbar');
-    if (insertedNav) {
-        console.log('✅ Navbar correctamente insertado');
-        console.log('Menú mobile encontrado:', document.getElementById('mobile-menu') ? '✅' : '❌');
-        console.log('Toggle button encontrado:', document.getElementById('menu-toggle') ? '✅' : '❌');
-    } else {
-        console.error('❌ Error: Navbar no se insertó correctamente');
-    }
     
     // Inicializar funcionalidad del navbar
     initializeNavbar();
 }
 
-function adjustNavbarPaths(html, basePath) {
-    console.log('Ajustando rutas con basePath:', basePath);
-    
-    // Ajustar rutas de enlaces href
-    html = html.replace(/href="\/([^"]*)"?/g, (match, path) => {
-        const newPath = `href="${basePath}${path}"`;
-        console.log(`Ajustando ruta: ${match} -> ${newPath}`);
-        return newPath;
-    });
-    
-    // Ajustar rutas de imágenes src
-    html = html.replace(/src="\/([^"]*)"?/g, (match, path) => {
-        const newPath = `src="${basePath}${path}"`;
-        console.log(`Ajustando imagen: ${match} -> ${newPath}`);
-        return newPath;
-    });
-    
-    return html;
+function createRoutes(basePath) {
+    return {
+        index: basePath + 'index.html',
+        escarapela: basePath + 'img/escarapela.webp',
+        historia: basePath + 'historia.html',
+        cultura: {
+            cultura: basePath + 'cultura/cultura.html',
+            gastronomia: basePath + 'cultura/gastronomia.html',
+            festividades: basePath + 'cultura/festividades.html'
+        },
+        turismo: {
+            mapa: basePath + 'turismo/mapa-sonoro/mapa-sonoro.html',
+            invierno: basePath + 'turismo/invierno.html',
+            verano: basePath + 'turismo/verano.html',
+            turismo: basePath + 'turismo/turismo.html'
+        },
+        guia: basePath + 'guia.html',
+        sustentabilidad: basePath + 'sustentabilidad.html',
+        juegos: basePath + 'juegos/juegos.html'
+    };
 }
 
 function initializeNavbar() {
@@ -204,25 +219,16 @@ function initializeNavbar() {
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenu = document.getElementById('close-menu');
 
-    console.log('Elementos encontrados:');
-    console.log('- menuToggle:', menuToggle ? '✅' : '❌');
-    console.log('- mobileMenu:', mobileMenu ? '✅' : '❌');
-    console.log('- closeMenu:', closeMenu ? '✅' : '❌');
-
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             console.log('Toggle menu clicked');
             mobileMenu.classList.remove('hidden');
-            // Agregar clase para mostrar el menú con animación
             setTimeout(() => {
                 mobileMenu.classList.add('show');
             }, 10);
         });
-        console.log('✅ Event listener agregado al toggle menu');
-    } else {
-        console.error('❌ No se pudo configurar el toggle del menú mobile');
     }
 
     if (closeMenu && mobileMenu) {
@@ -235,14 +241,12 @@ function initializeNavbar() {
                 mobileMenu.classList.add('hidden');
             }, 300);
         });
-        console.log('✅ Event listener agregado al botón cerrar');
     }
 
     // Cerrar menú mobile al hacer click fuera
     document.addEventListener('click', function(event) {
         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
             if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                console.log('Click fuera del menú, cerrando...');
                 mobileMenu.classList.remove('show');
                 setTimeout(() => {
                     mobileMenu.classList.add('hidden');
@@ -260,28 +264,21 @@ function initializeNavbar() {
 
     // Funcionalidad de dropdowns mobile
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    console.log('Dropdown toggles encontrados:', dropdownToggles.length);
-    
-    dropdownToggles.forEach((toggle, index) => {
-        console.log(`Configurando dropdown ${index + 1}:`, toggle);
+    dropdownToggles.forEach((toggle) => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
             const targetId = this.getAttribute('data-target');
-            console.log('Dropdown toggle clicked, target:', targetId);
             const targetDropdown = document.getElementById(targetId);
             if (targetDropdown) {
                 targetDropdown.classList.toggle('hidden');
-                console.log('Dropdown toggled, hidden:', targetDropdown.classList.contains('hidden'));
                 
                 // Rotar la flecha
                 const arrow = this.querySelector('svg');
                 if (arrow) {
                     arrow.classList.toggle('rotate-180');
                 }
-            } else {
-                console.error('Target dropdown no encontrado:', targetId);
             }
         });
     });
@@ -306,7 +303,7 @@ function initializeNavbar() {
     console.log('✅ Navbar completamente inicializado');
 }
 
-// Funciones para dropdowns desktop (manteniendo las originales)
+// Funciones para dropdowns desktop
 function openDropdown(dropdownId) {
     const dropdown = document.getElementById(dropdownId);
     if (dropdown) {
