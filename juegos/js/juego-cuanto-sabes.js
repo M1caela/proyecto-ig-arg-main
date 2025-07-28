@@ -259,13 +259,13 @@ function mostrarResultadoFinalConocimientos() {
     }
 
     resultadoElementoConocimiento.innerHTML = 
-        `<div class="flex flex-col justify-center items-center m-auto p-6">
+        `<div class="text-center flex flex-col justify-center items-center m-auto p-6">
             <img src="${imagenSrc}" alt="Nivel de conocimiento" class="flex justify-center items-center m-auto w-64 h-auto mb-4">
             <h2 class="font-bold text-xl mb-2">${mensajeNivel}</h2> 
             <h1 class="font-bold text-2xl mb-4"> Puntaje final: ${puntajeConocimientos}/${preguntasConocimientos.length}</h1> 
 
-            <a href="index.html"><button class="rounded-md text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">Volver a jugar</button></a>
-            <a href="#juego1">Jugar quiz de personalidades</a">
+            <a href="juegos.html"><button class="rounded-xl text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">Volver a jugar</button></a>
+            <a href="#juego1" class="font-semibold hover:scale-105 transition">Jugar quiz de personalidades</a">
         </div>` // se muestra mensaje según cantidad de rtas correctas 
     ;
     resultadoElementoConocimiento.style.display = 'block';

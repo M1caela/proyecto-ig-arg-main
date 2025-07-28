@@ -23,25 +23,25 @@
 
     <!-- MEMOTEST -->
     <div id="juegoMemotest" class="contenedor-juego-memotest flex flex-col items-center justify-center m-10 mt-16">
-        <div class="previa-memotest p-6 outline rounded-md w-[70%] min-h-[300px] flex flex-col justify-center items-center bg-white">
-            <h1>Memotest <br> ¿Cuánto podés recordar?</h1>
-            <button id="btnJugarMemotest" class="rounded-md text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
+        <div class="previa-memotest p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57] hover:scale-102 transition">
+            <h1>Memotest: <br> ¿Cuánto podés recordar?</h1>
+            <button id="btnJugarMemotest" class="rounded-xl text-[#1e2b57] font-bold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
         </div>
 
         <!-- INSTRUCCIONES -->
-        <div id="instruccionesMemotest" class="p-6 outline rounded-md w-[70%] flex flex-col justify-center items-center bg-white text-center hidden">
+        <div id="instruccionesMemotest" class="p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57] hidden">
             <h2 class="text-xl font-semibold mb-4">¿Cómo jugar?</h2>
-            <p class="m-4 text-center">
+            <p class="m-4 text-center text-black">
                 Poné a prueba tu memoria en este clásico juego de emparejar fichas. 🃏 <br>
                 Se colocan hacia abajo mezcladas aleatoriamente. <strong>Hacé clic para dar vuelta la ficha e intentar encontrar su par.</strong> <br>
                 En cada turno se dan vuelta dos fichas. Si son iguales, se suma un punto y quedan visibles. Sino, se vuelven a dar vuelta.<br>
                 <strong>El jugador con más pares descubiertos al final... ¡gana el juego!</strong>
             </p>
-            <button id="btnAceptarInstrucciones" class="rounded-md text-white font-semibold px-4 py-2 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡Vamos!</button>
+            <button id="btnAceptarInstrucciones" class="rounded-xl text-[#1e2b57] font-semibold px-4 py-2 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡Vamos!</button>
         </div>
 
         <!-- TABLERO -->
-        <div class="juego-memotest p-6 outline rounded-md w-[70%] flex flex-col justify-center m-auto items-center text-center bg-white hidden">
+        <div class="juego-memotest p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57]  hidden">
             <p id="turnoActual" class="p-2 mb-4 font-semibold text-lg text-[#1e2b57] bg-[#afb8d8] border-2 border-[#1e2b57] rounded-xl">Tu turno</p>
             <p class="text-sm text-[#1e2b57] italic">Elegí una ficha e intentá encontrar su par.</p>
             <div id="tableroMemotest" class="grid grid-cols-4 gap-3 justify-center items-center my-6"></div>
@@ -52,14 +52,14 @@
 
     <!-- ¿QUÉ PERSONAJE SOS? -->
     <div id="juego1" class="contenedor-juego-personajes flex flex-col items-center justify-center m-10 mt-16 ">
-        <div class="previa-quiz-personaje p-6 outline rounded-md w-[70%] min-h-[300px] flex flex-col justify-center items-center bg-white">
+        <div class="previa-quiz-personaje p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57] hover:scale-102 transition">
             <h1>¿Querés saber qué personaje argentino sos?</h1>
-            <button id="btnJugarPersonajes" class="rounded-md text-white  font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
+            <button id="btnJugarPersonajes" class="rounded-xl text-[#1e2b57] font-bold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
         </div>
 
         <!-- PREGUNTAS -->
-        <div class="juego-quiz-personaje p-6 outline rounded-md w-[70%] flex flex-col justify-center m-auto items-center text-center bg-white hidden">
-            <div id="pregunta" class="outline rounded-md p-2 m-auto mb-8 font-semibold bg-[#F1E9CC] min-h-[6em] max-w-[500px] flex justify-center items-center"></div>
+        <div class="juego-quiz-personaje p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57]  hidden">
+            <div id="pregunta" class="outline rounded-md p-2 m-auto mb-8 text-center font-semibold bg-[#F1E9CC] min-h-[6em] max-w-[500px] flex justify-center items-center"></div>
             <button id="respuesta1" class="outline rounded-sm p-2 m-auto mb-4 hover:bg-[#C9D5F3] active:bg-[#9EAFD6]"></button>
             <button id="respuesta2" class="outline rounded-sm p-2 m-auto mb-4 hover:bg-[#C9D5F3] active:bg-[#9EAFD6]"></button>
             <button id="respuesta3" class="outline rounded-sm p-2 m-auto mb-4 hover:bg-[#C9D5F3] active:bg-[#9EAFD6]"></button>
@@ -74,20 +74,20 @@
             </div>
         </div>
         
-        <div class="resultado-personaje bg-white p-6 outline rounded-md w-[70%] flex flex-col justify-center items-center text-center hidden">
+        <div class="resultado-personaje p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57] hidden">
         </div>
     </div>
 
     <!-- QUIZ DE CONOCIMIENTOS -->
-    <div id="juego2" class="contenedor-juego-conocimiento flex flex-col items-center justify-center p-10 ">
-        <div class="previa-quiz-conocimiento p-6 outline rounded-md w-[70%] min-h-[300px] flex flex-col justify-center items-center bg-white">
+    <div id="juego2" class="contenedor-juego-conocimiento flex flex-col items-center justify-center p-10">
+        <div class="previa-quiz-conocimiento p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57] hover:scale-102 transition">
             <h1>¿Cuánto sabés sobre Argentina? Descubrilo con este quiz.</h1>
-            <button id="btnJugarConocimiento" class="rounded-md text-white  font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
+            <button id="btnJugarConocimiento" class="rounded-xl text-[#1e2b57] font-bold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">¡JUGAR!</button>
         </div>
 
         <!-- RESPUESTAS -->
-        <div class="juego-quiz-conocimiento p-6 outline rounded-md w-[70%] flex flex-col justify-center items-center text-center bg-white hidden">
-            <div id="preguntaConocimiento" class="outline rounded-md p-2 m-auto mb-8 font-semibold bg-[#F1E9CC] min-h-[6em] max-w-[500px] flex justify-center items-center"></div>
+        <div class="juego-quiz-conocimiento p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57] hidden">
+            <div id="preguntaConocimiento" class="outline rounded-md p-2 m-auto mb-8 text-center font-semibold bg-[#F1E9CC] min-h-[6em] max-w-[500px] flex justify-center items-center"></div>
             <button id="respuestaConocimiento1" class="outline rounded-sm p-2 m-auto mb-4 hover:bg-[#C9D5F3] active:bg-[#9EAFD6]"></button>
             <button id="respuestaConocimiento2" class="outline rounded-sm p-2 m-auto mb-4 hover:bg-[#C9D5F3] active:bg-[#9EAFD6]"></button>
             <button id="respuestaConocimiento3" class="outline rounded-sm p-2 m-auto mb-4 hover:bg-[#C9D5F3] active:bg-[#9EAFD6]"></button>
@@ -100,7 +100,7 @@
             </div>
         </div>
 
-        <div class="resultado-conocimiento bg-white m-6 outline rounded-md w-[70%] flex flex-col justify-center items-center text-center hidden">
+        <div class="resultado-conocimiento p-6 w-[70%] min-h-[300px] outline border-6 border-[#1e2b57] rounded-xl shadow-lg flex flex-col justify-center items-center bg-white text-[#1e2b57]  hidden">
         </div>
     </div>
 </main>

@@ -189,11 +189,13 @@ function turnoBot() {
 
     if (aciertosJugador > aciertosBot) {
       mensaje.textContent = "¡Ganaste! Felicidades 🎉";
+      btnReiniciarMemotest.style.display = 'block';
     } else if (aciertosBot > aciertosJugador) {
       mensaje.textContent = "Perdiste 😓 ¡Quizás la próxima!";
       btnReiniciarMemotest.style.display = 'block';
     } else {
       mensaje.textContent = "¡Empate!";
+      btnReiniciarMemotest.style.display = 'block';
     }
   }
 

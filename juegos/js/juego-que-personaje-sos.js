@@ -221,13 +221,13 @@ function mostrarResultado() {
     reproducirSonidoFinalizar ()
     let resultadoElemento = document.querySelector('.resultado-personaje');
         resultadoElemento.innerHTML = `
-            <div class="flex flex-col justify-center items-center m-auto p-6">
+            <div class="flex flex-col justify-center items-center m-auto p-6 text-center">
                 <h1 class="font-bold text-2xl mb-4">${personajes[personajeGanador].nombre}</h1>
-                <p class="mb-4">${personajes[personajeGanador].descripcion}</p>
-                <img src="${personajes[personajeGanador].imagen}" alt="${personajes[personajeGanador].nombre}" class="flex justify-center items-center m-auto">
+                <p class="mb-4 p-4">${personajes[personajeGanador].descripcion}</p>
+                <img src="${personajes[personajeGanador].imagen}" alt="${personajes[personajeGanador].nombre}" class="flex justify-center items-center m-auto rounded-lg shadow-sm">
 
-                <a href="index.html"><button class="rounded-md text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">Volver a jugar</button></a>
-               <a href="#juego2">Jugar quiz de conocimientos</a">
+                <a href="juegos.html"><button class="rounded-xl text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">Volver a jugar</button></a>
+                <a href="#juego2" class="font-semibold hover:scale-105 transition">Jugar quiz de conocimientos</a">
             </div>
         `;
         resultadoElemento.style.display = 'block';
