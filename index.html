@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Argentina</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/navbar-styles.css"> 
+
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script> 
-    <link rel="stylesheet" href="./css/navbar-styles.css"> 
 </head>
 
 <header>
     <!-- NAVBAR -->
     <div id="navbar-placeholder"></div>
+    
 </header>
 
     <main id="home">
@@ -24,13 +26,14 @@
         </div> 
 
         <section class="text-center p-8 m-8">
-            <p>
+            <h2 class="font-bold text-xl md:text-3xl mb-8">Un país que lo tiene todo.</h2>
+            <p class="mb-8">
                 <strong>Argentina</strong> es un país ubicado en el extremo sur de América del Sur. Con una superficie de aproximadamente 2.78 millones de kilómetros cuadrados, es el octavo país más grande del mundo y el segundo más grande de América Latina, después de Brasil. Su territorio abarca una amplia variedad de paisajes, desde las vastas pampas hasta las imponentes montañas de los Andes, y desde los bosques subtropicales del norte hasta los glaciares y fiordos de la Patagonia.
                 La capital y ciudad más poblada es Buenos Aires, una metrópolis vibrante y cosmopolita conocida por su arquitectura europea, su rica vida cultural y su renombrada escena gastronómica. Argentina es famosa por su pasión por el fútbol, su música de tango y su legado literario, con figuras destacadas como Jorge Luis Borges y Julio Cortázar.
                 El país tiene una <strong>población diversa y multicultural</strong>, resultado de oleadas de inmigración europeas en los siglos XIX y XX, que se sumaron a la mezcla original de pueblos indígenas y descendientes de africanos. Esta rica diversidad cultural se refleja en las tradiciones, festividades y costumbres argentinas.
                 Es un país de contrastes y riquezas, que ofrece una combinación única de <strong>historia, cultura y belleza</strong> natural que atrae a visitantes de todo el mundo.
             </p>
-            <a href="historia.html"><button id="btn">Conocer más sobre la historia de Argentina</button></a>
+            <a href="./historia/historia.html"><button id="btn">Conocer más sobre la historia de Argentina</button></a>
         </section>
         
 
@@ -46,19 +49,19 @@
             <section>
                 <h2 class="text-white font-bold text-2xl md:text-3xl mt-6 p-6 text-center">Explorá la diversidad de Argentina</h2>
                 <div class="diversidad flex justify-center align-center text-center ">
-                    <a href="turismo/invierno.html"><div id="nieve" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">
+                    <a href="./turismo/invierno.html"><div id="nieve" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">
                       <p>Nieve</p>   
                      </div></a>
          
-                     <a href="turismo/index.html"><div id="montaña" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">
+                     <a href="./turismo/todoelaño.html"><div id="montaña" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">
                          <p>Montaña</p>
                      </div></a>
                
-                     <a href="turismo/index.html"><div id="lagos" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">            
+                     <a href="./turismo/todoelaño.html"><div id="lagos" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">            
                          <p>Lagos</p> 
                      </div></a>
          
-                     <a href="turismo/verano.html"><div id="playas" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">               
+                     <a href="./turismo/verano.html"><div id="playas" class="w-[300px] h-[350px] flex justify-center items-center text-center hover:scale-110 transition cursor-pointer">               
                          <p>Playas</p> 
                      </div></a>
                  </div>
@@ -70,9 +73,9 @@
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
 
-<script src="js/main.js"></script>
-<script src="js/footer-handler.js"></script> 
-<script src="./js/navbar-loader.js"></script> 
+<script src="./js/main.js"></script>
+<script src="./js/footer-handler.js"></script> 
+<script src="./js/navbar-loader.js" defer></script> 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"> </script>
 
 </body>
