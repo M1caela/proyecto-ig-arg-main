@@ -17,3 +17,4 @@ document.getElementById("prevBtn").addEventListener("click", function() {
         carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
 });
+
