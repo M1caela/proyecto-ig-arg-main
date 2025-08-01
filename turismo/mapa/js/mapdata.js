@@ -188,7 +188,7 @@ var simplemaps_countrymap_mapdata={
             class="w-full mt-2 rounded-lg"
             style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
             <source 
-              src="audio/afilador-neuquen.wav" 
+              src="audios/afilador-neuquen.wav" 
               type="audio/mpeg">
             Tu navegador no soporta audio HTML5
           </audio>
@@ -716,7 +716,7 @@ var simplemaps_countrymap_mapdata={
             style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
             <source 
               src="audios/tucuman-tafi-del-valle-ciudad-sagrada-de-los-quilmes.mp3" 
-              type="audio/mpeg">
+              type="audios/mpeg">
             Tu navegador no soporta audio HTML5
           </audio>
         </div>`,
@@ -738,7 +738,7 @@ var simplemaps_countrymap_mapdata={
             style="box-shadow: 0 2px 4px rgba(0,0,0,0.1)">
             <source 
               src="audios/verdulero_ambulante_bahia_blanca.mp3" 
-              type="audio/mpeg">
+              type="audios/mpeg">
             Tu navegador no soporta audio HTML5
           </audio>
         </div>`,

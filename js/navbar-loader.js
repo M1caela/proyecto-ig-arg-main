@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function getNavbarHTML() {
     return `
-<!-- navbar -->
+    <!-- navbar --> 
+    // los links estan puestos como placeholders para que se reemplacen por las rutas correctas // 
+
     <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white p-4 z-[9999] transition-colors duration-300">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
@@ -50,10 +52,10 @@ function getNavbarHTML() {
                         </svg>
                     </button>
                     <ul id="dropdown-turismo" class="absolute left-0 hidden bg-[#1e2b57] text-white mt-2 rounded-lg shadow-lg min-w-48" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
-                        <li><a href="TURISMO_MAPA" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Mapa sonoro</a></li>
+                        <li><a href="TURISMO_TURISMO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Turismo</a></li>      
                         <li><a href="TURISMO_INVIERNO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Invierno</a></li>
                         <li><a href="TURISMO_VERANO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Verano</a></li>
-                        <li><a href="TURISMO_TURISMO" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Ver todo</a></li>  
+                        <li><a href="TURISMO_MAPA" class="font-semibold block px-4 py-2 hover:text-[#8492C7]">Mapa sonoro</a></li>
                     </ul>
                 </li>
 
@@ -91,16 +93,17 @@ function getNavbarHTML() {
                     <!-- TURISMO MOBILE -->
                     <li>
                         <button class="dropdown-toggle w-full flex items-center justify-between py-2 font-semibold hover:text-[#8492C7]" data-target="mobile-turismo">
-                            <span>Lugares increíbles</span>
+                            <span>Turismo</span>
                             <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <ul id="mobile-turismo" class="hidden ml-4 mt-2 space-y-2">
-                            <li><a href="TURISMO_MAPA" class="block py-1 font-semibold hover:text-[#8492C7]">Mapa sonoro</a></li>
+                            <li><a href="TURISMO_INDEX" class="block py-1 font-semibold hover:text-[#8492C7]">Turismo</a></li>  
                             <li><a href="TURISMO_INVIERNO" class="block py-1 font-semibold hover:text-[#8492C7]">Invierno</a></li>
                             <li><a href="TURISMO_VERANO" class="block py-1 font-semibold hover:text-[#8492C7]">Verano</a></li>
-                            <li><a href="TURISMO_INDEX" class="block py-1 font-semibold hover:text-[#8492C7]">Ver todo</a></li>  
+                            <li><a href="TURISMO_MAPA" class="block py-1 font-semibold hover:text-[#8492C7]">Mapa sonoro</a></li>
+
                         </ul>
                     </li>
 
@@ -141,8 +144,8 @@ function loadNavbar() {
         basePath = './';
         level = 'root';
     } else if (currentPath.includes('/cultura/') || currentPath.includes('/turismo/') || currentPath.includes('/juegos/') || currentPath.includes('/ambiente/') || currentPath.includes('/guia/') || currentPath.includes('/historia/')) {
-        if (currentPath.includes('/turismo/mapa-sonoro/')) {
-            basePath = '../../';
+        if (currentPath.includes('/turismo/mapa/')) {
+            basePath = '../../';  // subir 2 niveles
             level = 'level2';
         } else {
             basePath = '../';
@@ -153,14 +156,12 @@ function loadNavbar() {
         level = 'root';
     }
 
-    // console.log('Nivel detectado:', level);
-    // console.log('Base path:', basePath);
-
-    // Crear las rutas y reemplazar los placeholders del html
+    // Crear las rutas según el path(nivel) y reemplazar los placeholders del html
     const routes = createRoutes(basePath);
+
     let navbarHTML = getNavbarHTML();
     
-    navbarHTML = navbarHTML.replace(/INDEX_LINK/g, routes.index);
+    navbarHTML = navbarHTML.replace(/INDEX_LINK/g, routes.index); // g = global
     navbarHTML = navbarHTML.replace(/IMG_ESCARAPELA/g, routes.escarapela);
     navbarHTML = navbarHTML.replace(/HISTORIA_LINK/g, routes.historia);
     navbarHTML = navbarHTML.replace(/CULTURA_LINK/g, routes.cultura.index);
@@ -178,14 +179,11 @@ function loadNavbar() {
     navbarHTML = navbarHTML.replace(/JUEGOS_LINK/g, routes.juegos);
     navbarHTML = navbarHTML.replace(/JUEGO_LINK/g, routes.juegos);
     
-    // console.log('HTML del navbar con rutas aplicadas');
-    
-    // Insertar en el DOM
+    // Insertar en el DOM el nuevo navbar
     navbarPlaceholder.innerHTML = navbarHTML;
     console.log('Navbar insertado en DOM');
-    
-    // Inicializar funcionalidad del navbar
-    initializeNavbar();
+
+    initializeNavbar(); // funcionalidades
 }
 
 function createRoutes(basePath) {
@@ -199,7 +197,7 @@ function createRoutes(basePath) {
             festividades: basePath + 'cultura/festividades.html'
         },
         turismo: {
-            mapa: basePath + 'turismo/mapa-sonoro.html',
+            mapa: basePath + 'turismo/mapa/mapa-sonoro.html',
             invierno: basePath + 'turismo/invierno.html',
             verano: basePath + 'turismo/verano.html',
             index: basePath + 'turismo/turismo.html'
@@ -220,7 +218,6 @@ function initializeNavbar() {
         menuToggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('Toggle menu clicked');
             mobileMenu.classList.remove('hidden');
             setTimeout(() => {
                 mobileMenu.classList.add('show');
@@ -232,7 +229,6 @@ function initializeNavbar() {
         closeMenu.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('Close menu clicked');
             mobileMenu.classList.remove('show');
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
@@ -297,7 +293,7 @@ function initializeNavbar() {
     // Resaltar página actual en el navbar
     highlightCurrentPage();
     
-    console.log('✅ Navbar completamente inicializado');
+    console.log('Navbar completamente inicializado');
 }
 
 // Funciones para dropdowns desktop

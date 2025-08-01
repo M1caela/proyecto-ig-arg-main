@@ -2,11 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Days+One&family=Playwrite+IT+Moderna:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* COLORES
-
 azul oscuro  #1e2b57; 
 celeste      #74ACDF;
 amarillo     #b8a974f3;
-
 */
 
 
@@ -37,15 +35,6 @@ h2 {
 h3 {
     font-size: 1em;
     font-weight: 600;
-}
-
-nav {
-    position: fixed; /* fijo en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 50; /* asegura que esté encima del contenido */
-    padding: 1rem; 
 }
 
 #escarapela {
@@ -84,7 +73,6 @@ nav {
     color: white;
     text-align: center;
 }
-
 
 /** HOME **/
     #home .background-video {
@@ -260,7 +248,7 @@ nav {
         background: rgba(0, 0, 0, 0.3); 
         padding: 0.2em;
         border-radius: 5px;
-        opacity: 0;
+        opacity: 0.70;
     } .ir-subpaginas div:hover h3 {opacity: 1;}
 
 

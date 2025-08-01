@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var juego = document.querySelector(".juego-memotest");
   var previa = document.querySelector(".previa-memotest");
   var mensaje = document.getElementById("mensajeFinalMemotest");
-  var btnReiniciar = document.getElementById("btnReiniciarMemotest");
   var indicadorTurno = document.getElementById("turnoActual");
 
   btnJugar.addEventListener("click", function () {
@@ -185,17 +184,13 @@ function turnoBot() {
 
   function mostrarGanador() {
     bloqueo = true;
-    btnReiniciar.classList.remove("hidden");
 
     if (aciertosJugador > aciertosBot) {
       mensaje.textContent = "¡Ganaste! Felicidades 🎉";
-      btnReiniciarMemotest.style.display = 'block';
     } else if (aciertosBot > aciertosJugador) {
       mensaje.textContent = "Perdiste 😓 ¡Quizás la próxima!";
-      btnReiniciarMemotest.style.display = 'block';
     } else {
       mensaje.textContent = "¡Empate!";
-      btnReiniciarMemotest.style.display = 'block';
     }
   }
 
