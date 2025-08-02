@@ -160,11 +160,39 @@
                         </button>
                     </div>
             </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+            <script>
+                var glide01 = new Glide('.glide-01', {
+                    type: 'carousel',
+                    focusAt: 'center',
+                    perView: 3,
+                    autoplay: 3000,
+                    animationDuration: 700,
+                    gap: 24,
+                    breakpoints: {
+                        1024: { perView: 2 },
+                        640: { perView: 1 }
+                    },
+                });
             
-
+                var glide02 = new Glide('.glide-02', {
+                    type: 'carousel',
+                    focusAt: 'center',
+                    perView: 3,
+                    autoplay: 3000,
+                    animationDuration: 700,
+                    gap: 24,
+                    breakpoints: {
+                        1024: { perView: 2 },
+                        640: { perView: 1 }
+                    },
+                });
+            
+                glide01.mount();
+                glide02.mount();
+            </script>
         </article>
-
-
 
         <section>
             <h2 class="mb-6 mt-[160px] ml-4">Conocé otros destinos turísticos</h2>
@@ -178,39 +206,6 @@
     <div id="footer-placeholder"></div>
 
 
-           
-    <script>
-        var glide01 = new Glide('.glide-01', {
-            type: 'carousel',
-            focusAt: 'center',
-            perView: 3,
-            autoplay: 3000,
-            animationDuration: 700,
-            gap: 24,
-            breakpoints: {
-                1024: { perView: 2 },
-                640: { perView: 1 }
-            },
-        });
-    
-        var glide02 = new Glide('.glide-02', {
-            type: 'carousel',
-            focusAt: 'center',
-            perView: 3,
-            autoplay: 3000,
-            animationDuration: 700,
-            gap: 24,
-            breakpoints: {
-                1024: { perView: 2 },
-                640: { perView: 1 }
-            },
-        });
-    
-        glide01.mount();
-        glide02.mount();
-    </script>
-            
- <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
 <script src="../js/footer-loader.js"></script> 
 <script src="../js/navbar-loader.js"></script> 
 </body>
