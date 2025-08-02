@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function getFooterHTML() {
     return `
-<footer class="footer footer-horizontal footer-center bg-[#74ACDF] p-8 flex flex-col justify-center">
-    <div class="flex justify-center items-center text-center"> 
-        <aside>
-            <img class="w-[120px] m-auto" src="IMG_ESCARAPELA" alt="Escarapela argentina">
-            <p class="font-bold text-white text-xl">ARG</p>
-            <div class="text-white font-semibold">
-                <a href="CONTACTO_LINK">Contacto</a> | 
-                <a href="DESARROLLO_LINK">Sobre el desarrollo de la web</a>
-            </div>
-            <p class="text-white text-xs">Copyright © 2025 - All right reserved</p>
-        </aside>
-    </div>
-</footer>
+    <footer class="footer footer-horizontal footer-center bg-[#74ACDF] p-8 flex flex-col justify-center">
+        <div class="flex justify-center items-center text-center"> 
+            <aside> 
+                <img class="w-[120px] m-auto" src="IMG_ESCARAPELA" alt="Escarapela argentina">
+                <p class="font-bold text-white text-xl">ARG</p>
+                <div class="text-white font-semibold">
+                    <a href="CONTACTO_LINK">Contacto</a> | 
+                    <a href="DESARROLLO_LINK">Sobre el desarrollo de la web</a>
+                </div>
+                <p class="text-white text-xs">Copyright © 2025 - All right reserved</p>
+            </aside>
+        </div>
+    </footer>
     `;
 }
 
@@ -40,7 +40,7 @@ function loadFooter() {
         basePath = './';
         level = 'root';
     } else if (currentPath.includes('/cultura/') || currentPath.includes('/turismo/') || currentPath.includes('/juegos/') || currentPath.includes('/ambiente/') || currentPath.includes('/guia/') || currentPath.includes('/historia/')) {
-        if (currentPath.includes('/turismo/mapa-sonoro/')) {
+        if (currentPath.includes('/turismo/mapa/')) {
             basePath = '../../';
             level = 'level2';
         } else {
@@ -52,9 +52,6 @@ function loadFooter() {
         level = 'root';
     }
 
-    console.log('Footer - Nivel detectado:', level);
-    console.log('Footer - Base path:', basePath);
-
     // Crear las rutas específicas
     const routes = createFooterRoutes(basePath);
     
@@ -65,12 +62,10 @@ function loadFooter() {
     footerHTML = footerHTML.replace(/IMG_ESCARAPELA/g, routes.escarapela);
     footerHTML = footerHTML.replace(/CONTACTO_LINK/g, routes.contacto);
     footerHTML = footerHTML.replace(/DESARROLLO_LINK/g, routes.desarrollo);
-    
-    console.log('Footer - HTML con rutas aplicadas');
-    
+
     // Insertar en el DOM
     footerPlaceholder.innerHTML = footerHTML;
-    console.log('✅ Footer insertado en DOM');
+    console.log('Footer insertado en DOM');
 }
 
 function createFooterRoutes(basePath) {

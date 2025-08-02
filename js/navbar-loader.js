@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function getNavbarHTML() {
     return `
     <!-- navbar --> 
-    // los links estan puestos como placeholders para que se reemplacen por las rutas correctas // 
+    <!-- los links estan puestos como placeholders para que se reemplacen por las rutas correctas --> 
 
     <nav id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white p-4 z-[9999] transition-colors duration-300">
         <div class="container mx-auto flex justify-between items-center">
@@ -43,6 +43,8 @@ function getNavbarHTML() {
                     </ul>
                 </li>
 
+                <li><a href="GUIA_LINK" class="font-semibold hover:text-[#74ACDF]">Guía turística</a></li>
+
                 <!-- TURISMO -->
                 <li class="relative group" onmouseenter="openDropdown('dropdown-turismo')" onmouseleave="closeDropdown('dropdown-turismo')">
                     <button class="font-semibold hover:text-[#74ACDF] flex items-center">
@@ -59,7 +61,6 @@ function getNavbarHTML() {
                     </ul>
                 </li>
 
-                <li><a href="GUIA_LINK" class="font-semibold hover:text-[#74ACDF]">Guía turística</a></li>
                 <li><a href="AMBIENTE_LINK" class="font-semibold hover:text-[#74ACDF]">Ambiente</a></li>
                 <li><a href="JUEGOS_LINK" class="font-semibold hover:text-[#74ACDF]">¡Juegos!</a></li>
             </ul>
@@ -90,6 +91,10 @@ function getNavbarHTML() {
                         </ul>
                     </li>
 
+                    <li>
+                        <a href="GUIA_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">Guía turística</a>
+                    </li>
+
                     <!-- TURISMO MOBILE -->
                     <li>
                         <button class="dropdown-toggle w-full flex items-center justify-between py-2 font-semibold hover:text-[#8492C7]" data-target="mobile-turismo">
@@ -107,9 +112,6 @@ function getNavbarHTML() {
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="GUIA_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">Guía turística</a>
-                    </li>
                     <li>
                         <a href="AMBIENTE_LINK" class="block py-2 font-semibold hover:text-[#8492C7]">Ambiente</a>
                     </li>

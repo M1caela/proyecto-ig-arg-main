@@ -1,4 +1,3 @@
-/* navbar-styles.css */
 
 /* Animaciones para el menú mobile */
 #mobile-menu {
@@ -101,7 +100,6 @@
     font-weight: 600;
 }
 
-/* Mejoras responsivas */
 @media (max-width: 768px) {
     #mobile-menu {
         backdrop-filter: blur(10px);
