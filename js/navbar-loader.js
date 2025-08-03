@@ -132,8 +132,6 @@ function loadNavbar() {
         return;
     }
 
-
-
     // Determinar la ruta base según la ubicación actual, para evitar problemas con subcarpetas
     const currentPath = window.location.pathname;
     console.log('Current path:', currentPath);

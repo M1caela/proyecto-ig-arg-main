@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo | ARG</title>    
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/navbar-styles.css"> 
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script> 
 </head>
 
 <body>
@@ -19,13 +21,13 @@
         <div class="img-banner">
             <section class="categorias flex justify-center mt-[150px]">
                 <div id="ir-verano">
-                    <a href="verano.html"><h2>VERANO</h2></a>
+                    <a href="verano.html"><h2 class="font-bold text-2xl md:text-4xl">VERANO</h2></a>
                 </div>
                 <div id="ir-invierno">
-                    <a href="invierno.html"><h2>INVIERNO</h2></a>
+                    <a href="invierno.html"><h2 class="font-bold text-2xl md:text-4xl">INVIERNO</h2></a>
                 </div>
                 <div id="ir-todo">
-                    <a href="todoelaño.html"><h2>TODO EL AÑO</h2></a>
+                    <a href="todoelaño.html"><h2 class="font-bold text-2xl md:text-4xl">TODO EL AÑO</h2></a>
                 </div>
             </section>
 
@@ -35,7 +37,7 @@
         </div>
 
         <article class="ult-eventos">
-            <h2  class="m-12 md:pl-[6em] sm:text-center md:text-left">Últimos eventos y festividades</h2>
+            <h2  class="m-12 md:pl-[6em] text-center md:text-left font-semibold text-xl md:text-2xl">Últimos eventos y festividades</h2>
 
             <div class="max-w-[70%] m-auto flex justify-center">
                 
@@ -85,7 +87,7 @@
                             </div>
 
                             <div class="md:pr-8 md:pl-8">
-                                <li><img src="img/eventos-feria-libro.png"alt="Fiesta Internacional del Libro"  class="w-full max-w-full max-h-full m-auto" /></li>
+                                <li><img src="img/eventos-feria-libro.png" alt="Fiesta Internacional del Libro"  class="w-full max-w-full max-h-full m-auto" /></li>
                                 <p  class="font-semibold">Fiesta Internacional del Libro</p>
                                 <p>CABA | 24/04/2025 - 12/05/2025</p>
                             </div>
@@ -111,7 +113,7 @@
         </article>
             
         <article class="actividades mb-12">
-            <h2 class="m-12 md:pl-[6em] sm:text-center md:text-left">Disfrutá de las actividades en todo el país</h2>
+            <h2 class="m-12 md:pl-[6em] text-center md:text-left font-semibold text-xl md:text-2xl">Disfrutá de las actividades en todo el país</h2>
 
             <div class="max-w-[70%] m-auto flex justify-center">
                 <div class="relative w-full glide-02">
@@ -206,7 +208,7 @@
         </article>
 
         <article id="consejos">
-            <h2 class="p-8">Consejos para disfrutar el viaje</h2>
+            <h2 class="p-8 font-semibold text-center text-xl md:text-3xl">Consejos para disfrutar el viaje</h2>
 
             <div class="flex justify-center items-center flex-col margin-auto">
                 <div class="flex items-center justify-center m-6">
@@ -250,7 +252,7 @@
             
                 <div class="text-center p-6 mb-10">
                     <p class="text-lg md:text-xl"><strong>¿Querés saber más?</strong> Hicimos esta guía para vos.</p>
-                    <a href="../guia/guia.html"><button id="btn">Guía del viajero</button></a>
+                    <button id="btn"></button><a href="../guia/guia.html">Guía del viajero</a></button>
                 </div>
             </div>
         </article>
