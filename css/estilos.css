@@ -561,13 +561,13 @@ h3 {
 
     #gastronomia .img-banner {
         background-attachment: scroll;
+        background-size: contain
     }
 
      #festividades #banner-principal {
         background-attachment: scroll;
+        background-size: contain
       }
-
-
 
     /*  TURISMO */
         #turismo .img-banner {
@@ -577,7 +577,8 @@ h3 {
 
     #turismo .categorias div {
         background-attachment: scroll;
-        background-size: cover;
+        /* background-size: cover; */
+        background-size: contain;
         text-align: center;
         max-height: 400px;
         margin: 0;
@@ -588,6 +589,7 @@ h3 {
     
     #inv-banner-principal, #ver-banner-principal, #td-banner-principal {
         background-attachment: scroll;
+        background-size: contain
     }
 
     #consejos img {
@@ -602,7 +604,9 @@ h3 {
 
     #guia .img-banner { 
         background-attachment: scroll;
+        background-size: contain
     }
+        
 
     .ir-subpaginas h3 {
         font-size: 1em;
