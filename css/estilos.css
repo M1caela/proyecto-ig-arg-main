@@ -60,7 +60,7 @@ h3 {
     overflow: hidden;
 }
 
-.img-banner, .vid-banner {
+.img-banner {
     background-size: cover;
     background-position: center;
 }
@@ -532,6 +532,10 @@ h3 {
     .diversidad p {
         font-size: 2em;
         padding: 3px 7px;
+    }
+
+     #home .datos {
+        background-attachment: scroll;
     }
 
 
