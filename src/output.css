@@ -2941,7 +2941,7 @@ h3 {
   opacity: 80%;
 }
 .diversidad p {
-  opacity: 0;
+  opacity: 60%;
   color: white;
   font-family: "Roboto";
   font-weight: 800;
@@ -2949,7 +2949,7 @@ h3 {
   text-align: center;
 }
 .diversidad div:hover p {
-  opacity: 1;
+  opacity: 100%;
 }
 #nieve {
   background-image: url('../img/nieve.png');
@@ -3358,11 +3358,18 @@ h3 {
   .costumbres img {
     max-width: 240px;
   }
+  #gastronomia .img-banner {
+    background-attachment: scroll;
+  }
+  #festividades #banner-principal {
+    background-attachment: scroll;
+  }
   #turismo .img-banner {
     height: 190vh;
+    background-attachment: scroll;
   }
   #turismo .categorias div {
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover;
     text-align: center;
     max-height: 400px;
@@ -3371,6 +3378,9 @@ h3 {
     color: white;
     font-size: 1em;
   }
+  #inv-banner-principal, #ver-banner-principal, #td-banner-principal {
+    background-attachment: scroll;
+  }
   #consejos img {
     max-width: 100px;
     max-height: 100px;
@@ -3378,6 +3388,9 @@ h3 {
   #guia .consejos, #guia .telefonos, #guia .lunfardo {
     margin-left: 2em;
     margin-right: 2em;
+  }
+  #guia .img-banner {
+    background-attachment: scroll;
   }
   .ir-subpaginas h3 {
     font-size: 1em;
