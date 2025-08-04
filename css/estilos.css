@@ -87,7 +87,8 @@ h3 {
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        height: 100vh; 
+        height: auto;
+        min-height: 100vh; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -108,7 +109,7 @@ h3 {
         background-size: cover;
         background-position: center;
         border-radius: 15px;
-        margin: 3em;
+        margin: 20px;
     } #home .diversidad img:hover {opacity: 80%;}
             
     .diversidad p {
@@ -536,6 +537,8 @@ h3 {
 
      #home .datos {
         background-attachment: scroll;
+        min-height: 150vh; 
+   
     }
 
 
