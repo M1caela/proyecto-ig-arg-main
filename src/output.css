@@ -1710,6 +1710,9 @@
   .w-\[300px\] {
     width: 300px;
   }
+  .w-auto {
+    width: auto;
+  }
   .w-full {
     width: 100%;
   }
@@ -2002,9 +2005,6 @@
   .p-12 {
     padding: calc(var(--spacing) * 12);
   }
-  .p-\[2em\] {
-    padding: 2em;
-  }
   .p-\[3em\] {
     padding: 3em;
   }
@@ -2161,10 +2161,6 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-  }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
@@ -2197,9 +2193,6 @@
   }
   .text-gray-700 {
     color: var(--color-gray-700);
-  }
-  .text-green-600 {
-    color: var(--color-green-600);
   }
   .text-green-700 {
     color: var(--color-green-700);
@@ -2418,11 +2411,6 @@
       margin-left: 1em;
     }
   }
-  .sm\:w-\[70\%\] {
-    @media (width >= 40rem) {
-      width: 70%;
-    }
-  }
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2486,11 +2474,6 @@
   .md\:w-2\/5 {
     @media (width >= 48rem) {
       width: calc(2/5 * 100%);
-    }
-  }
-  .md\:w-\[60\%\] {
-    @media (width >= 48rem) {
-      width: 60%;
     }
   }
   .md\:w-\[70\%\] {
@@ -2914,7 +2897,8 @@ h3 {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2932,10 +2916,13 @@ h3 {
   background-color: #978b5df3;
 }
 .diversidad div {
+  height: auto;
+  min-height: 290px;
+  max-width: 260px;
   background-size: cover;
   background-position: center;
-  border-radius: 15px;
-  margin: 3em;
+  border-radius: 13px;
+  margin: 20px;
 }
 #home .diversidad img:hover {
   opacity: 80%;
@@ -3328,17 +3315,9 @@ h3 {
   width: 90%;
 }
 @media (max-width: 768px) {
-  #home .diversidad {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .diversidad p {
-    font-size: 2em;
-    padding: 3px 7px;
-  }
   #home .datos {
     background-attachment: scroll;
+    min-height: 150vh;
   }
   .poblamiento {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/historia-pueblos-originarios.png);
