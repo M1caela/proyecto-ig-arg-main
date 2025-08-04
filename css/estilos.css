@@ -106,9 +106,12 @@ h3 {
 
     /* seccion de 'diversidad arg' */
     .diversidad div {
+        height: auto;
+        min-height: 290px;
+        max-width: 260px;
         background-size: cover;
         background-position: center;
-        border-radius: 15px;
+        border-radius: 13px;
         margin: 20px;
     } #home .diversidad img:hover {opacity: 80%;}
             
@@ -524,16 +527,16 @@ h3 {
 @media (max-width: 768px) {
 
     /*  HOME */
-    #home .diversidad {
+    /* #home .diversidad {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
+    } */
+/* 
     .diversidad p {
         font-size: 2em;
         padding: 3px 7px;
-    }
+    } */
 
      #home .datos {
         background-attachment: scroll;
