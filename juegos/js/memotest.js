@@ -1,3 +1,5 @@
+// MEMOTEST // 
+
 document.addEventListener("DOMContentLoaded", function () {
   var piezas = [
     "vino", "tango", "hornero", "empanadas", "obelisco", "carne", "pelota","mate", "sol", "bandera"
@@ -36,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   function iniciarJuego() {
-// se hace visible el tablero de juego en el mismo contenedor
+      // se hace visible el tablero de juego en el mismo contenedor
     carta1 = null;  
     carta2 = null; // se reinicia para no arrastrar lo anterior
     bloqueo = false;
@@ -84,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // alternacion de turnos
   function actualizarIndicadorTurno() {
     indicadorTurno.textContent = turnoJugador ? "Tu turno" : "Turno del bot";
   }

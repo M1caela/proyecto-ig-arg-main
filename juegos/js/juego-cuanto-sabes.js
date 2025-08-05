@@ -137,6 +137,7 @@ function actualizarBarraProgreso() {
     progressLabel.style.width = `${porcentaje}%`;
 }
 
+//  sonidos
 const audioSeleccionCorrecta = new Audio('sonidos/correcto.mp3');
 function reproducirSonidoCorrecto () {
     audioSeleccionCorrecta.currentTime = 0; 
@@ -215,6 +216,7 @@ function mostrarRespuestaCorrecta() {
             let respuestaCorrecta = document.querySelector('#respuestaConocimiento' + (index + 1));
             if (respuestaCorrecta) {
                 respuestaCorrecta.style.backgroundColor = '#888888'; // Color gris para la respuesta correcta
+                respuestaCorrecta.style.border = 'green 2px solid'; 
             }
         }
     });
@@ -258,6 +260,7 @@ function mostrarResultadoFinalConocimientos() {
         mensajeNivel = '¡Felicitaciones! Sos todo un experto. 🫡';
     }
 
+    // se muestra mensaje según cantidad de rtas correctas 
     resultadoElementoConocimiento.innerHTML = 
         `<div class="text-center flex flex-col justify-center items-center m-auto p-6">
             <img src="${imagenSrc}" alt="Nivel de conocimiento" class="flex justify-center items-center m-auto w-64 h-auto mb-4">
@@ -266,7 +269,7 @@ function mostrarResultadoFinalConocimientos() {
 
             <a href="juegos.html"><button class="rounded-xl text-white font-semibold p-2 m-6 bg-[#74ACDF] hover:bg-[#4F8DC6]">Volver a jugar</button></a>
             <a href="#juego1" class="font-semibold hover:scale-105 transition">Jugar quiz de personalidades</a">
-        </div>` // se muestra mensaje según cantidad de rtas correctas 
+        </div>` 
     ;
     resultadoElementoConocimiento.style.display = 'block';
 }
